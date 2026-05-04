@@ -104,7 +104,7 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
     .join(" ");
 
   if (variant === "spaceship") {
-    return renderCommitInvaders();
+    return renderCommitInvadersGame({ login, days, total, max, label });
   }
 
   const grid = days
@@ -295,6 +295,369 @@ function renderSpark(point, index, radius, shape) {
     ${pulse}
     <animate attributeName="r" values="1;${radius};1" dur="2.4s" begin="${delay}s" repeatCount="indefinite" />
   </circle>`;
+}
+
+const INVADER_W = 860;
+const INVADER_H = 200;
+const INVADER_CELL = 11;
+const INVADER_GAP = 2;
+const INVADER_GRID_X = 24;
+const INVADER_GRID_Y = 38;
+const INVADER_TOTAL = 60;
+const INVADER_INTRO = 2;
+const INVADER_OUTRO = 4;
+const INVADER_SHIP_Y = 178;
+const INVADER_SHIP_W = 22;
+
+const INVADER_DARK = {
+  bg: "#0d1117",
+  dim: "#30363d",
+  star: "#1f6feb",
+  accent: "#39d353",
+  levels: ["#0e4429", "#006d32", "#26a641", "#39d353"],
+  laser: "#39d353",
+  enemyLaser: "#f78166",
+  ship: "#39d353",
+  shipGlow: "#26a641",
+  hud: "#39d353",
+  hudDim: "#8b949e",
+  scan: "rgba(57,211,83,0.05)",
+  crash: "#f78166",
+};
+
+const INVADER_LIGHT = {
+  bg: "#ffffff",
+  dim: "#d0d7de",
+  star: "#0969da",
+  accent: "#1a7f37",
+  levels: ["#9be9a8", "#40c463", "#30a14e", "#216e39"],
+  laser: "#1a7f37",
+  enemyLaser: "#cf222e",
+  ship: "#1a7f37",
+  shipGlow: "#2da44e",
+  hud: "#1a7f37",
+  hudDim: "#57606a",
+  scan: "rgba(26,127,55,0.04)",
+  crash: "#cf222e",
+};
+
+const INVADER_FRAME_A = [
+  "0010100",
+  "0011100",
+  "0111110",
+  "1110111",
+  "1111111",
+  "0101010",
+  "1010101",
+];
+
+const INVADER_FRAME_B = [
+  "0010100",
+  "1011101",
+  "1111111",
+  "1110111",
+  "0111110",
+  "1000001",
+  "0100010",
+];
+
+const INVADER_EXPLOSION = [
+  "1010101",
+  "0100010",
+  "1011101",
+  "0011100",
+  "1011101",
+  "0100010",
+  "1010101",
+];
+
+const INVADER_PATH_A = spritePath(INVADER_FRAME_A);
+const INVADER_PATH_B = spritePath(INVADER_FRAME_B);
+const INVADER_PATH_X = spritePath(INVADER_EXPLOSION);
+
+function renderCommitInvadersGame({ login, days, total, max, label }) {
+  const grid = Array.from({ length: 7 }, () => Array.from({ length: 53 }, () => 0));
+  for (const day of days) {
+    if (day.weekIndex < 53 && day.dayIndex < 7) {
+      grid[day.dayIndex][day.weekIndex] = invaderLevel(day.contributionCount, max);
+    }
+  }
+
+  const tokens = {
+    bg: "var(--bg)",
+    dim: "var(--dim)",
+    star: "var(--star)",
+    accent: "var(--accent)",
+    levels: ["var(--l1)", "var(--l2)", "var(--l3)", "var(--l4)"],
+    laser: "var(--laser)",
+    enemyLaser: "var(--elaser)",
+    ship: "var(--ship)",
+    shipGlow: "var(--shipg)",
+    hud: "var(--hud)",
+    hudDim: "var(--hudd)",
+    scan: "var(--scan)",
+    crash: "var(--crash)",
+  };
+
+  const adaptiveStyle = `<style>
+:root{--bg:${INVADER_LIGHT.bg};--dim:${INVADER_LIGHT.dim};--star:${INVADER_LIGHT.star};--accent:${INVADER_LIGHT.accent};--l1:${INVADER_LIGHT.levels[0]};--l2:${INVADER_LIGHT.levels[1]};--l3:${INVADER_LIGHT.levels[2]};--l4:${INVADER_LIGHT.levels[3]};--laser:${INVADER_LIGHT.laser};--elaser:${INVADER_LIGHT.enemyLaser};--ship:${INVADER_LIGHT.ship};--shipg:${INVADER_LIGHT.shipGlow};--hud:${INVADER_LIGHT.hud};--hudd:${INVADER_LIGHT.hudDim};--scan:${INVADER_LIGHT.scan};--crash:${INVADER_LIGHT.crash};}
+@media (prefers-color-scheme: dark){:root{--bg:${INVADER_DARK.bg};--dim:${INVADER_DARK.dim};--star:${INVADER_DARK.star};--accent:${INVADER_DARK.accent};--l1:${INVADER_DARK.levels[0]};--l2:${INVADER_DARK.levels[1]};--l3:${INVADER_DARK.levels[2]};--l4:${INVADER_DARK.levels[3]};--laser:${INVADER_DARK.laser};--elaser:${INVADER_DARK.enemyLaser};--ship:${INVADER_DARK.ship};--shipg:${INVADER_DARK.shipGlow};--hud:${INVADER_DARK.hud};--hudd:${INVADER_DARK.hudDim};--scan:${INVADER_DARK.scan};--crash:${INVADER_DARK.crash};}}
+</style>`;
+
+  return buildInvadersSvg(tokens, grid, {
+    adaptiveStyle,
+    login,
+    label,
+    total,
+  });
+}
+
+function buildInvadersSvg(theme, grid, { adaptiveStyle, login, label, total }) {
+  const invaders = [];
+  for (let row = 0; row < 7; row += 1) {
+    for (let col = 0; col < 53; col += 1) {
+      if (grid[row][col] > 0) {
+        invaders.push({ row, col, hp: grid[row][col], level: grid[row][col] });
+      }
+    }
+  }
+
+  invaders.sort((a, b) => b.row - a.row || a.col - b.col);
+
+  const totalShots = Math.max(1, invaders.reduce((sum, invader) => sum + invader.hp, 0));
+  const battleEnd = INVADER_TOTAL - INVADER_OUTRO;
+  const interval = (battleEnd - INVADER_INTRO) / totalShots;
+
+  let shotIndex = 0;
+  for (const invader of invaders) {
+    invader.hits = [];
+    for (let hit = 0; hit < invader.hp; hit += 1) {
+      invader.hits.push(INVADER_INTRO + shotIndex * interval);
+      shotIndex += 1;
+    }
+    invader.dieAt = invader.hits[invader.hits.length - 1] + 0.04;
+  }
+
+  const stops = [{ t: 0, x: INVADER_W / 2 - INVADER_SHIP_W / 2 }];
+  for (const invader of invaders) {
+    const targetX = invaderX(invader.col) + INVADER_CELL / 2 - INVADER_SHIP_W / 2;
+    stops.push({ t: Math.max(0.1, invader.hits[0] - 0.25), x: targetX });
+    stops.push({ t: invader.dieAt, x: targetX });
+  }
+  stops.push({ t: battleEnd + 0.4, x: INVADER_W / 2 - INVADER_SHIP_W / 2 });
+  stops.push({ t: INVADER_TOTAL, x: INVADER_W / 2 - INVADER_SHIP_W / 2 });
+  stops.sort((a, b) => a.t - b.t);
+
+  const compactStops = [];
+  for (const stop of stops) {
+    if (compactStops.length && Math.abs(compactStops[compactStops.length - 1].t - stop.t) < 0.005) {
+      compactStops[compactStops.length - 1] = stop;
+    } else {
+      compactStops.push(stop);
+    }
+  }
+
+  const pixel = INVADER_CELL / 7;
+  const escapedLabel = escapeXml(label);
+  const escapedLogin = escapeXml(login);
+  let output = "";
+
+  output += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${INVADER_W} ${INVADER_H}" width="${INVADER_W}" height="${INVADER_H}" role="img" aria-labelledby="title desc" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace">`;
+  output += `<title id="title">${escapedLabel} contribution animation</title>`;
+  output += `<desc id="desc">Space Invaders inspired contribution graph for ${escapedLogin} with ${total} contributions in the last year.</desc>`;
+  output += `<defs>${adaptiveStyle}`;
+  output += `<filter id="g" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="0.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+  output += `<radialGradient id="vig" cx="50%" cy="50%" r="70%"><stop offset="60%" stop-color="${theme.bg}" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.45"/></radialGradient>`;
+  output += `<pattern id="scan" width="2" height="3" patternUnits="userSpaceOnUse"><rect width="2" height="1" fill="${theme.scan}"/></pattern>`;
+  for (let level = 0; level < 4; level += 1) {
+    output += `<symbol id="iA${level}" viewBox="0 0 7 7" overflow="visible"><path d="${INVADER_PATH_A}" fill="${theme.levels[level]}"/></symbol>`;
+    output += `<symbol id="iB${level}" viewBox="0 0 7 7" overflow="visible"><path d="${INVADER_PATH_B}" fill="${theme.levels[level]}"/></symbol>`;
+  }
+  output += `<symbol id="ex" viewBox="0 0 7 7" overflow="visible"><path d="${INVADER_PATH_X}" fill="${theme.crash}"/></symbol>`;
+  output += `<symbol id="ship" viewBox="0 0 22 12" overflow="visible"><rect x="10" y="0" width="2" height="3" fill="${theme.ship}"/><rect x="8" y="3" width="6" height="2" fill="${theme.ship}"/><rect x="2" y="5" width="18" height="3" fill="${theme.ship}"/><rect x="0" y="8" width="22" height="2" fill="${theme.shipGlow}"/></symbol>`;
+  output += `</defs>`;
+
+  output += `<rect width="${INVADER_W}" height="${INVADER_H}" fill="${theme.bg}"/>`;
+  output += renderStars(theme);
+  output += renderInvadersHud(theme);
+  output += renderInvadersFrame(theme);
+  output += `<g><animateTransform attributeName="transform" type="translate" values="-3,0;3,0" keyTimes="0;0.5" dur="1.6s" repeatCount="indefinite" calcMode="discrete"/>`;
+  output += `<g><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.49;0.5;0.99;1" dur="0.9s" repeatCount="indefinite"/>`;
+  for (const invader of invaders) output += renderInvaderSprite(invader, "A", pixel);
+  output += `</g><g><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.49;0.5;0.99;1" dur="0.9s" repeatCount="indefinite"/>`;
+  for (const invader of invaders) output += renderInvaderSprite(invader, "B", pixel);
+  output += `</g>`;
+  for (const invader of invaders) output += renderInvaderExplosion(invader, pixel);
+  output += `</g>`;
+  output += renderEnemyLasers(theme, invaders);
+  output += renderPlayerLasers(theme, invaders);
+  output += renderInvaderShip(compactStops);
+  output += renderVictory(theme, battleEnd + 0.5);
+  output += `<rect width="${INVADER_W}" height="${INVADER_H}" fill="url(#scan)" pointer-events="none"/>`;
+  output += `<rect width="${INVADER_W}" height="${INVADER_H}" fill="url(#vig)" pointer-events="none"/>`;
+  output += `<text x="${INVADER_W - 10}" y="${INVADER_H - 6}" text-anchor="end" font-size="7" fill="${theme.hudDim}" letter-spacing="2" opacity="0.6">github-contrib-runner</text>`;
+  output += `</svg>`;
+
+  return output;
+}
+
+function renderStars(theme) {
+  let seed = 99;
+  const random = () => {
+    seed = (seed * 9301 + 49297) % 233280;
+    return seed / 233280;
+  };
+  let output = `<g opacity="0.55">`;
+  for (let index = 0; index < 40; index += 1) {
+    const x = random() * INVADER_W;
+    const y = random() * INVADER_H;
+    const radius = 0.4 + random() * 0.7;
+    const duration = 2 + random() * 4;
+    const begin = -random() * duration;
+    output += `<circle cx="${fmt(x)}" cy="${fmt(y)}" r="${fmt(radius)}" fill="${theme.star}"><animate attributeName="opacity" values="0.15;1;0.15" dur="${fmt(duration)}s" begin="${fmt(begin)}s" repeatCount="indefinite"/></circle>`;
+  }
+  output += `</g>`;
+  return output;
+}
+
+function renderInvadersHud(theme) {
+  let output = `<g font-size="9" letter-spacing="2">`;
+  output += `<text x="20" y="16" fill="${theme.hudDim}">SCORE</text>`;
+  output += `<text x="20" y="27" fill="${theme.hud}" font-weight="bold">00000`;
+  for (let index = 1; index <= 12; index += 1) {
+    const time = INVADER_INTRO + (index / 12) * (INVADER_TOTAL - INVADER_INTRO - INVADER_OUTRO);
+    output += `<set attributeName="textContent" to="${String(index * 290).padStart(5, "0")}" begin="${fmt(time)}s;${fmt(time + INVADER_TOTAL)}s"/>`;
+  }
+  output += `<set attributeName="textContent" to="00000" begin="${fmt(INVADER_TOTAL - 0.05)}s;${fmt(INVADER_TOTAL * 2 - 0.05)}s"/></text>`;
+  output += `<text x="${INVADER_W / 2 - 36}" y="16" fill="${theme.hudDim}">HI-SCORE</text>`;
+  output += `<text x="${INVADER_W / 2 - 36}" y="27" fill="${theme.hud}" font-weight="bold">04829</text>`;
+  output += `<text x="${INVADER_W - 110}" y="16" fill="${theme.hudDim}">WAVE</text>`;
+  output += `<text x="${INVADER_W - 110}" y="27" fill="${theme.hud}" font-weight="bold">01</text>`;
+  output += `<text x="${INVADER_W - 30}" y="16" fill="${theme.hudDim}">P1</text>`;
+  output += `<text x="${INVADER_W - 30}" y="27" fill="${theme.accent}" font-weight="bold">●<animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/></text>`;
+  output += `<text x="${INVADER_W / 2}" y="13" text-anchor="middle" font-size="11" fill="${theme.accent}" font-weight="bold" letter-spacing="6" filter="url(#g)">COMMIT INVADERS</text>`;
+  output += `</g>`;
+  return output;
+}
+
+function renderInvadersFrame(theme) {
+  const y = 30;
+  const height = INVADER_H - 38;
+  return `<g stroke="${theme.dim}" stroke-width="1" fill="none" opacity="0.6">
+    <path d="M 8 ${y}v7M 8 ${y}h7"/><path d="M ${INVADER_W - 8} ${y}v7M ${INVADER_W - 8} ${y}h-7"/>
+    <path d="M 8 ${y + height}v-7M 8 ${y + height}h7"/><path d="M ${INVADER_W - 8} ${y + height}v-7M ${INVADER_W - 8} ${y + height}h-7"/>
+  </g>`;
+}
+
+function renderInvaderSprite(invader, frame, pixel) {
+  const die = invader.dieAt / INVADER_TOTAL;
+  return `<use href="#i${frame}${invader.level - 1}" x="${invaderX(invader.col)}" y="${fmt(invaderY(invader.row) + pixel * 0.3)}" width="${INVADER_CELL}" height="${INVADER_CELL}">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;${fmt(die)};${fmt(Math.min(0.999, die + 0.005))};${fmt((INVADER_TOTAL - 0.05) / INVADER_TOTAL)};1" dur="${INVADER_TOTAL}s" repeatCount="indefinite"/>
+  </use>`;
+}
+
+function renderInvaderExplosion(invader, pixel) {
+  return `<use href="#ex" x="${invaderX(invader.col)}" y="${fmt(invaderY(invader.row) + pixel * 0.3)}" width="${INVADER_CELL}" height="${INVADER_CELL}" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="0.35s" begin="${fmt(invader.dieAt)}s;${fmt(invader.dieAt + INVADER_TOTAL)}s" fill="freeze"/>
+  </use>`;
+}
+
+function renderPlayerLasers(theme, invaders) {
+  let output = "";
+  const flight = 0.22;
+  for (const invader of invaders) {
+    for (const hit of invader.hits) {
+      const x = invaderX(invader.col) + INVADER_CELL / 2;
+      const targetY = invaderY(invader.row) + INVADER_CELL / 2;
+      const begin = hit - flight;
+      output += `<rect x="${fmt(x - 1)}" y="${INVADER_SHIP_Y - 2}" width="2" height="6" fill="${theme.laser}" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.85;1" dur="${flight}s" begin="${fmt(begin)}s;${fmt(begin + INVADER_TOTAL)}s" fill="freeze"/>
+        <animate attributeName="y" values="${INVADER_SHIP_Y - 2};${fmt(targetY)}" dur="${flight}s" begin="${fmt(begin)}s;${fmt(begin + INVADER_TOTAL)}s" fill="freeze"/>
+      </rect>`;
+    }
+  }
+  return output;
+}
+
+function renderEnemyLasers(theme, invaders) {
+  let output = "";
+  let seed = 13;
+  const random = () => {
+    seed = (seed * 9301 + 49297) % 233280;
+    return seed / 233280;
+  };
+  for (let index = 0; index < 10; index += 1) {
+    const invader = invaders[Math.floor(random() * invaders.length)];
+    if (!invader) continue;
+    const fireAt = INVADER_INTRO + 1 + random() * (INVADER_TOTAL - INVADER_INTRO - INVADER_OUTRO - 3);
+    if (fireAt > invader.dieAt - 0.3) continue;
+    const x = invaderX(invader.col) + INVADER_CELL / 2;
+    const startY = invaderY(invader.row) + INVADER_CELL;
+    const duration = 0.8 + random() * 0.4;
+    output += `<rect x="${fmt(x - 0.5)}" y="${fmt(startY)}" width="1.5" height="5" fill="${theme.enemyLaser}" opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="${fmt(duration)}s" begin="${fmt(fireAt)}s;${fmt(fireAt + INVADER_TOTAL)}s" fill="freeze"/>
+      <animate attributeName="y" values="${fmt(startY)};${fmt(INVADER_SHIP_Y - 2)}" dur="${fmt(duration)}s" begin="${fmt(fireAt)}s;${fmt(fireAt + INVADER_TOTAL)}s" fill="freeze"/>
+    </rect>`;
+  }
+  return output;
+}
+
+function renderInvaderShip(stops) {
+  const values = stops.map((stop) => fmt(stop.x)).join(";");
+  const keyTimes = stops.map((stop) => fmt(Math.min(1, Math.max(0, stop.t / INVADER_TOTAL)))).join(";");
+  return `<g filter="url(#g)">
+    <g><use href="#ship" x="0" y="${INVADER_SHIP_Y}" width="22" height="12">
+      <animate attributeName="x" values="${values}" keyTimes="${keyTimes}" dur="${INVADER_TOTAL}s" repeatCount="indefinite"/>
+    </use></g>
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;${fmt((INVADER_TOTAL - INVADER_OUTRO + 0.5) / INVADER_TOTAL)};${fmt((INVADER_TOTAL - INVADER_OUTRO + 0.6) / INVADER_TOTAL)};${fmt((INVADER_TOTAL - 0.05) / INVADER_TOTAL)};1" dur="${INVADER_TOTAL}s" repeatCount="indefinite"/>
+  </g>`;
+}
+
+function renderVictory(theme, endTime) {
+  const centerX = INVADER_W / 2;
+  const centerY = INVADER_H / 2;
+  return `<g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;${fmt(endTime / INVADER_TOTAL)};${fmt((endTime + 0.3) / INVADER_TOTAL)};${fmt((INVADER_TOTAL - 0.5) / INVADER_TOTAL)};${fmt((INVADER_TOTAL - 0.1) / INVADER_TOTAL)};1" dur="${INVADER_TOTAL}s" repeatCount="indefinite"/>
+    <rect x="${centerX - 130}" y="${centerY - 22}" width="260" height="44" fill="${theme.bg}" stroke="${theme.accent}" stroke-width="1.5"/>
+    <text x="${centerX}" y="${centerY - 3}" text-anchor="middle" font-size="14" font-weight="bold" fill="${theme.accent}" letter-spacing="6" filter="url(#g)">STAGE CLEAR</text>
+    <text x="${centerX}" y="${centerY + 13}" text-anchor="middle" font-size="8" fill="${theme.hudDim}" letter-spacing="3">PRESS START TO CONTINUE<animate attributeName="opacity" values="1;0.2;1" dur="0.8s" repeatCount="indefinite"/></text>
+  </g>`;
+}
+
+function invaderLevel(count, max) {
+  if (count === 0) return 0;
+  if (count <= max * 0.25) return 1;
+  if (count <= max * 0.5) return 2;
+  if (count <= max * 0.75) return 3;
+  return 4;
+}
+
+function invaderX(column) {
+  return INVADER_GRID_X + column * (INVADER_CELL + INVADER_GAP);
+}
+
+function invaderY(row) {
+  return INVADER_GRID_Y + row * (INVADER_CELL + INVADER_GAP);
+}
+
+function spritePath(rows) {
+  let path = "";
+  for (let row = 0; row < rows.length; row += 1) {
+    let runStart = -1;
+    for (let column = 0; column <= rows[row].length; column += 1) {
+      const filled = column < rows[row].length && rows[row][column] === "1";
+      if (filled && runStart < 0) runStart = column;
+      if (!filled && runStart >= 0) {
+        path += `M${runStart} ${row}h${column - runStart}v1h-${column - runStart}z`;
+        runStart = -1;
+      }
+    }
+  }
+  return path;
+}
+
+function fmt(number) {
+  return Math.round(number * 1000) / 1000;
 }
 
 function escapeXml(value) {
