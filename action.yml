@@ -1,0 +1,43 @@
+name: GitHub Contrib Runner
+description: Generate a custom animated SVG from a GitHub contribution calendar.
+author: Wendell Ottoni
+
+inputs:
+  username:
+    description: GitHub username to render.
+    required: false
+    default: ${{ github.repository_owner }}
+  token:
+    description: GitHub token used to read contribution data.
+    required: false
+    default: ""
+  output:
+    description: Output SVG path.
+    required: false
+    default: dist/contrib-runner.svg
+  title:
+    description: SVG title.
+    required: false
+    default: Commit Runner
+  theme:
+    description: Theme name. Supported values are fire, neon, ocean.
+    required: false
+    default: fire
+
+runs:
+  using: composite
+  steps:
+    - name: Generate contribution runner SVG
+      shell: bash
+      env:
+        INPUT_USERNAME: ${{ inputs.username }}
+        INPUT_TOKEN: ${{ inputs.token }}
+        INPUT_OUTPUT: ${{ inputs.output }}
+        INPUT_TITLE: ${{ inputs.title }}
+        INPUT_THEME: ${{ inputs.theme }}
+        GITHUB_TOKEN: ${{ github.token }}
+      run: node "$GITHUB_ACTION_PATH/src/cli.mjs"
+
+branding:
+  icon: activity
+  color: orange
