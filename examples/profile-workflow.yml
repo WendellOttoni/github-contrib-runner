@@ -20,6 +20,7 @@ jobs:
         uses: WendellOttoni/github-contrib-runner@main
         with:
           username: ${{ github.repository_owner }}
+          variant: runner
           theme: fire
           output: dist/contrib-runner.svg
 

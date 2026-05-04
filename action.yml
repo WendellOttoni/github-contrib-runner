@@ -18,11 +18,15 @@ inputs:
   title:
     description: SVG title.
     required: false
-    default: Commit Runner
+    default: ""
   theme:
     description: Theme name. Supported values are fire, neon, ocean.
     required: false
     default: fire
+  variant:
+    description: Animation variant. Supported values are runner, spaceship, train, rocket, pulse, miner, scanner.
+    required: false
+    default: runner
 
 runs:
   using: composite
@@ -35,6 +39,7 @@ runs:
         INPUT_OUTPUT: ${{ inputs.output }}
         INPUT_TITLE: ${{ inputs.title }}
         INPUT_THEME: ${{ inputs.theme }}
+        INPUT_VARIANT: ${{ inputs.variant }}
         GITHUB_TOKEN: ${{ github.token }}
       run: node "$GITHUB_ACTION_PATH/src/cli.mjs"
 

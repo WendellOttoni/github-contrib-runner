@@ -4,9 +4,35 @@ Generate a custom animated SVG from a GitHub contribution calendar.
 
 This started as an alternative to the common Snake and Pac-Man profile animations. Instead of cloning either idea directly, it renders a contribution grid with a moving runner, scan light, pulse effects, and themeable colors.
 
-## Preview
+## Preview Gallery
 
-![Commit Runner preview](examples/preview.svg)
+### Commit Runner
+
+![Commit Runner preview](examples/runner.svg)
+
+### Space Ship
+
+![Space Ship preview](examples/spaceship.svg)
+
+### Train Code
+
+![Train Code preview](examples/train.svg)
+
+### Rocket Trail
+
+![Rocket Trail preview](examples/rocket.svg)
+
+### Data Pulse
+
+![Data Pulse preview](examples/pulse.svg)
+
+### Code Miner
+
+![Code Miner preview](examples/miner.svg)
+
+### Laser Scanner
+
+![Laser Scanner preview](examples/scanner.svg)
 
 ## Usage
 
@@ -35,6 +61,7 @@ jobs:
         uses: WendellOttoni/github-contrib-runner@main
         with:
           username: ${{ github.repository_owner }}
+          variant: runner
           theme: fire
           output: dist/contrib-runner.svg
 
@@ -76,8 +103,32 @@ The SVG is generated from the `username` input, not from the repository where th
   uses: WendellOttoni/github-contrib-runner@main
   with:
     username: WendellOttoni
+    variant: rocket
     theme: fire
     output: dist/contrib-runner.svg
+```
+
+### Variants
+
+Choose one of these values with the `variant` input:
+
+| Variant | Concept |
+| --- | --- |
+| `runner` | Energy cursor crossing active days. |
+| `spaceship` | Ship turning contributions into constellations. |
+| `train` | Tiny train moving through the commit line. |
+| `rocket` | Rocket leaving a trail over contribution peaks. |
+| `pulse` | Signal activating the calendar as it travels. |
+| `miner` | Miner collecting contribution blocks. |
+| `scanner` | Scanner reading contribution intensity. |
+
+```yml
+with:
+  username: WendellOttoni
+  variant: spaceship
+  theme: neon
+  title: Space Ship
+  output: dist/contrib-runner.svg
 ```
 
 ### Themes
@@ -87,6 +138,7 @@ Use `fire` to match orange/red profile designs:
 ```yml
 with:
   username: WendellOttoni
+  variant: runner
   theme: fire
   title: Commit Runner
   output: dist/contrib-runner.svg
@@ -97,6 +149,7 @@ Use `neon` for a cyan/purple style:
 ```yml
 with:
   username: WendellOttoni
+  variant: pulse
   theme: neon
   title: Neon Runner
   output: dist/contrib-runner.svg
@@ -107,6 +160,7 @@ Use `ocean` for a blue/cyan style:
 ```yml
 with:
   username: WendellOttoni
+  variant: scanner
   theme: ocean
   title: Ocean Runner
   output: dist/contrib-runner.svg
@@ -121,6 +175,7 @@ You can generate more than one variant by calling the action multiple times:
   uses: WendellOttoni/github-contrib-runner@main
   with:
     username: WendellOttoni
+    variant: rocket
     theme: fire
     output: dist/contrib-runner-fire.svg
 
@@ -128,6 +183,7 @@ You can generate more than one variant by calling the action multiple times:
   uses: WendellOttoni/github-contrib-runner@main
   with:
     username: WendellOttoni
+    variant: spaceship
     theme: neon
     output: dist/contrib-runner-neon.svg
 ```
@@ -139,15 +195,22 @@ You can generate more than one variant by calling the action multiple times:
 | `username` | `${{ github.repository_owner }}` | GitHub username to render. |
 | `token` | `${{ github.token }}` | Token used to read contribution data. |
 | `output` | `dist/contrib-runner.svg` | Output SVG path. |
-| `title` | `Commit Runner` | SVG title. |
+| `title` | Variant label | SVG title. |
 | `theme` | `fire` | Theme name: `fire`, `neon`, or `ocean`. |
+| `variant` | `runner` | Animation variant: `runner`, `spaceship`, `train`, `rocket`, `pulse`, `miner`, or `scanner`. |
 
 ## Development
 
 The action is dependency-free and runs with the Node.js version available on GitHub-hosted runners.
 
 ```bash
-INPUT_USERNAME=WendellOttoni INPUT_TOKEN=ghp_example INPUT_OUTPUT=dist/contrib-runner.svg node src/cli.mjs
+INPUT_USERNAME=WendellOttoni INPUT_TOKEN=ghp_example INPUT_VARIANT=rocket INPUT_OUTPUT=dist/contrib-runner.svg node src/cli.mjs
 ```
 
 Never commit real GitHub tokens.
+
+Generate the preview gallery with simulated data:
+
+```bash
+node src/generate-previews.mjs
+```

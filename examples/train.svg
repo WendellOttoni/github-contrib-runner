@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="912" height="170" viewBox="0 0 912 170" role="img" aria-labelledby="title desc">
-    <title id="title">Commit Runner contribution animation</title>
+    <title id="title">Train Code contribution animation</title>
     <desc id="desc">Animated custom contribution graph for WendellOttoni with 1587 contributions in the last year.</desc>
     <style>
       :root { color-scheme: dark; }
@@ -12,7 +12,7 @@
       .level-2 { fill: #79321f; }
       .level-3 { fill: #c8401f; }
       .level-4 { fill: #fe4701; }
-      .track { fill: none; stroke: #ff005433; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 3 8; }
+      .track { fill: none; stroke: #ff005433; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 6; }
       .runner-core { fill: #fe4701; filter: drop-shadow(0 0 7px #fe4701); }
       .runner-wing { fill: #ff0054; }
       .runner-flame { fill: #ff0054; stroke: #ff0054; stroke-width: 2; stroke-linecap: round; filter: drop-shadow(0 0 6px #ff0054); }
@@ -27,8 +27,8 @@
       </linearGradient>
     </defs>
     <rect class="bg" width="100%" height="100%" rx="10" />
-    <text class="label" x="34" y="28">Commit Runner</text>
-    <text class="meta" x="34" y="47">1587 contributions - energy cursor crossing active days</text>
+    <text class="label" x="34" y="28">Train Code</text>
+    <text class="meta" x="34" y="47">1587 contributions - a tiny train moves through the commit line</text>
     <rect class="scan" x="34" y="58" width="42" height="124" rx="10">
       <animate attributeName="x" values="34;836;34" dur="9s" repeatCount="indefinite" />
     </rect>
@@ -1517,329 +1517,89 @@
         <animate attributeName="opacity" values=".72;1;.72" dur="4.8s" begin="0.48s" repeatCount="indefinite" />
       </rect>
     <path class="track" d="M 40.0 72.0 L 40.0 88.0 L 40.0 104.0 L 40.0 120.0 L 40.0 136.0 L 40.0 152.0 L 40.0 168.0 L 56.0 72.0 L 56.0 88.0 L 56.0 104.0 L 56.0 120.0 L 56.0 136.0 L 56.0 152.0 L 56.0 168.0 L 72.0 72.0 L 72.0 88.0 L 72.0 104.0 L 72.0 120.0 L 72.0 136.0 L 72.0 152.0 L 72.0 168.0 L 88.0 72.0 L 88.0 88.0 L 88.0 104.0 L 88.0 120.0 L 88.0 136.0 L 88.0 152.0 L 88.0 168.0 L 104.0 72.0 L 104.0 88.0 L 104.0 104.0 L 104.0 120.0 L 104.0 136.0 L 104.0 152.0 L 104.0 168.0 L 120.0 72.0 L 120.0 88.0 L 120.0 104.0 L 120.0 120.0 L 120.0 136.0 L 120.0 152.0 L 120.0 168.0 L 136.0 72.0 L 136.0 88.0 L 136.0 104.0 L 136.0 120.0 L 136.0 136.0 L 136.0 152.0 L 136.0 168.0 L 152.0 72.0 L 152.0 88.0 L 152.0 104.0 L 152.0 120.0 L 152.0 136.0 L 152.0 152.0 L 152.0 168.0 L 168.0 72.0 L 168.0 88.0 L 168.0 104.0 L 168.0 120.0 L 168.0 136.0 L 168.0 152.0 L 168.0 168.0 L 184.0 72.0 L 184.0 88.0 L 184.0 104.0 L 184.0 120.0 L 184.0 136.0 L 184.0 152.0 L 184.0 168.0 L 200.0 72.0 L 200.0 88.0 L 200.0 104.0 L 200.0 120.0 L 200.0 136.0 L 200.0 152.0 L 200.0 168.0 L 216.0 72.0 L 216.0 88.0 L 216.0 104.0 L 216.0 120.0 L 216.0 136.0 L 216.0 152.0 L 216.0 168.0 L 232.0 72.0 L 232.0 88.0 L 232.0 104.0 L 232.0 120.0 L 232.0 136.0 L 232.0 152.0 L 232.0 168.0 L 248.0 72.0 L 248.0 88.0 L 248.0 104.0 L 248.0 120.0 L 248.0 136.0 L 248.0 152.0 L 248.0 168.0 L 264.0 72.0 L 264.0 88.0 L 264.0 104.0 L 264.0 120.0 L 264.0 136.0 L 264.0 152.0 L 264.0 168.0 L 296.0 72.0 L 296.0 88.0 L 296.0 104.0 L 296.0 120.0 L 296.0 136.0 L 296.0 152.0 L 296.0 168.0 L 312.0 72.0 L 312.0 88.0 L 312.0 104.0 L 312.0 120.0 L 312.0 136.0 L 312.0 152.0 L 312.0 168.0 L 328.0 72.0 L 328.0 88.0 L 328.0 104.0 L 328.0 120.0 L 328.0 136.0 L 328.0 152.0 L 328.0 168.0 L 344.0 72.0 L 344.0 88.0 L 344.0 104.0 L 344.0 120.0 L 344.0 136.0 L 344.0 152.0 L 344.0 168.0 L 360.0 72.0 L 360.0 88.0 L 360.0 104.0 L 360.0 120.0 L 360.0 136.0 L 360.0 152.0 L 360.0 168.0 L 376.0 72.0 L 376.0 88.0 L 376.0 104.0 L 376.0 120.0 L 376.0 136.0 L 376.0 152.0 L 376.0 168.0 L 392.0 72.0 L 392.0 88.0 L 392.0 104.0 L 392.0 120.0 L 392.0 136.0 L 392.0 152.0 L 392.0 168.0 L 408.0 72.0 L 408.0 88.0 L 408.0 104.0 L 408.0 120.0 L 408.0 136.0 L 408.0 152.0 L 408.0 168.0 L 424.0 72.0 L 424.0 88.0 L 424.0 104.0 L 424.0 120.0 L 424.0 136.0 L 424.0 152.0 L 424.0 168.0 L 440.0 72.0 L 440.0 88.0 L 440.0 104.0 L 440.0 120.0 L 440.0 136.0 L 440.0 152.0 L 440.0 168.0 L 456.0 72.0 L 456.0 88.0 L 456.0 104.0 L 456.0 120.0 L 456.0 136.0 L 456.0 152.0 L 456.0 168.0 L 472.0 72.0 L 472.0 88.0 L 472.0 104.0 L 472.0 120.0 L 472.0 136.0 L 472.0 152.0 L 472.0 168.0 L 488.0 72.0 L 488.0 88.0 L 488.0 104.0 L 488.0 120.0 L 488.0 136.0 L 488.0 152.0 L 488.0 168.0 L 504.0 72.0 L 504.0 88.0 L 504.0 104.0 L 504.0 120.0 L 504.0 136.0 L 504.0 152.0 L 504.0 168.0 L 520.0 72.0 L 520.0 88.0 L 520.0 104.0 L 520.0 120.0 L 520.0 136.0 L 520.0 152.0 L 520.0 168.0 L 536.0 72.0 L 536.0 88.0 L 536.0 104.0 L 536.0 120.0 L 536.0 136.0 L 536.0 152.0 L 552.0 152.0 L 552.0 168.0 L 568.0 72.0 L 568.0 88.0 L 568.0 104.0 L 568.0 120.0 L 568.0 136.0 L 568.0 168.0 L 584.0 72.0 L 584.0 88.0 L 584.0 104.0 L 584.0 120.0 L 584.0 136.0 L 584.0 152.0 L 584.0 168.0 L 600.0 72.0 L 600.0 88.0 L 600.0 104.0 L 600.0 120.0 L 600.0 136.0 L 600.0 152.0 L 600.0 168.0 L 616.0 72.0 L 616.0 88.0 L 616.0 104.0 L 616.0 120.0 L 616.0 136.0 L 616.0 152.0 L 616.0 168.0 L 632.0 72.0 L 632.0 88.0 L 632.0 104.0 L 632.0 120.0 L 632.0 136.0 L 632.0 152.0 L 632.0 168.0 L 648.0 72.0 L 648.0 88.0 L 648.0 104.0 L 648.0 120.0 L 648.0 152.0 L 648.0 168.0 L 664.0 72.0 L 664.0 88.0 L 664.0 104.0 L 664.0 136.0 L 664.0 152.0 L 664.0 168.0 L 680.0 72.0 L 680.0 88.0 L 680.0 104.0 L 680.0 120.0 L 680.0 136.0 L 680.0 152.0 L 680.0 168.0 L 696.0 72.0 L 696.0 88.0 L 696.0 104.0 L 696.0 120.0 L 696.0 136.0 L 696.0 152.0 L 696.0 168.0 L 712.0 72.0 L 712.0 88.0 L 712.0 104.0 L 712.0 120.0 L 712.0 136.0 L 712.0 152.0 L 712.0 168.0 L 728.0 72.0 L 728.0 88.0 L 728.0 104.0 L 728.0 120.0 L 728.0 136.0 L 728.0 152.0 L 728.0 168.0 L 744.0 72.0 L 744.0 88.0 L 744.0 104.0 L 744.0 120.0 L 744.0 136.0 L 744.0 152.0 L 744.0 168.0 L 760.0 72.0 L 760.0 88.0 L 760.0 104.0 L 760.0 120.0 L 760.0 136.0 L 760.0 152.0 L 760.0 168.0 L 776.0 72.0 L 776.0 88.0 L 776.0 104.0 L 776.0 120.0 L 776.0 136.0 L 776.0 152.0 L 776.0 168.0 L 792.0 72.0 L 792.0 88.0 L 792.0 104.0 L 792.0 120.0 L 792.0 136.0 L 792.0 152.0 L 792.0 168.0 L 808.0 72.0 L 808.0 88.0 L 808.0 104.0 L 808.0 120.0 L 808.0 136.0 L 808.0 152.0 L 824.0 104.0 L 824.0 120.0 L 824.0 136.0 L 824.0 152.0 L 824.0 168.0 L 840.0 72.0 L 840.0 88.0 L 840.0 104.0 L 840.0 120.0 L 840.0 136.0 L 840.0 168.0 L 856.0 72.0 L 856.0 104.0 L 856.0 120.0 L 856.0 136.0 L 856.0 152.0 L 856.0 168.0 L 872.0 72.0 L 872.0 88.0 L 872.0 104.0 L 872.0 120.0 L 872.0 136.0 L 872.0 152.0 L 872.0 168.0" />
-    <circle class="spark" cx="40" cy="72" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.00s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="0.00s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="40" cy="88" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.18s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="0.18s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="40" cy="104" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.36s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="0.36s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="40" cy="120" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.54s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="0.54s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="40" cy="136" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.72s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="0.72s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="40" cy="152" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.90s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="0.90s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="40" cy="168" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.08s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="1.08s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="56" cy="72" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.26s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="1.26s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="56" cy="88" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.44s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="1.44s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="56" cy="104" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.62s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="1.62s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="56" cy="120" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.80s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="1.80s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="56" cy="136" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.98s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="1.98s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="56" cy="152" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.16s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="2.16s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="56" cy="168" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.34s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="2.34s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="72" cy="72" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.52s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="2.52s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="72" cy="88" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.70s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="2.70s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="72" cy="104" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.88s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="2.88s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="72" cy="120" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.06s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="3.06s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="72" cy="136" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.24s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="3.24s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="72" cy="152" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.42s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="3.42s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="72" cy="168" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.60s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="3.60s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="88" cy="72" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.78s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="3.78s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="88" cy="88" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.96s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="3.96s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="88" cy="104" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.14s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="4.14s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="88" cy="120" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.32s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="4.32s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="88" cy="136" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.50s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="4.50s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="88" cy="152" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.68s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="4.68s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="88" cy="168" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.86s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="4.86s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="104" cy="72" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.04s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="5.04s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="104" cy="88" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.22s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="5.22s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="104" cy="104" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.40s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="5.40s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="104" cy="120" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.58s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="5.58s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="104" cy="136" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.76s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="5.76s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="104" cy="152" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.94s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="5.94s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="104" cy="168" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.12s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="6.12s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="120" cy="72" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.30s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="6.30s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="120" cy="88" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.48s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="6.48s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="120" cy="104" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.66s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="6.66s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="120" cy="120" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.84s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="6.84s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="120" cy="136" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.02s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="7.02s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="120" cy="152" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.20s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="7.20s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="120" cy="168" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.38s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="7.38s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="136" cy="72" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.56s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="7.56s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="136" cy="88" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.74s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="7.74s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="136" cy="104" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.92s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="7.92s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="136" cy="120" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.10s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="8.10s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="136" cy="136" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.28s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="8.28s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="136" cy="152" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.46s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="8.46s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="136" cy="168" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.64s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="8.64s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="152" cy="72" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.82s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="8.82s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="152" cy="88" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.00s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="9.00s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="152" cy="104" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.18s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="9.18s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="152" cy="120" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.36s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="9.36s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="152" cy="136" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.54s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="9.54s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="152" cy="152" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.72s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="9.72s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="152" cy="168" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.90s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="9.90s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="168" cy="72" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.08s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="10.08s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="168" cy="88" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.26s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="10.26s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="168" cy="104" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.44s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="10.44s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="168" cy="120" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.62s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="10.62s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="168" cy="136" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.80s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="10.80s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="168" cy="152" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.98s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="10.98s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="168" cy="168" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.16s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="0.16s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="184" cy="72" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.34s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="0.34s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="184" cy="88" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.52s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="0.52s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="184" cy="104" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.70s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="0.70s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="184" cy="120" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.88s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="0.88s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="184" cy="136" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.06s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="1.06s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="184" cy="152" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.24s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="1.24s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="184" cy="168" r="5" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.42s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;5;1" dur="2.4s" begin="1.42s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="200" cy="72" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.60s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="1.60s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="200" cy="88" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.78s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="1.78s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="200" cy="104" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.96s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="1.96s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="200" cy="120" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.14s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="2.14s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="200" cy="136" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.32s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="2.32s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="200" cy="152" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.50s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="2.50s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="200" cy="168" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.68s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="2.68s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="216" cy="72" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.86s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="2.86s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="216" cy="88" r="3" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.04s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;3;1" dur="2.4s" begin="3.04s" repeatCount="indefinite" />
-  </circle>
-<circle class="spark" cx="216" cy="104" r="4" opacity="0">
-    <animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.22s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1;4;1" dur="2.4s" begin="3.22s" repeatCount="indefinite" />
-  </circle>
+    <rect class="spark" x="38" y="70" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.00s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="38.5" y="86.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.18s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="37.5" y="101.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.36s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="37.5" y="117.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.54s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="37.5" y="133.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.72s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="37.5" y="149.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.90s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="37.5" y="165.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.08s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="54.5" y="70.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.26s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="54" y="86" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.44s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="54.5" y="102.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.62s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="54.5" y="118.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.80s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="54" y="134" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.98s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="54.5" y="150.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.16s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="54.5" y="166.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.34s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="70" y="70" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.52s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="70.5" y="86.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.70s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="70" y="102" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.88s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="70.5" y="118.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.06s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="70" y="134" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.24s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="70.5" y="150.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.42s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="70.5" y="166.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.60s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="86.5" y="70.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.78s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="86" y="86" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.96s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="86.5" y="102.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.14s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="86" y="118" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.32s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="86.5" y="134.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.50s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="86" y="150" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.68s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="86" y="166" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="4.86s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="101.5" y="69.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.04s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="101.5" y="85.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.22s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="101.5" y="101.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.40s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="101.5" y="117.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.58s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="101.5" y="133.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.76s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="102" y="150" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="5.94s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="102" y="166" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.12s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="118" y="70" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.30s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="118" y="86" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.48s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="118.5" y="102.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.66s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="118.5" y="118.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="6.84s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="118.5" y="134.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.02s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="118" y="150" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.20s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="118" y="166" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.38s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="134.5" y="70.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.56s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="134.5" y="86.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.74s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="134" y="102" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="7.92s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="134" y="118" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.10s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="134" y="134" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.28s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="134" y="150" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.46s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="134" y="166" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.64s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="150.5" y="70.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="8.82s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="150.5" y="86.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.00s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="150" y="102" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.18s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="150" y="118" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.36s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="150" y="134" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.54s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="150" y="150" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.72s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="150" y="166" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="9.90s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="166" y="70" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.08s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="166" y="86" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.26s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="166.5" y="102.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.44s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="166.5" y="118.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.62s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="166.5" y="134.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.80s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="166" y="150" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="10.98s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="166" y="166" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.16s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="182.5" y="70.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.34s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="182.5" y="86.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.52s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="181.5" y="101.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.70s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="181.5" y="117.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="0.88s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="181.5" y="133.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.06s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="181.5" y="149.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.24s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="181.5" y="165.5" width="5" height="5" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.42s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="198.5" y="70.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.60s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="198" y="86" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.78s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="198.5" y="102.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.96s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="198" y="118" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.14s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="198.5" y="134.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.32s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="198" y="150" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.50s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="198" y="166" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.68s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="214" y="70" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.86s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="214.5" y="86.5" width="3" height="3" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.04s" repeatCount="indefinite" /></rect>
+<rect class="spark" x="214" y="102" width="4" height="4" rx="1" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="3.22s" repeatCount="indefinite" /></rect>
     <g transform="translate(-8 -8)">
       <animateMotion dur="14s" repeatCount="indefinite" rotate="auto" path="M 40.0 72.0 L 40.0 88.0 L 40.0 104.0 L 40.0 120.0 L 40.0 136.0 L 40.0 152.0 L 40.0 168.0 L 56.0 72.0 L 56.0 88.0 L 56.0 104.0 L 56.0 120.0 L 56.0 136.0 L 56.0 152.0 L 56.0 168.0 L 72.0 72.0 L 72.0 88.0 L 72.0 104.0 L 72.0 120.0 L 72.0 136.0 L 72.0 152.0 L 72.0 168.0 L 88.0 72.0 L 88.0 88.0 L 88.0 104.0 L 88.0 120.0 L 88.0 136.0 L 88.0 152.0 L 88.0 168.0 L 104.0 72.0 L 104.0 88.0 L 104.0 104.0 L 104.0 120.0 L 104.0 136.0 L 104.0 152.0 L 104.0 168.0 L 120.0 72.0 L 120.0 88.0 L 120.0 104.0 L 120.0 120.0 L 120.0 136.0 L 120.0 152.0 L 120.0 168.0 L 136.0 72.0 L 136.0 88.0 L 136.0 104.0 L 136.0 120.0 L 136.0 136.0 L 136.0 152.0 L 136.0 168.0 L 152.0 72.0 L 152.0 88.0 L 152.0 104.0 L 152.0 120.0 L 152.0 136.0 L 152.0 152.0 L 152.0 168.0 L 168.0 72.0 L 168.0 88.0 L 168.0 104.0 L 168.0 120.0 L 168.0 136.0 L 168.0 152.0 L 168.0 168.0 L 184.0 72.0 L 184.0 88.0 L 184.0 104.0 L 184.0 120.0 L 184.0 136.0 L 184.0 152.0 L 184.0 168.0 L 200.0 72.0 L 200.0 88.0 L 200.0 104.0 L 200.0 120.0 L 200.0 136.0 L 200.0 152.0 L 200.0 168.0 L 216.0 72.0 L 216.0 88.0 L 216.0 104.0 L 216.0 120.0 L 216.0 136.0 L 216.0 152.0 L 216.0 168.0 L 232.0 72.0 L 232.0 88.0 L 232.0 104.0 L 232.0 120.0 L 232.0 136.0 L 232.0 152.0 L 232.0 168.0 L 248.0 72.0 L 248.0 88.0 L 248.0 104.0 L 248.0 120.0 L 248.0 136.0 L 248.0 152.0 L 248.0 168.0 L 264.0 72.0 L 264.0 88.0 L 264.0 104.0 L 264.0 120.0 L 264.0 136.0 L 264.0 152.0 L 264.0 168.0 L 296.0 72.0 L 296.0 88.0 L 296.0 104.0 L 296.0 120.0 L 296.0 136.0 L 296.0 152.0 L 296.0 168.0 L 312.0 72.0 L 312.0 88.0 L 312.0 104.0 L 312.0 120.0 L 312.0 136.0 L 312.0 152.0 L 312.0 168.0 L 328.0 72.0 L 328.0 88.0 L 328.0 104.0 L 328.0 120.0 L 328.0 136.0 L 328.0 152.0 L 328.0 168.0 L 344.0 72.0 L 344.0 88.0 L 344.0 104.0 L 344.0 120.0 L 344.0 136.0 L 344.0 152.0 L 344.0 168.0 L 360.0 72.0 L 360.0 88.0 L 360.0 104.0 L 360.0 120.0 L 360.0 136.0 L 360.0 152.0 L 360.0 168.0 L 376.0 72.0 L 376.0 88.0 L 376.0 104.0 L 376.0 120.0 L 376.0 136.0 L 376.0 152.0 L 376.0 168.0 L 392.0 72.0 L 392.0 88.0 L 392.0 104.0 L 392.0 120.0 L 392.0 136.0 L 392.0 152.0 L 392.0 168.0 L 408.0 72.0 L 408.0 88.0 L 408.0 104.0 L 408.0 120.0 L 408.0 136.0 L 408.0 152.0 L 408.0 168.0 L 424.0 72.0 L 424.0 88.0 L 424.0 104.0 L 424.0 120.0 L 424.0 136.0 L 424.0 152.0 L 424.0 168.0 L 440.0 72.0 L 440.0 88.0 L 440.0 104.0 L 440.0 120.0 L 440.0 136.0 L 440.0 152.0 L 440.0 168.0 L 456.0 72.0 L 456.0 88.0 L 456.0 104.0 L 456.0 120.0 L 456.0 136.0 L 456.0 152.0 L 456.0 168.0 L 472.0 72.0 L 472.0 88.0 L 472.0 104.0 L 472.0 120.0 L 472.0 136.0 L 472.0 152.0 L 472.0 168.0 L 488.0 72.0 L 488.0 88.0 L 488.0 104.0 L 488.0 120.0 L 488.0 136.0 L 488.0 152.0 L 488.0 168.0 L 504.0 72.0 L 504.0 88.0 L 504.0 104.0 L 504.0 120.0 L 504.0 136.0 L 504.0 152.0 L 504.0 168.0 L 520.0 72.0 L 520.0 88.0 L 520.0 104.0 L 520.0 120.0 L 520.0 136.0 L 520.0 152.0 L 520.0 168.0 L 536.0 72.0 L 536.0 88.0 L 536.0 104.0 L 536.0 120.0 L 536.0 136.0 L 536.0 152.0 L 552.0 152.0 L 552.0 168.0 L 568.0 72.0 L 568.0 88.0 L 568.0 104.0 L 568.0 120.0 L 568.0 136.0 L 568.0 168.0 L 584.0 72.0 L 584.0 88.0 L 584.0 104.0 L 584.0 120.0 L 584.0 136.0 L 584.0 152.0 L 584.0 168.0 L 600.0 72.0 L 600.0 88.0 L 600.0 104.0 L 600.0 120.0 L 600.0 136.0 L 600.0 152.0 L 600.0 168.0 L 616.0 72.0 L 616.0 88.0 L 616.0 104.0 L 616.0 120.0 L 616.0 136.0 L 616.0 152.0 L 616.0 168.0 L 632.0 72.0 L 632.0 88.0 L 632.0 104.0 L 632.0 120.0 L 632.0 136.0 L 632.0 152.0 L 632.0 168.0 L 648.0 72.0 L 648.0 88.0 L 648.0 104.0 L 648.0 120.0 L 648.0 152.0 L 648.0 168.0 L 664.0 72.0 L 664.0 88.0 L 664.0 104.0 L 664.0 136.0 L 664.0 152.0 L 664.0 168.0 L 680.0 72.0 L 680.0 88.0 L 680.0 104.0 L 680.0 120.0 L 680.0 136.0 L 680.0 152.0 L 680.0 168.0 L 696.0 72.0 L 696.0 88.0 L 696.0 104.0 L 696.0 120.0 L 696.0 136.0 L 696.0 152.0 L 696.0 168.0 L 712.0 72.0 L 712.0 88.0 L 712.0 104.0 L 712.0 120.0 L 712.0 136.0 L 712.0 152.0 L 712.0 168.0 L 728.0 72.0 L 728.0 88.0 L 728.0 104.0 L 728.0 120.0 L 728.0 136.0 L 728.0 152.0 L 728.0 168.0 L 744.0 72.0 L 744.0 88.0 L 744.0 104.0 L 744.0 120.0 L 744.0 136.0 L 744.0 152.0 L 744.0 168.0 L 760.0 72.0 L 760.0 88.0 L 760.0 104.0 L 760.0 120.0 L 760.0 136.0 L 760.0 152.0 L 760.0 168.0 L 776.0 72.0 L 776.0 88.0 L 776.0 104.0 L 776.0 120.0 L 776.0 136.0 L 776.0 152.0 L 776.0 168.0 L 792.0 72.0 L 792.0 88.0 L 792.0 104.0 L 792.0 120.0 L 792.0 136.0 L 792.0 152.0 L 792.0 168.0 L 808.0 72.0 L 808.0 88.0 L 808.0 104.0 L 808.0 120.0 L 808.0 136.0 L 808.0 152.0 L 824.0 104.0 L 824.0 120.0 L 824.0 136.0 L 824.0 152.0 L 824.0 168.0 L 840.0 72.0 L 840.0 88.0 L 840.0 104.0 L 840.0 120.0 L 840.0 136.0 L 840.0 168.0 L 856.0 72.0 L 856.0 104.0 L 856.0 120.0 L 856.0 136.0 L 856.0 152.0 L 856.0 168.0 L 872.0 72.0 L 872.0 88.0 L 872.0 104.0 L 872.0 120.0 L 872.0 136.0 L 872.0 152.0 L 872.0 168.0" />
-      <path class="runner-wing" d="M8 0 L14 16 L8 12 L2 16 Z" opacity=".9" /><circle class="runner-core" cx="8" cy="8" r="4.5" />
+      <rect class="runner-wing" x="1" y="5" width="14" height="8" rx="2" /><rect class="runner-core" x="4" y="2" width="7" height="6" rx="1.5" /><circle class="runner-core" cx="4" cy="15" r="2" /><circle class="runner-core" cx="12" cy="15" r="2" />
     </g>
   </svg>
   
