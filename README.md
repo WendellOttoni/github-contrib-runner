@@ -6,7 +6,7 @@ This started as an alternative to the common Snake and Pac-Man profile animation
 
 ## Usage
 
-Create a workflow in your profile repository:
+Create this workflow in `.github/workflows/contrib-runner.yml`:
 
 ```yml
 name: Commit Runner Animation
@@ -43,10 +43,89 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-Then add this to your profile README:
+Then add the generated SVG to your README:
 
 ```md
 <img src="https://raw.githubusercontent.com/USERNAME/USERNAME/output/contrib-runner.svg" alt="Commit Runner contribution animation" />
+```
+
+For example, in this profile repository:
+
+```md
+<img src="https://raw.githubusercontent.com/WendellOttoni/WendellOttoni/output/contrib-runner.svg" alt="Commit Runner contribution animation" />
+```
+
+## Examples
+
+### Test in Any Repository
+
+You do not need to test it directly in your profile README. Create any repository, add the workflow above, run it from the **Actions** tab, and point the README image to that repository:
+
+```md
+<img src="https://raw.githubusercontent.com/WendellOttoni/teste-contrib-runner/output/contrib-runner.svg" alt="Commit Runner contribution animation" />
+```
+
+The SVG is generated from the `username` input, not from the repository where the workflow runs. That means a test repository can render your real contribution calendar:
+
+```yml
+- name: Generate Commit Runner animation
+  uses: WendellOttoni/github-contrib-runner@main
+  with:
+    username: WendellOttoni
+    theme: fire
+    output: dist/contrib-runner.svg
+```
+
+### Themes
+
+Use `fire` to match orange/red profile designs:
+
+```yml
+with:
+  username: WendellOttoni
+  theme: fire
+  title: Commit Runner
+  output: dist/contrib-runner.svg
+```
+
+Use `neon` for a cyan/purple style:
+
+```yml
+with:
+  username: WendellOttoni
+  theme: neon
+  title: Neon Runner
+  output: dist/contrib-runner.svg
+```
+
+Use `ocean` for a blue/cyan style:
+
+```yml
+with:
+  username: WendellOttoni
+  theme: ocean
+  title: Ocean Runner
+  output: dist/contrib-runner.svg
+```
+
+### Custom Output File
+
+You can generate more than one variant by calling the action multiple times:
+
+```yml
+- name: Generate fire animation
+  uses: WendellOttoni/github-contrib-runner@main
+  with:
+    username: WendellOttoni
+    theme: fire
+    output: dist/contrib-runner-fire.svg
+
+- name: Generate neon animation
+  uses: WendellOttoni/github-contrib-runner@main
+  with:
+    username: WendellOttoni
+    theme: neon
+    output: dist/contrib-runner-neon.svg
 ```
 
 ## Inputs
