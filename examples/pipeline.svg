@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="200" viewBox="0 0 860 200" role="img" aria-labelledby="title desc">
+    <title id="title">Build Pipeline contribution animation</title>
+    <desc id="desc">commits move through a CI pipeline for WendellOttoni with 1587 contributions.</desc>
+    <style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}</style>
+    
+    <rect width="100%" height="100%" fill="#0d1117"/>
+    <text x="20" y="20" fill="#c9d1d9" font-size="13" font-weight="700" letter-spacing="3">BUILD PIPELINE</text>
+    <text x="20" y="36" fill="#c9d1d9" opacity=".7" font-size="9">Build Pipeline - 1587 contributions</text>
+    <path d="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100" fill="none" stroke="#30363d" stroke-width="8" stroke-linecap="round"/>
+    <g><rect x="66" y="78" width="88" height="44" rx="6" fill="#161b22" stroke="#30363d"/>
+      <text x="110" y="104" text-anchor="middle" font-size="10" fill="#c9d1d9">COMMIT</text></g><g><rect x="256" y="78" width="88" height="44" rx="6" fill="#161b22" stroke="#30363d"/>
+      <text x="300" y="104" text-anchor="middle" font-size="10" fill="#c9d1d9">TEST</text></g><g><rect x="446" y="78" width="88" height="44" rx="6" fill="#161b22" stroke="#30363d"/>
+      <text x="490" y="104" text-anchor="middle" font-size="10" fill="#c9d1d9">BUILD</text></g><g><rect x="636" y="78" width="88" height="44" rx="6" fill="#161b22" stroke="#30363d"/>
+      <text x="680" y="104" text-anchor="middle" font-size="10" fill="#c9d1d9">SHIP</text></g>
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="0s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="0s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="0.35s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="0.35s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="0.7s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="0.7s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="1.05s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="1.05s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="1.4s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="1.4s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="1.75s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="1.75s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="2.1s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="2.1s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="2.45s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="2.45s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="2.8s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="2.8s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="3.15s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="3.15s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="3.5s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="3.5s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="3.85s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="3.85s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="4.2s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="4.2s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="4.55s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="4.55s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="4.9s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="4.9s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="5.25s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="5.25s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="5.6s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="5.6s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="5.95s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="5.95s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="6.3s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="6.3s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="6.65s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="6.65s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="7s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="7s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="7.35s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="7.35s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="7.7s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="7.7s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="8.05s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="8.05s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="8.4s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="8.4s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="8.75s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="8.75s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="9.1s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="9.1s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="9.45s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="9.45s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="9.8s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="9.8s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="10.15s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="10.15s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="10.5s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="10.5s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="10.85s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="10.85s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="11.2s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="11.2s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="11.55s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="11.55s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="11.9s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="11.9s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="12.25s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="12.25s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="12.6s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="12.6s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="12.95s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="12.95s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="13.3s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="13.3s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="13.65s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="13.65s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="14s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="14s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="14.35s" repeatCount="indefinite"/>
+      <circle r="8" fill="#006d32" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="14.35s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="14.7s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="14.7s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="15.05s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="15.05s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="15.4s" repeatCount="indefinite"/>
+      <circle r="8" fill="#26a641" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="15.4s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="15.75s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="15.75s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="16.1s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="16.1s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g><g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" begin="16.45s" repeatCount="indefinite"/>
+      <circle r="8" fill="#0e4429" stroke="#fff" stroke-opacity=".25">
+        <animateMotion dur="8s" begin="16.45s" repeatCount="indefinite" path="M70 100 C180 40 260 160 350 100 S540 40 640 100 S750 145 810 100"/>
+      </circle>
+    </g>
+  
+  </svg>

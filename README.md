@@ -34,6 +34,30 @@ This started as an alternative to the common Snake and Pac-Man profile animation
 
 ![Laser Scanner preview](examples/scanner.svg)
 
+### Code Miner Minecraft
+
+![Code Miner Minecraft preview](examples/minecraft.svg)
+
+### Hash Cracker
+
+![Hash Cracker preview](examples/hash.svg)
+
+### Build Pipeline
+
+![Build Pipeline preview](examples/pipeline.svg)
+
+### City Skyline
+
+![City Skyline preview](examples/skyline.svg)
+
+### Constellation
+
+![Constellation preview](examples/constellation.svg)
+
+### Etch-a-Sketch
+
+![Etch-a-Sketch preview](examples/sketch.svg)
+
 ## Usage
 
 Create this workflow in `.github/workflows/contrib-runner.yml`:
@@ -117,12 +141,12 @@ The `prototypes/` directory contains standalone HTML generators used to explore 
 | Prototype | Open locally | Status |
 | --- | --- | --- |
 | Commit Invaders | [`prototypes/commit_invaders.html`](prototypes/commit_invaders.html) | Ported to `variant: spaceship`. |
-| Code Miner Minecraft | [`prototypes/code_miner_minecraft.html`](prototypes/code_miner_minecraft.html) | Prototype. |
-| Hash Cracker | [`prototypes/hash_cracker.html`](prototypes/hash_cracker.html) | Prototype. |
-| Build Pipeline | [`prototypes/build_pipeline.html`](prototypes/build_pipeline.html) | Prototype. |
-| City Skyline | [`prototypes/city_skyline.html`](prototypes/city_skyline.html) | Prototype. |
-| Constellation | [`prototypes/constellation.html`](prototypes/constellation.html) | Prototype. |
-| Etch-a-Sketch | [`prototypes/etch_a_sketch.html`](prototypes/etch_a_sketch.html) | Prototype. |
+| Code Miner Minecraft | [`prototypes/code_miner_minecraft.html`](prototypes/code_miner_minecraft.html) | Ported to `variant: minecraft`. |
+| Hash Cracker | [`prototypes/hash_cracker.html`](prototypes/hash_cracker.html) | Ported to `variant: hash`. |
+| Build Pipeline | [`prototypes/build_pipeline.html`](prototypes/build_pipeline.html) | Ported to `variant: pipeline`. |
+| City Skyline | [`prototypes/city_skyline.html`](prototypes/city_skyline.html) | Ported to `variant: skyline`. |
+| Constellation | [`prototypes/constellation.html`](prototypes/constellation.html) | Ported to `variant: constellation`. |
+| Etch-a-Sketch | [`prototypes/etch_a_sketch.html`](prototypes/etch_a_sketch.html) | Ported to `variant: sketch`. |
 
 To preview them:
 
@@ -138,15 +162,13 @@ Then open any file from `prototypes/` in your browser. Each prototype has:
 - a download button for the generated SVG;
 - SVG source preview for inspection.
 
-Prototype HTML files are not Action variants yet. To use a prototype with real GitHub contribution data, its renderer must first be ported into `src/render.mjs` and added to the `variant` input.
-
-The already ported example is `Commit Invaders`:
+The prototypes above have Action variants. Use any of them with real GitHub contribution data:
 
 ```yml
 with:
   username: WendellOttoni
-  variant: spaceship
-  output: dist/commit-invaders.svg
+  variant: skyline
+  output: dist/contribution-animation.svg
 ```
 
 ### Variants
@@ -162,6 +184,12 @@ Choose one of these values with the `variant` input:
 | `pulse` | Signal activating the calendar as it travels. |
 | `miner` | Miner collecting contribution blocks. |
 | `scanner` | Scanner reading contribution intensity. |
+| `minecraft` | Minecraft-style miner breaks contribution ore blocks. |
+| `hash` | Terminal hash stream decrypts active contribution days. |
+| `pipeline` | Commits travel through CI stages. |
+| `skyline` | Weekly contributions become a city skyline. |
+| `constellation` | Active days become connected stars. |
+| `sketch` | A line draws the contribution history. |
 
 ```yml
 with:
@@ -238,7 +266,7 @@ You can generate more than one variant by calling the action multiple times:
 | `output` | `dist/contrib-runner.svg` | Output SVG path. |
 | `title` | Variant label | SVG title. |
 | `theme` | `fire` | Theme name: `fire`, `neon`, or `ocean`. |
-| `variant` | `runner` | Animation variant: `runner`, `spaceship`, `train`, `rocket`, `pulse`, `miner`, or `scanner`. |
+| `variant` | `runner` | Animation variant: `runner`, `spaceship`, `train`, `rocket`, `pulse`, `miner`, `scanner`, `minecraft`, `hash`, `pipeline`, `skyline`, `constellation`, or `sketch`. |
 
 ## Development
 

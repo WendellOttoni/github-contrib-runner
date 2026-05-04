@@ -1,0 +1,1505 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="200" viewBox="0 0 860 200" role="img" aria-labelledby="title desc">
+    <title id="title">Code Miner Minecraft contribution animation</title>
+    <desc id="desc">Minecraft-style miner breaks contribution ore blocks for WendellOttoni with 1587 contributions.</desc>
+    <style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}</style>
+    
+    <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7ec0ee"/><stop offset="1" stop-color="#1a3a5c"/></linearGradient></defs>
+    <rect width="100%" height="100%" fill="url(#sky)"/>
+    <rect x="0" y="150" width="860" height="50" fill="#6b4423"/>
+    <rect x="0" y="143" width="860" height="10" fill="#5a9943"/>
+    <text x="20" y="20" fill="#f5f5f5" font-size="13" font-weight="700" letter-spacing="3">CODE MINER MINECRAFT</text>
+    <text x="20" y="36" fill="#f5f5f5" opacity=".7" font-size="9">Code Miner - 1587 contributions</text>
+    <g>
+      <rect x="24" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M24 51h11M27 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="24" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="24" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M24 64h11M27 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="24" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="24" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M24 77h11M27 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="24" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="24" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M24 90h11M27 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="24" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="24" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M24 103h11M27 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="24" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="24" y="113" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M24 116h11M27 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="24" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="24" y="126" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M24 129h11M27 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="24" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="37" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M37 51h11M40 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="37" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="37" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M37 64h11M40 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="37" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="37" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M37 77h11M40 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="37" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="37" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M37 90h11M40 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="37" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="37" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M37 103h11M40 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="37" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="37" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M37 116h11M40 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="37" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="37" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M37 129h11M40 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="37" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="50" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M50 51h11M53 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="50" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="50" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M50 64h11M53 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="50" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="50" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M50 77h11M53 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="50" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="50" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M50 90h11M53 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="50" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="50" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M50 103h11M53 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="50" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="50" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M50 116h11M53 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="50" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="50" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M50 129h11M53 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="50" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="63" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M63 51h11M66 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="63" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="63" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M63 64h11M66 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="63" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="63" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M63 77h11M66 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="63" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="63" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M63 90h11M66 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="63" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="63" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M63 103h11M66 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="63" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="63" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M63 116h11M66 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="63" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="63" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M63 129h11M66 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="63" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="76" y="48" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M76 51h11M79 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="76" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="76" y="61" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M76 64h11M79 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="76" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="76" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M76 77h11M79 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="76" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="76" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M76 90h11M79 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="76" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="76" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M76 103h11M79 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="76" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="76" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M76 116h11M79 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="76" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="76" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M76 129h11M79 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="76" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="89" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M89 51h11M92 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="89" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="89" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M89 64h11M92 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="89" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="89" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M89 77h11M92 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="89" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="89" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M89 90h11M92 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="89" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="89" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M89 103h11M92 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="89" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="89" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M89 116h11M92 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="89" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="89" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M89 129h11M92 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="89" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="102" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M102 51h11M105 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="102" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="102" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M102 64h11M105 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="102" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="102" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M102 77h11M105 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="102" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="102" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M102 90h11M105 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="102" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="102" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M102 103h11M105 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="102" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="102" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M102 116h11M105 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="102" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="102" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M102 129h11M105 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="102" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="115" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M115 51h11M118 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="115" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="115" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M115 64h11M118 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="115" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="115" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M115 77h11M118 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="115" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="115" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M115 90h11M118 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="115" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="115" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M115 103h11M118 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="115" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="115" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M115 116h11M118 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="115" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="115" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M115 129h11M118 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="115" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="128" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M128 51h11M131 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="128" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="128" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M128 64h11M131 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="128" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="128" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M128 77h11M131 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="128" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="128" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M128 90h11M131 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="128" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="128" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M128 103h11M131 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="128" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="128" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M128 116h11M131 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="128" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="128" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M128 129h11M131 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="128" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="141" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M141 51h11M144 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="141" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="141" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M141 64h11M144 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="141" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="141" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M141 77h11M144 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="141" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="141" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M141 90h11M144 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="141" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="141" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M141 103h11M144 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="141" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="141" y="113" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M141 116h11M144 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="141" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="141" y="126" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M141 129h11M144 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="141" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="154" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M154 51h11M157 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="154" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="154" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M154 64h11M157 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="154" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="154" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M154 77h11M157 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="154" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="154" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M154 90h11M157 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="154" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="154" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M154 103h11M157 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="154" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="154" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M154 116h11M157 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="154" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="154" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M154 129h11M157 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="154" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="167" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M167 51h11M170 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="167" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="167" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M167 64h11M170 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="167" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="167" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M167 77h11M170 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="167" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="167" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M167 90h11M170 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="167" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="167" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M167 103h11M170 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="167" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="167" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M167 116h11M170 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="167" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="167" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M167 129h11M170 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="167" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="180" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M180 51h11M183 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="180" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="180" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M180 64h11M183 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="180" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="180" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M180 77h11M183 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="180" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="180" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M180 90h11M183 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="180" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="180" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M180 103h11M183 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="180" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="7.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="180" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M180 116h11M183 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="180" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="7.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="180" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M180 129h11M183 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="180" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="193" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M193 51h11M196 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="193" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="193" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M193 64h11M196 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="193" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="193" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M193 77h11M196 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="193" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="193" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M193 90h11M196 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="193" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="193" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M193 103h11M196 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="193" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="193" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M193 116h11M196 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="193" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="193" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M193 129h11M196 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="193" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="206" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M206 51h11M209 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="206" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="206" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M206 64h11M209 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="206" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="206" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M206 77h11M209 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="206" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="206" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M206 90h11M209 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="206" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="206" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M206 103h11M209 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="206" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="206" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M206 116h11M209 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="206" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="206" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M206 129h11M209 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="206" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="219" y="48" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M219 51h11M222 48v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="219" y="61" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M219 64h11M222 61v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="219" y="74" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M219 77h11M222 74v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="219" y="87" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M219 90h11M222 87v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="219" y="100" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M219 103h11M222 100v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="219" y="113" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M219 116h11M222 113v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="219" y="126" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M219 129h11M222 126v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="232" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M232 51h11M235 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="232" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="232" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M232 64h11M235 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="232" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="232" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M232 77h11M235 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="232" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="232" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M232 90h11M235 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="232" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="232" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M232 103h11M235 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="232" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="232" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M232 116h11M235 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="232" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="232" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M232 129h11M235 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="232" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="245" y="48" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M245 51h11M248 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="245" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="245" y="61" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M245 64h11M248 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="245" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="245" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M245 77h11M248 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="245" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="245" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M245 90h11M248 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="245" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="245" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M245 103h11M248 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="245" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="245" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M245 116h11M248 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="245" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="245" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M245 129h11M248 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="245" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="258" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M258 51h11M261 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="258" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="258" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M258 64h11M261 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="258" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="258" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M258 77h11M261 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="258" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="258" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M258 90h11M261 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="258" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="258" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M258 103h11M261 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="258" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="258" y="113" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M258 116h11M261 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="258" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="258" y="126" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M258 129h11M261 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="258" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="271" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M271 51h11M274 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="271" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="271" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M271 64h11M274 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="271" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="271" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M271 77h11M274 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="271" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="271" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M271 90h11M274 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="271" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="271" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M271 103h11M274 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="271" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="271" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M271 116h11M274 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="271" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="271" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M271 129h11M274 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="271" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="284" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M284 51h11M287 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="284" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="284" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M284 64h11M287 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="284" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="284" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M284 77h11M287 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="284" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="284" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M284 90h11M287 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="284" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="284" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M284 103h11M287 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="284" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="284" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M284 116h11M287 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="284" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="284" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M284 129h11M287 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="284" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="297" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M297 51h11M300 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="297" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="297" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M297 64h11M300 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="297" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="297" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M297 77h11M300 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="297" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="297" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M297 90h11M300 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="297" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="297" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M297 103h11M300 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="297" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="297" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M297 116h11M300 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="297" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="297" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M297 129h11M300 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="297" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="310" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M310 51h11M313 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="310" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="310" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M310 64h11M313 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="310" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="310" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M310 77h11M313 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="310" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="310" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M310 90h11M313 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="310" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="310" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M310 103h11M313 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="310" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="310" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M310 116h11M313 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="310" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="310" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M310 129h11M313 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="310" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="323" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M323 51h11M326 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="323" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="323" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M323 64h11M326 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="323" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="323" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M323 77h11M326 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="323" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="323" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M323 90h11M326 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="323" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="323" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M323 103h11M326 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="323" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="323" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M323 116h11M326 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="323" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="323" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M323 129h11M326 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="323" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="336" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M336 51h11M339 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="336" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="336" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M336 64h11M339 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="336" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="336" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M336 77h11M339 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="336" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="336" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M336 90h11M339 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="336" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="336" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M336 103h11M339 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="336" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="336" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M336 116h11M339 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="336" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="336" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M336 129h11M339 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="336" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="349" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M349 51h11M352 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="349" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="349" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M349 64h11M352 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="349" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="349" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M349 77h11M352 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="349" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="349" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M349 90h11M352 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="349" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="7.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="349" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M349 103h11M352 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="349" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="7.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="349" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M349 116h11M352 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="349" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="349" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M349 129h11M352 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="349" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="362" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M362 51h11M365 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="362" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="362" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M362 64h11M365 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="362" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="362" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M362 77h11M365 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="362" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="362" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M362 90h11M365 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="362" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="362" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M362 103h11M365 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="362" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="362" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M362 116h11M365 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="362" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="362" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M362 129h11M365 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="362" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="375" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M375 51h11M378 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="375" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="375" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M375 64h11M378 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="375" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="375" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M375 77h11M378 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="375" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="375" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M375 90h11M378 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="375" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="375" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M375 103h11M378 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="375" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="375" y="113" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M375 116h11M378 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="375" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="375" y="126" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M375 129h11M378 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="375" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="388" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M388 51h11M391 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="388" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="388" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M388 64h11M391 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="388" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="388" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M388 77h11M391 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="388" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="388" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M388 90h11M391 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="388" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="388" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M388 103h11M391 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="388" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="388" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M388 116h11M391 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="388" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="388" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M388 129h11M391 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="388" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="401" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M401 51h11M404 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="401" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="401" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M401 64h11M404 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="401" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="401" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M401 77h11M404 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="401" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="401" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M401 90h11M404 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="401" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="401" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M401 103h11M404 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="401" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="401" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M401 116h11M404 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="401" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="401" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M401 129h11M404 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="401" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="414" y="48" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M414 51h11M417 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="414" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="414" y="61" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M414 64h11M417 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="414" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="414" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M414 77h11M417 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="414" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="414" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M414 90h11M417 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="414" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="414" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M414 103h11M417 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="414" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="414" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M414 116h11M417 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="414" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="414" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M414 129h11M417 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="414" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="427" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M427 51h11M430 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="427" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="427" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M427 64h11M430 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="427" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="427" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M427 77h11M430 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="427" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="427" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M427 90h11M430 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="427" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="427" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M427 103h11M430 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="427" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="427" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M427 116h11M430 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="427" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="427" y="126" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M427 129h11M430 126v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="440" y="48" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M440 51h11M443 48v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="440" y="61" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M440 64h11M443 61v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="440" y="74" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M440 77h11M443 74v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="440" y="87" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M440 90h11M443 87v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="440" y="100" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M440 103h11M443 100v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="440" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M440 116h11M443 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="440" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="440" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M440 129h11M443 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="440" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="453" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M453 51h11M456 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="453" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="453" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M453 64h11M456 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="453" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="453" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M453 77h11M456 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="453" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="453" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M453 90h11M456 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="453" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="453" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M453 103h11M456 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="453" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="453" y="113" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M453 116h11M456 113v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="453" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M453 129h11M456 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="453" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="466" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M466 51h11M469 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="466" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="466" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M466 64h11M469 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="466" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="466" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M466 77h11M469 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="466" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="466" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M466 90h11M469 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="466" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="466" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M466 103h11M469 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="466" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="466" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M466 116h11M469 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="466" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="466" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M466 129h11M469 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="466" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="479" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M479 51h11M482 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="479" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="479" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M479 64h11M482 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="479" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="479" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M479 77h11M482 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="479" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="479" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M479 90h11M482 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="479" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="479" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M479 103h11M482 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="479" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="479" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M479 116h11M482 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="479" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="479" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M479 129h11M482 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="479" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="492" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M492 51h11M495 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="492" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="492" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M492 64h11M495 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="492" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="492" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M492 77h11M495 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="492" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="492" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M492 90h11M495 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="492" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="492" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M492 103h11M495 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="492" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="492" y="113" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M492 116h11M495 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="492" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="492" y="126" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M492 129h11M495 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="492" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="505" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M505 51h11M508 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="505" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="505" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M505 64h11M508 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="505" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="505" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M505 77h11M508 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="505" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="505" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M505 90h11M508 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="505" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="505" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M505 103h11M508 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="505" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="505" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M505 116h11M508 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="505" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="505" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M505 129h11M508 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="505" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="518" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M518 51h11M521 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="518" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="518" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M518 64h11M521 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="518" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="518" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M518 77h11M521 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="518" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="7.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="518" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M518 90h11M521 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="518" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="7.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="518" y="100" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M518 103h11M521 100v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="518" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M518 116h11M521 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="518" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="518" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M518 129h11M521 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="518" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="531" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M531 51h11M534 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="531" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="531" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M531 64h11M534 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="531" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="531" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M531 77h11M534 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="531" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="531" y="87" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M531 90h11M534 87v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="531" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M531 103h11M534 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="531" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="531" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M531 116h11M534 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="531" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="531" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M531 129h11M534 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="531" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="544" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M544 51h11M547 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="544" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="544" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M544 64h11M547 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="544" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="544" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M544 77h11M547 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="544" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="544" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M544 90h11M547 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="544" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="544" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M544 103h11M547 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="544" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="544" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M544 116h11M547 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="544" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="544" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M544 129h11M547 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="544" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="557" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M557 51h11M560 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="557" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="557" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M557 64h11M560 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="557" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="557" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M557 77h11M560 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="557" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="557" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M557 90h11M560 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="557" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="557" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M557 103h11M560 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="557" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="557" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M557 116h11M560 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="557" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="557" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M557 129h11M560 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="557" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="570" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M570 51h11M573 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="570" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="1.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="570" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M570 64h11M573 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="570" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="570" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M570 77h11M573 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="570" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="570" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M570 90h11M573 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="570" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="570" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M570 103h11M573 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="570" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="570" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M570 116h11M573 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="570" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="570" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M570 129h11M573 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="570" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="583" y="48" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M583 51h11M586 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="583" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="583" y="61" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M583 64h11M586 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="583" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="583" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M583 77h11M586 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="583" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="583" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M583 90h11M586 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="583" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="583" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M583 103h11M586 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="583" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="583" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M583 116h11M586 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="583" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="583" y="126" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M583 129h11M586 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="583" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="2.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="596" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M596 51h11M599 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="596" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="596" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M596 64h11M599 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="596" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="596" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M596 77h11M599 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="596" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="596" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M596 90h11M599 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="596" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="596" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M596 103h11M599 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="596" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="596" y="113" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M596 116h11M599 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="596" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="596" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M596 129h11M599 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="596" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="609" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M609 51h11M612 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="609" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="609" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M609 64h11M612 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="609" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="609" y="74" width="11" height="11" fill="#2563eb" stroke="#000" stroke-width=".8"/>
+      <path d="M609 77h11M612 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="609" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.76s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="609" y="87" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M609 90h11M612 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="609" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.84s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="609" y="100" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M609 103h11M612 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="609" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="3.92s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="609" y="113" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M609 116h11M612 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="609" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="609" y="126" width="11" height="11" fill="#22c55e" stroke="#000" stroke-width=".8"/>
+      <path d="M609 129h11M612 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="609" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="622" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M622 51h11M625 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="622" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="622" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M622 64h11M625 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="622" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="622" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M622 77h11M625 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="622" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="622" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M622 90h11M625 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="622" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="622" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M622 103h11M625 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="622" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="622" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M622 116h11M625 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="622" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="622" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M622 129h11M625 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="622" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="635" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M635 51h11M638 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="635" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="635" y="61" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M635 64h11M638 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="635" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.8s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="635" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M635 77h11M638 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="635" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="635" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M635 90h11M638 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="635" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="4.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="635" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M635 103h11M638 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="635" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.04s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="635" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M635 116h11M638 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="635" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="635" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M635 129h11M638 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="635" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.2s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="648" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M648 51h11M651 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="648" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.28s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="648" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M648 64h11M651 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="648" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.36s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="648" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M648 77h11M651 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="648" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.44s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="648" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M648 90h11M651 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="648" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.52s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="648" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M648 103h11M651 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="648" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="648" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M648 116h11M651 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="648" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="5.68s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="648" y="126" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M648 129h11M651 126v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="661" y="48" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M661 51h11M664 48v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="661" y="61" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M661 64h11M664 61v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="661" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M661 77h11M664 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="661" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="661" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M661 90h11M664 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="661" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="661" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M661 103h11M664 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="661" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="661" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M661 116h11M664 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="661" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="661" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M661 129h11M664 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="661" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="674" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M674 51h11M677 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="674" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="674" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M674 64h11M677 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="674" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="674" y="74" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M674 77h11M677 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="674" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="674" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M674 90h11M677 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="674" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="674" y="100" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M674 103h11M677 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="674" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="674" y="113" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M674 116h11M677 113v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="674" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M674 129h11M677 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="674" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.88s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="687" y="48" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M687 51h11M690 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="687" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="6.96s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="687" y="61" width="11" height="11" fill="#2a2226" stroke="#000" stroke-width=".8"/>
+      <path d="M687 64h11M690 61v11" stroke="#000" stroke-opacity=".18"/>
+      
+    </g><g>
+      <rect x="687" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M687 77h11M690 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="687" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="7.12s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="687" y="87" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M687 90h11M690 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="687" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="687" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M687 103h11M690 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="687" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.08s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="687" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M687 116h11M690 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="687" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.16s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="687" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M687 129h11M690 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="687" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.24s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="700" y="48" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M700 51h11M703 48v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="700" y="48" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.32s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="700" y="61" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M700 64h11M703 61v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="700" y="61" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.4s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="700" y="74" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M700 77h11M703 74v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="700" y="74" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.48s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="700" y="87" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M700 90h11M703 87v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="700" y="87" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.56s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="700" y="100" width="11" height="11" fill="#6b4423" stroke="#000" stroke-width=".8"/>
+      <path d="M700 103h11M703 100v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="700" y="100" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.64s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="700" y="113" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M700 116h11M703 113v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="700" y="113" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.72s" repeatCount="indefinite"/></rect>
+    </g><g>
+      <rect x="700" y="126" width="11" height="11" fill="#5a5a5a" stroke="#000" stroke-width=".8"/>
+      <path d="M700 129h11M703 126v11" stroke="#000" stroke-opacity=".18"/>
+      <rect x="700" y="126" width="11" height="11" fill="#fff" opacity="0"><animate attributeName="opacity" values="0;.35;0" dur=".5s" begin="0.8s" repeatCount="indefinite"/></rect>
+    </g>
+    <path d="M29.5 53.5 L29.5 66.5 L29.5 79.5 L29.5 92.5 L29.5 105.5 L29.5 118.5 L29.5 131.5 L42.5 53.5 L42.5 66.5 L42.5 79.5 L42.5 92.5 L42.5 105.5 L42.5 118.5 L42.5 131.5 L55.5 53.5 L55.5 66.5 L55.5 79.5 L55.5 92.5 L55.5 105.5 L55.5 118.5 L55.5 131.5 L68.5 53.5 L68.5 66.5 L68.5 79.5 L68.5 92.5 L68.5 105.5 L68.5 118.5 L68.5 131.5 L81.5 53.5 L81.5 66.5 L81.5 79.5 L81.5 92.5 L81.5 105.5 L81.5 118.5 L81.5 131.5 L94.5 53.5 L94.5 66.5 L94.5 79.5 L94.5 92.5 L94.5 105.5 L94.5 118.5 L94.5 131.5 L107.5 53.5 L107.5 66.5 L107.5 79.5 L107.5 92.5 L107.5 105.5 L107.5 118.5 L107.5 131.5 L120.5 53.5 L120.5 66.5 L120.5 79.5 L120.5 92.5 L120.5 105.5 L120.5 118.5 L120.5 131.5 L133.5 53.5 L133.5 66.5 L133.5 79.5 L133.5 92.5 L133.5 105.5 L133.5 118.5 L133.5 131.5 L146.5 53.5 L146.5 66.5 L146.5 79.5 L146.5 92.5 L146.5 105.5 L146.5 118.5 L146.5 131.5 L159.5 53.5 L159.5 66.5 L159.5 79.5 L159.5 92.5 L159.5 105.5 L159.5 118.5 L159.5 131.5 L172.5 53.5 L172.5 66.5 L172.5 79.5 L172.5 92.5 L172.5 105.5 L172.5 118.5 L172.5 131.5 L185.5 53.5 L185.5 66.5 L185.5 79.5 L185.5 92.5 L185.5 105.5 L185.5 118.5 L185.5 131.5 L198.5 53.5 L198.5 66.5 L198.5 79.5 L198.5 92.5 L198.5 105.5 L198.5 118.5 L198.5 131.5 L211.5 53.5 L211.5 66.5 L211.5 79.5 L211.5 92.5 L211.5 105.5 L211.5 118.5 L211.5 131.5 L237.5 53.5 L237.5 66.5 L237.5 79.5 L237.5 92.5 L237.5 105.5 L237.5 118.5 L237.5 131.5 L250.5 53.5 L250.5 66.5 L250.5 79.5 L250.5 92.5 L250.5 105.5 L250.5 118.5 L250.5 131.5 L263.5 53.5 L263.5 66.5 L263.5 79.5 L263.5 92.5 L263.5 105.5 L263.5 118.5 L263.5 131.5 L276.5 53.5 L276.5 66.5 L276.5 79.5 L276.5 92.5 L276.5 105.5 L276.5 118.5 L276.5 131.5 L289.5 53.5 L289.5 66.5 L289.5 79.5 L289.5 92.5 L289.5 105.5 L289.5 118.5 L289.5 131.5" fill="none" stroke="#facc15" stroke-width="2" stroke-dasharray="4 8" opacity=".75"/>
+    <g transform="translate(-7 -13)">
+      <animateMotion dur="18s" repeatCount="indefinite" rotate="auto" path="M29.5 53.5 L29.5 66.5 L29.5 79.5 L29.5 92.5 L29.5 105.5 L29.5 118.5 L29.5 131.5 L42.5 53.5 L42.5 66.5 L42.5 79.5 L42.5 92.5 L42.5 105.5 L42.5 118.5 L42.5 131.5 L55.5 53.5 L55.5 66.5 L55.5 79.5 L55.5 92.5 L55.5 105.5 L55.5 118.5 L55.5 131.5 L68.5 53.5 L68.5 66.5 L68.5 79.5 L68.5 92.5 L68.5 105.5 L68.5 118.5 L68.5 131.5 L81.5 53.5 L81.5 66.5 L81.5 79.5 L81.5 92.5 L81.5 105.5 L81.5 118.5 L81.5 131.5 L94.5 53.5 L94.5 66.5 L94.5 79.5 L94.5 92.5 L94.5 105.5 L94.5 118.5 L94.5 131.5 L107.5 53.5 L107.5 66.5 L107.5 79.5 L107.5 92.5 L107.5 105.5 L107.5 118.5 L107.5 131.5 L120.5 53.5 L120.5 66.5 L120.5 79.5 L120.5 92.5 L120.5 105.5 L120.5 118.5 L120.5 131.5 L133.5 53.5 L133.5 66.5 L133.5 79.5 L133.5 92.5 L133.5 105.5 L133.5 118.5 L133.5 131.5 L146.5 53.5 L146.5 66.5 L146.5 79.5 L146.5 92.5 L146.5 105.5 L146.5 118.5 L146.5 131.5 L159.5 53.5 L159.5 66.5 L159.5 79.5 L159.5 92.5 L159.5 105.5 L159.5 118.5 L159.5 131.5 L172.5 53.5 L172.5 66.5 L172.5 79.5 L172.5 92.5 L172.5 105.5 L172.5 118.5 L172.5 131.5 L185.5 53.5 L185.5 66.5 L185.5 79.5 L185.5 92.5 L185.5 105.5 L185.5 118.5 L185.5 131.5 L198.5 53.5 L198.5 66.5 L198.5 79.5 L198.5 92.5 L198.5 105.5 L198.5 118.5 L198.5 131.5 L211.5 53.5 L211.5 66.5 L211.5 79.5 L211.5 92.5 L211.5 105.5 L211.5 118.5 L211.5 131.5 L237.5 53.5 L237.5 66.5 L237.5 79.5 L237.5 92.5 L237.5 105.5 L237.5 118.5 L237.5 131.5 L250.5 53.5 L250.5 66.5 L250.5 79.5 L250.5 92.5 L250.5 105.5 L250.5 118.5 L250.5 131.5 L263.5 53.5 L263.5 66.5 L263.5 79.5 L263.5 92.5 L263.5 105.5 L263.5 118.5 L263.5 131.5 L276.5 53.5 L276.5 66.5 L276.5 79.5 L276.5 92.5 L276.5 105.5 L276.5 118.5 L276.5 131.5 L289.5 53.5 L289.5 66.5 L289.5 79.5 L289.5 92.5 L289.5 105.5 L289.5 118.5 L289.5 131.5"/>
+      <rect x="3" y="7" width="11" height="11" fill="#2563eb" stroke="#111"/>
+      <rect x="5" y="0" width="7" height="7" fill="#f2c078" stroke="#111"/>
+      <path d="M13 2 L22 9 M20 7 L16 11" stroke="#e5e7eb" stroke-width="2"/>
+    </g>
+  
+  </svg>
