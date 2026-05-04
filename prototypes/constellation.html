@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Constellation – SVG Generator</title>
+<style>
+  body { margin: 0; background: #0d1117; color: #c9d1d9; font-family: ui-monospace, "SF Mono", Menlo, monospace; padding: 24px; }
+  h1 { font-size: 13px; letter-spacing: .25em; color: #a371f7; margin: 0 0 16px; font-weight: 600; }
+  .card { background: #010409; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .card.light { background: #ffffff; border-color: #d0d7de; color: #1f2328; }
+  .label { font-size: 10px; letter-spacing: .15em; opacity: .7; margin-bottom: 10px; text-transform: uppercase; }
+  pre { background: #0d1117; color: #8b949e; padding: 12px; border-radius: 6px; overflow: auto; font-size: 10px; max-height: 220px; }
+  button { background: #238636; color: white; border: 0; padding: 8px 14px; border-radius: 6px; cursor: pointer; font: inherit; margin-right: 8px; font-size: 12px; }
+  button:hover { background: #2ea043; }
+  .row { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+  .meta { font-size: 11px; color: #8b949e; }
+  svg { display: block; max-width: 100%; }
+</style>
+</head>
+<body>
+  <h1>▸ CONSTELLATION — GENERATOR</h1>
+  <div class="row">
+    <button id="regen">↻ Re-roll</button>
+    <button id="download">⬇ Download .svg</button>
+    <span class="meta" id="size"></span>
+  </div>
+  <div class="card"><div class="label">Dark mode (cosmos)</div><div id="dark-mount"></div></div>
+  <div class="card light"><div class="label">Light mode (star chart paper)</div><div id="light-mount"></div></div>
+  <div class="card"><div class="label">SVG source preview</div><pre id="src"></pre></div>
+
+<script>
+'use strict';
+
+const W = 860, H = 200;
+const COLS = 53, ROWS = 7;
+const TOTAL = 60;
+
+const DARK = {
+  bg1:'#020617', bg2:'#0a0f24', bg3:'#1a1145',
+  star1:'#ffffff', star2:'#cdd6f4', star3:'#89b4fa', star4:'#f5c2e7',
+  faint:'#3d4a6a',
+  line:'#7c83ff',
+  text:'#c9d1d9', textDim:'#7d8fa8', textVery:'#3d4a6a',
+  accent:'#a371f7',
+  comet:'#fff5c6',
+  nebulaA:'rgba(163,113,247,0.10)',
+  nebulaB:'rgba(125,141,255,0.08)',
+};
+const LIGHT = {
+  bg1:'#f8f6ee', bg2:'#ede5d0', bg3:'#dcd0a8',
+  star1:'#1a1a2e', star2:'#2e2a4a', star3:'#3d2f5a', star4:'#5a3d6e',
+  faint:'#c4b88f',
+  line:'#3d2f5a',
+  text:'#3d2f1a', textDim:'#7a6a4a', textVery:'#b0a880',
+  accent:'#7c2d92',
+  comet:'#cf6c00',
+  nebulaA:'rgba(124,45,146,0.08)',
+  nebulaB:'rgba(61,47,90,0.06)',
+};
+
+const fmt = n => Math.round(n * 1000) / 1000;
+
+function genContrib(seed) {
+  let s = seed;
+  const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  const g = [];
+  for (let r = 0; r < ROWS; r++) {
+    g[r] = [];
+    for (let c = 0; c < COLS; c++) {
+      const wave = Math.sin(c / 5) * 0.4 + 0.6;
+      const wk = (r >= 1 && r <= 5) ? 1 : 0.55;
+      const p = rnd() * wave * wk;
+      let v = 0;
+      if (p < 0.18) v = 0;
+      else if (p < 0.36) v = 1;
+      else if (p < 0.54) v = 2;
+      else if (p < 0.72) v = 3;
+      else v = 4;
+      g[r][c] = v;
+    }
+  }
+  return g;
+}
+
+const PAD_X = 50, PAD_Y = 36;
+const FRAME_W = W - PAD_X * 2;
+const FRAME_H = H - PAD_Y * 2;
+const CELL_W = FRAME_W / COLS;
+const CELL_H = FRAME_H / ROWS;
+
+function buildSVG(T, grid, seed) {
+  // Each commit cell = a star. Brighter cells = brighter/larger stars.
+  const stars = [];
+  let sd = (seed * 13 + 7) >>> 0;
+  const rnd = () => { sd = (sd * 9301 + 49297) % 233280; return sd / 233280; };
+
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      if (grid[r][c] === 0) continue;
+      const x = PAD_X + (c + 0.5) * CELL_W + (rnd() - 0.5) * CELL_W * 0.7;
+      const y = PAD_Y + (r + 0.5) * CELL_H + (rnd() - 0.5) * CELL_H * 0.5;
+      const lvl = grid[r][c];
+      stars.push({ x, y, lvl, r: r, c: c });
+    }
+  }
+
+  // Constellation lines: connect nearby strong stars (>=3) into clusters
+  const strong = stars.filter(s => s.lvl >= 3);
+  const lines = [];
+  for (const s of strong) {
+    let nearest = null, best = Infinity;
+    for (const o of strong) {
+      if (o === s) continue;
+      const dx = o.x - s.x, dy = o.y - s.y;
+      const d = dx * dx + dy * dy;
+      if (d < best && d < 4500) { best = d; nearest = o; }
+    }
+    if (nearest) {
+      const key = [s.x, s.y, nearest.x, nearest.y].sort().join(',');
+      if (!lines.find(l => l.key === key)) {
+        lines.push({ a: s, b: nearest, key });
+      }
+    }
+  }
+
+  // Constellation labels: 3 named ones at strong star clusters
+  const clusterCenters = pickClusters(strong, 3);
+
+  let out = '';
+  out += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">`;
+  out += `<defs>`;
+  out += `<radialGradient id="bg" cx="50%" cy="50%" r="80%"><stop offset="0%" stop-color="${T.bg2}"/><stop offset="100%" stop-color="${T.bg1}"/></radialGradient>`;
+  out += `<radialGradient id="nebA" cx="30%" cy="40%" r="40%"><stop offset="0%" stop-color="${T.nebulaA}"/><stop offset="100%" stop-color="${T.nebulaA}" stop-opacity="0"/></radialGradient>`;
+  out += `<radialGradient id="nebB" cx="70%" cy="65%" r="35%"><stop offset="0%" stop-color="${T.nebulaB}"/><stop offset="100%" stop-color="${T.nebulaB}" stop-opacity="0"/></radialGradient>`;
+  out += `<filter id="glow"><feGaussianBlur stdDeviation="0.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+  out += `<linearGradient id="cometGrad" x1="0%" x2="100%"><stop offset="0%" stop-color="${T.comet}" stop-opacity="0"/><stop offset="100%" stop-color="${T.comet}" stop-opacity="0.9"/></linearGradient>`;
+  out += `</defs>`;
+
+  // Backdrop
+  out += `<rect width="${W}" height="${H}" fill="url(#bg)"/>`;
+  out += `<rect width="${W}" height="${H}" fill="url(#nebA)"/>`;
+  out += `<rect width="${W}" height="${H}" fill="url(#nebB)"/>`;
+
+  // Faint background dust stars
+  out += renderDust(T);
+
+  // Coordinate frame (RA/DEC ticks)
+  out += renderFrame(T);
+
+  // Comet (one shooting star crosses ~mid-loop)
+  out += renderComet(T);
+
+  // Constellation lines (drawn progressively across the loop)
+  out += renderLines(T, lines);
+
+  // Stars
+  out += renderStars(T, stars);
+
+  // Constellation labels
+  out += renderLabels(T, clusterCenters, seed);
+
+  // Title + legend
+  out += renderHeader(T, stars, lines);
+
+  // Footer coordinates
+  out += renderFooter(T, stars);
+
+  out += `</svg>`;
+  return out;
+}
+
+function pickClusters(stars, n) {
+  if (stars.length === 0) return [];
+  // Simple: divide x range into n bins, take centroid of each
+  const minX = Math.min(...stars.map(s => s.x));
+  const maxX = Math.max(...stars.map(s => s.x));
+  const w = (maxX - minX) / n;
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    const lo = minX + i * w, hi = minX + (i + 1) * w;
+    const sub = stars.filter(s => s.x >= lo && s.x < hi);
+    if (sub.length > 0) {
+      const cx = sub.reduce((a, s) => a + s.x, 0) / sub.length;
+      const cy = sub.reduce((a, s) => a + s.y, 0) / sub.length;
+      out.push({ x: cx, y: cy });
+    }
+  }
+  return out;
+}
+
+function renderDust(T) {
+  let s = `<g fill="${T.faint}">`;
+  let q = 191;
+  const rnd = () => { q = (q * 9301 + 49297) % 233280; return q / 233280; };
+  for (let i = 0; i < 80; i++) {
+    const x = rnd() * W, y = rnd() * H, r = 0.3 + rnd() * 0.5;
+    s += `<circle cx="${fmt(x)}" cy="${fmt(y)}" r="${fmt(r)}" opacity="${fmt(0.2 + rnd() * 0.4)}"/>`;
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderFrame(T) {
+  // Subtle dashed border + tick marks (RA/DEC chart vibe)
+  let s = `<g stroke="${T.textVery}" stroke-width="0.4" fill="none" opacity="0.7">`;
+  s += `<rect x="${PAD_X - 12}" y="${PAD_Y - 12}" width="${FRAME_W + 24}" height="${FRAME_H + 24}" stroke-dasharray="3 3"/>`;
+  // Corner crosshairs
+  const corners = [[PAD_X - 12, PAD_Y - 12], [W - PAD_X + 12, PAD_Y - 12], [PAD_X - 12, H - PAD_Y + 12], [W - PAD_X + 12, H - PAD_Y + 12]];
+  for (const [x, y] of corners) {
+    s += `<line x1="${x - 4}" y1="${y}" x2="${x + 4}" y2="${y}"/>`;
+    s += `<line x1="${x}" y1="${y - 4}" x2="${x}" y2="${y + 4}"/>`;
+  }
+  s += `</g>`;
+  // RA labels along top
+  s += `<g fill="${T.textVery}" font-size="6" letter-spacing="1">`;
+  for (let i = 0; i <= 6; i++) {
+    const x = PAD_X + (i / 6) * FRAME_W;
+    const ra = (i * 4).toString().padStart(2, '0') + 'h';
+    s += `<text x="${fmt(x)}" y="${PAD_Y - 16}" text-anchor="middle">${ra}</text>`;
+  }
+  // DEC labels along left
+  for (let i = 0; i <= 4; i++) {
+    const y = PAD_Y + (i / 4) * FRAME_H;
+    const dec = (45 - i * 22) + '°';
+    s += `<text x="${PAD_X - 18}" y="${fmt(y + 2)}" text-anchor="end">${dec}</text>`;
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderComet(T) {
+  // Shooting star arcs across at ~30% and ~70% of loop
+  let s = `<g>`;
+  for (let i = 0; i < 2; i++) {
+    const startT = TOTAL * (0.25 + i * 0.4);
+    const x0 = -40, x1 = W + 40;
+    const y0 = 30 + i * 60, y1 = 80 - i * 30;
+    const dur = 1.8;
+    s += `<g opacity="0">`;
+    s += `<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="${dur}s" begin="${fmt(startT)}s;${fmt(startT + TOTAL)}s" fill="freeze"/>`;
+    // Tail (rect) + head (circle), translated
+    s += `<g>`;
+    s += `<animateTransform attributeName="transform" type="translate" values="${x0} ${y0};${x1} ${y1}" keyTimes="0;1" dur="${dur}s" begin="${fmt(startT)}s;${fmt(startT + TOTAL)}s" fill="freeze"/>`;
+    s += `<rect x="-30" y="-0.5" width="30" height="1" fill="url(#cometGrad)"/>`;
+    s += `<circle cx="0" cy="0" r="1.6" fill="${T.comet}" filter="url(#glow)"/>`;
+    s += `</g>`;
+    s += `</g>`;
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderLines(T, lines) {
+  // Draw constellation lines progressively, sequenced
+  let s = `<g stroke="${T.line}" stroke-width="0.6" fill="none" opacity="0.55">`;
+  const total = lines.length;
+  const start = 1.5;
+  const span = TOTAL - start - 4;
+  lines.forEach((ln, i) => {
+    const t = start + (i / Math.max(total, 1)) * span;
+    const showAt = t / TOTAL;
+    s += `<line x1="${fmt(ln.a.x)}" y1="${fmt(ln.a.y)}" x2="${fmt(ln.a.x)}" y2="${fmt(ln.a.y)}" stroke-dasharray="200" stroke-dashoffset="200" opacity="0">`;
+    s += `<animate attributeName="opacity" values="0;0;0.6;0.6;0" keyTimes="0;${fmt(showAt)};${fmt(Math.min(0.999, showAt + 0.005))};${fmt((TOTAL - 0.4) / TOTAL)};1" dur="${TOTAL}s" repeatCount="indefinite"/>`;
+    s += `<animate attributeName="x2" from="${fmt(ln.a.x)}" to="${fmt(ln.b.x)}" dur="0.9s" begin="${fmt(t)}s;${fmt(t + TOTAL)}s" fill="freeze"/>`;
+    s += `<animate attributeName="y2" from="${fmt(ln.a.y)}" to="${fmt(ln.b.y)}" dur="0.9s" begin="${fmt(t)}s;${fmt(t + TOTAL)}s" fill="freeze"/>`;
+    s += `</line>`;
+  });
+  s += `</g>`;
+  return s;
+}
+
+function renderStars(T, stars) {
+  let s = `<g>`;
+  // Sort: faint first, bright last (so bright on top)
+  stars.sort((a, b) => a.lvl - b.lvl);
+  stars.forEach((st, idx) => {
+    const r = 0.6 + st.lvl * 0.7;
+    const palette = [T.faint, T.star3, T.star4, T.star2, T.star1];
+    const col = palette[st.lvl];
+    // Twinkle: vary opacity
+    const dur = 1.5 + (idx % 7) * 0.3;
+    const beg = -((idx * 0.13) % dur);
+    const baseOp = 0.55 + st.lvl * 0.1;
+    const peakOp = 0.85 + st.lvl * 0.05;
+    s += `<circle cx="${fmt(st.x)}" cy="${fmt(st.y)}" r="${fmt(r)}" fill="${col}" opacity="${fmt(baseOp)}">`;
+    s += `<animate attributeName="opacity" values="${fmt(baseOp)};${fmt(peakOp)};${fmt(baseOp)}" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/>`;
+    s += `</circle>`;
+    // Bright stars get a glow halo
+    if (st.lvl >= 3) {
+      s += `<circle cx="${fmt(st.x)}" cy="${fmt(st.y)}" r="${fmt(r + 1.5)}" fill="${col}" opacity="0.2"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/></circle>`;
+    }
+    // Brightest stars (lvl 4): cross flare
+    if (st.lvl >= 4) {
+      s += `<line x1="${fmt(st.x - 4)}" y1="${fmt(st.y)}" x2="${fmt(st.x + 4)}" y2="${fmt(st.y)}" stroke="${col}" stroke-width="0.4" opacity="0.5"/>`;
+      s += `<line x1="${fmt(st.x)}" y1="${fmt(st.y - 4)}" x2="${fmt(st.x)}" y2="${fmt(st.y + 4)}" stroke="${col}" stroke-width="0.4" opacity="0.5"/>`;
+    }
+  });
+  s += `</g>`;
+  return s;
+}
+
+function renderLabels(T, clusters, seed) {
+  // Pick 3 mythic-sounding constellation names (deterministic)
+  const names = [
+    'CANIS DEV', 'URSA COMMITTUS', 'LYRA NOVUS', 'ORION GIT', 'DRACO BRANCHIA',
+    'CASSIOPEIA REPO', 'PEGASUS PUSHED', 'ANDROMEDA MERGED', 'PHOENIX REBASED', 'CYGNUS SHIPPED'
+  ];
+  let q = (seed * 31) >>> 0;
+  const rnd = () => { q = (q * 9301 + 49297) % 233280; return q / 233280; };
+  const pool = names.slice();
+
+  let s = `<g font-size="7" letter-spacing="2" fill="${T.textDim}" font-family="ui-monospace,Menlo,monospace">`;
+  clusters.forEach((cl, i) => {
+    const idx = Math.floor(rnd() * pool.length);
+    const name = pool.splice(idx, 1)[0] || `STARS-${i}`;
+    const yoff = i % 2 === 0 ? -16 : 16;
+    const showAt = (1.5 + i * 1.2) / TOTAL;
+    s += `<g opacity="0">`;
+    s += `<animate attributeName="opacity" values="0;0;0.85;0.85;0" keyTimes="0;${fmt(showAt)};${fmt(showAt + 0.04)};${fmt((TOTAL - 0.4) / TOTAL)};1" dur="${TOTAL}s" repeatCount="indefinite"/>`;
+    s += `<text x="${fmt(cl.x)}" y="${fmt(cl.y + yoff)}" text-anchor="middle" font-weight="700">${name}</text>`;
+    s += `<text x="${fmt(cl.x)}" y="${fmt(cl.y + yoff + 8)}" text-anchor="middle" font-size="5" fill="${T.textVery}">— charted —</text>`;
+    s += `</g>`;
+  });
+  s += `</g>`;
+  return s;
+}
+
+function renderHeader(T, stars, lines) {
+  let s = `<g font-family="ui-monospace,Menlo,monospace">`;
+  s += `<text x="14" y="16" fill="${T.text}" font-size="9" font-weight="900" letter-spacing="3">★ STAR CHART · COMMITS</text>`;
+  s += `<text x="14" y="26" fill="${T.textDim}" font-size="6" letter-spacing="1.5">github-contrib-runner · sky atlas v1</text>`;
+
+  // Right header: epoch
+  s += `<text x="${W - 14}" y="16" text-anchor="end" fill="${T.text}" font-size="9" font-weight="700" letter-spacing="2">EPOCH 2025.0</text>`;
+  s += `<text x="${W - 14}" y="26" text-anchor="end" fill="${T.textDim}" font-size="6">${stars.length} stars · ${lines.length} edges</text>`;
+  s += `</g>`;
+  return s;
+}
+
+function renderFooter(T, stars) {
+  let s = `<g font-family="ui-monospace,Menlo,monospace" font-size="6" letter-spacing="1.5" fill="${T.textVery}">`;
+  s += `<text x="14" y="${H - 8}">RA 00h00m → 24h00m</text>`;
+  s += `<text x="${W / 2}" y="${H - 8}" text-anchor="middle" fill="${T.textDim}">— observed from WendellOttoni/runner —</text>`;
+  s += `<text x="${W - 14}" y="${H - 8}" text-anchor="end">DEC -45° → +45°</text>`;
+  s += `</g>`;
+  return s;
+}
+
+let lastSeed = 42;
+
+function buildAdaptive(grid) {
+  const dayGroup = buildSVG(LIGHT, grid, lastSeed).replace(/^<svg[^>]*>/, '<g class="day">').replace(/<\/svg>$/, '</g>');
+  const nightGroup = buildSVG(DARK, grid, lastSeed).replace(/^<svg[^>]*>/, '<g class="night">').replace(/<\/svg>$/, '</g>');
+  const style = `<style>.night{display:none}.day{display:block}@media (prefers-color-scheme:dark){.night{display:block}.day{display:none}}</style>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${style}${dayGroup}${nightGroup}</svg>`;
+}
+
+function regen(seed) {
+  const sd = seed != null ? seed : Math.floor(Math.random() * 10000);
+  lastSeed = sd;
+  const grid = genContrib(sd);
+  document.getElementById('dark-mount').innerHTML = buildSVG(DARK, grid, sd);
+  document.getElementById('light-mount').innerHTML = buildSVG(LIGHT, grid, sd);
+  const adaptive = buildAdaptive(grid);
+  document.getElementById('src').textContent = adaptive.slice(0, 3000) + (adaptive.length > 3000 ? '\n…' : '');
+  document.getElementById('size').textContent = (adaptive.length / 1024).toFixed(1) + ' KB · seed ' + sd;
+  window.__svg = adaptive;
+}
+document.getElementById('regen').onclick = () => regen();
+document.getElementById('download').onclick = () => {
+  const blob = new Blob([window.__svg], { type: 'image/svg+xml' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'constellation.svg';
+  a.click();
+};
+regen(42);
+</script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>City Skyline – SVG Generator</title>
+<style>
+  body { margin: 0; background: #0d1117; color: #c9d1d9; font-family: ui-monospace, "SF Mono", Menlo, monospace; padding: 24px; }
+  h1 { font-size: 13px; letter-spacing: .25em; color: #f0883e; margin: 0 0 16px; font-weight: 600; }
+  .card { background: #010409; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .card.light { background: #ffffff; border-color: #d0d7de; color: #1f2328; }
+  .label { font-size: 10px; letter-spacing: .15em; opacity: .7; margin-bottom: 10px; text-transform: uppercase; }
+  pre { background: #0d1117; color: #8b949e; padding: 12px; border-radius: 6px; overflow: auto; font-size: 10px; max-height: 220px; }
+  button { background: #238636; color: white; border: 0; padding: 8px 14px; border-radius: 6px; cursor: pointer; font: inherit; margin-right: 8px; font-size: 12px; }
+  button:hover { background: #2ea043; }
+  .row { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+  .meta { font-size: 11px; color: #8b949e; }
+  svg { display: block; max-width: 100%; }
+</style>
+</head>
+<body>
+  <h1>▸ CITY SKYLINE — GENERATOR</h1>
+  <div class="row">
+    <button id="regen">↻ Re-roll</button>
+    <button id="download">⬇ Download .svg</button>
+    <span class="meta" id="size"></span>
+  </div>
+  <div class="card"><div class="label">Dark mode (night)</div><div id="dark-mount"></div></div>
+  <div class="card light"><div class="label">Light mode (day)</div><div id="light-mount"></div></div>
+  <div class="card"><div class="label">SVG source preview</div><pre id="src"></pre></div>
+
+<script>
+'use strict';
+
+const W = 860, H = 200;
+const COLS = 53, ROWS = 7;
+const TOTAL = 60;
+
+// Dark = night | Light = day
+const DARK = {
+  sky1:'#0a1428', sky2:'#1a2540', sky3:'#3d2f5a',
+  ground:'#0a0e18',
+  bldgFar:'#1a2540', bldgMid:'#0e1830', bldgNear:'#06101e',
+  bldgEdge:'#3d4a6a',
+  window0:'#1a2540', window1:'#3d5680', window2:'#7eb6f0', window3:'#ffd47a', window4:'#fff5c6',
+  text:'#c9d1d9', textDim:'#7d8fa8',
+  accent:'#ffd47a',
+  star:'#fff5c6',
+  moon:'#fff5c6', moonShade:'#dcd2a0',
+  smoke:'rgba(180,200,230,0.12)',
+  isNight: true,
+};
+const LIGHT = {
+  sky1:'#cfe6f5', sky2:'#a8d3ec', sky3:'#7fb8dd',
+  ground:'#d8e0e8',
+  bldgFar:'#9eb1c4', bldgMid:'#7e95ad', bldgNear:'#5a738c',
+  bldgEdge:'#3e5266',
+  window0:'#5a738c', window1:'#3e5266', window2:'#28394d', window3:'#15212e', window4:'#0d1620',
+  text:'#1f2328', textDim:'#5a6470',
+  accent:'#cf6c00',
+  star:'#ffffff',
+  moon:'#fff7c2', moonShade:'#f0e8a0',
+  smoke:'rgba(80,100,120,0.18)',
+  isNight: false,
+};
+
+const fmt = n => Math.round(n * 1000) / 1000;
+
+function genContrib(seed) {
+  let s = seed;
+  const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  const g = [];
+  for (let r = 0; r < ROWS; r++) {
+    g[r] = [];
+    for (let c = 0; c < COLS; c++) {
+      const wave = Math.sin(c / 5) * 0.4 + 0.6;
+      const wk = (r >= 1 && r <= 5) ? 1 : 0.55;
+      const p = rnd() * wave * wk;
+      let v = 0;
+      if (p < 0.18) v = 0;
+      else if (p < 0.36) v = 1;
+      else if (p < 0.54) v = 2;
+      else if (p < 0.72) v = 3;
+      else v = 4;
+      g[r][c] = v;
+    }
+  }
+  return g;
+}
+
+// Each column = one building; height proportional to total commits that week
+function weekTotals(grid) {
+  const totals = [];
+  for (let c = 0; c < COLS; c++) {
+    let t = 0;
+    for (let r = 0; r < ROWS; r++) t += grid[r][c];
+    totals.push(t);
+  }
+  return totals;
+}
+
+const GROUND_Y = 175;
+const BLDG_W = (W - 16) / COLS;
+
+function buildSVG(T, grid) {
+  const totals = weekTotals(grid);
+  const maxTotal = Math.max(...totals, 1);
+
+  // Build building data
+  const buildings = [];
+  // Spread across 3 layers for depth
+  for (let c = 0; c < COLS; c++) {
+    const t = totals[c];
+    if (t === 0) continue;
+    // Base height scaling
+    const h = 12 + (t / 28) * 100; // max ~110
+    const layer = (c % 7 === 0) ? 'far' : (c % 3 === 0) ? 'mid' : 'near';
+    buildings.push({ c, h, t, layer });
+  }
+
+  let out = '';
+  out += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">`;
+  out += `<defs>`;
+  out += `<style>svg{shape-rendering:auto;}</style>`;
+  out += `<linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">`;
+  out += `<stop offset="0%" stop-color="${T.sky1}"/>`;
+  out += `<stop offset="60%" stop-color="${T.sky2}"/>`;
+  out += `<stop offset="100%" stop-color="${T.sky3}"/>`;
+  out += `</linearGradient>`;
+  out += `<filter id="blur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.5"/></filter>`;
+  out += `<filter id="glow"><feGaussianBlur stdDeviation="1.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+  out += `</defs>`;
+
+  // Sky
+  out += `<rect width="${W}" height="${H}" fill="url(#sky)"/>`;
+
+  // Stars (only visible in dark mode — gated by var)
+  out += renderStars(T);
+
+  // Moon/sun moving across
+  out += renderCelestial(T);
+
+  // Far buildings
+  out += renderLayer(T, buildings.filter(b => b.layer === 'far'), T.bldgFar, 0.6);
+  // Mid buildings
+  out += renderLayer(T, buildings.filter(b => b.layer === 'mid'), T.bldgMid, 0.85);
+  // Near buildings
+  out += renderLayer(T, buildings.filter(b => b.layer === 'near'), T.bldgNear, 1);
+
+  // Smoke from chimneys
+  out += renderSmoke(T, buildings);
+
+  // Birds
+  out += renderBirds(T);
+
+  // Ground line
+  out += `<rect x="0" y="${GROUND_Y}" width="${W}" height="${H - GROUND_Y}" fill="${T.ground}"/>`;
+  out += `<line x1="0" y1="${GROUND_Y}" x2="${W}" y2="${GROUND_Y}" stroke="${T.bldgEdge}" stroke-width="0.5" opacity="0.5"/>`;
+
+  // Header text
+  out += renderHeader(T);
+
+  // Stats footer
+  out += renderFooter(T, buildings, totals);
+
+  out += `</svg>`;
+  return out;
+}
+
+function renderStars(T) {
+  // Only rendered in dark mode — control via opacity var to avoid them in light
+  let s = `<g fill="${T.star}">`;
+  let q = 41;
+  const rnd = () => { q = (q * 9301 + 49297) % 233280; return q / 233280; };
+  for (let i = 0; i < 60; i++) {
+    const x = rnd() * W;
+    const y = 5 + rnd() * 120;
+    const r = 0.4 + rnd() * 0.7;
+    const dur = 1.5 + rnd() * 3;
+    const beg = -rnd() * dur;
+    s += `<circle cx="${fmt(x)}" cy="${fmt(y)}" r="${fmt(r)}" opacity="${0.4 + rnd() * 0.5}"><animate attributeName="opacity" values="${fmt(0.3 + rnd() * 0.4)};${fmt(0.7 + rnd() * 0.3)};${fmt(0.3 + rnd() * 0.4)}" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/></circle>`;
+  }
+  // Wrap with isNight gating: in day mode stars are hidden via opacity 0
+  s = `<g opacity="${T.isNight === false ? 0 : 1}">${s}</g>`;
+  return s;
+}
+
+function renderCelestial(T) {
+  // Moon (night) or sun (day). Use single circle that travels left → right across the loop
+  const r = 12;
+  const y = 35;
+  let s = `<g>`;
+  // Glow halo
+  s += `<circle cx="0" cy="${y}" r="${r + 6}" fill="${T.moon}" opacity="${T.isNight === false ? 0.35 : 0.18}" filter="url(#blur)">`;
+  s += `<animate attributeName="cx" from="-30" to="${W + 30}" dur="${TOTAL}s" repeatCount="indefinite"/>`;
+  s += `</circle>`;
+  // Body
+  s += `<circle cx="0" cy="${y}" r="${r}" fill="${T.moon}">`;
+  s += `<animate attributeName="cx" from="-30" to="${W + 30}" dur="${TOTAL}s" repeatCount="indefinite"/>`;
+  s += `</circle>`;
+  // Crater shading (only night)
+  if (T.isNight !== false) {
+    s += `<circle cx="-4" cy="${y - 3}" r="2.5" fill="${T.moonShade}" opacity="0.5">`;
+    s += `<animate attributeName="cx" from="-34" to="${W + 26}" dur="${TOTAL}s" repeatCount="indefinite"/>`;
+    s += `</circle>`;
+    s += `<circle cx="3" cy="${y + 4}" r="1.8" fill="${T.moonShade}" opacity="0.5">`;
+    s += `<animate attributeName="cx" from="-27" to="${W + 33}" dur="${TOTAL}s" repeatCount="indefinite"/>`;
+    s += `</circle>`;
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderLayer(T, buildings, color, depth) {
+  let s = `<g>`;
+  for (const b of buildings) {
+    const x = 8 + b.c * BLDG_W;
+    const w = BLDG_W * (depth >= 1 ? 0.9 : 0.85);
+    const y = GROUND_Y - b.h;
+    // Building body
+    s += `<rect x="${fmt(x)}" y="${fmt(y)}" width="${fmt(w)}" height="${fmt(b.h)}" fill="${color}"/>`;
+    // Highlight edge on right
+    s += `<line x1="${fmt(x + w)}" y1="${fmt(y)}" x2="${fmt(x + w)}" y2="${GROUND_Y}" stroke="${T.bldgEdge}" stroke-width="0.4" opacity="0.6"/>`;
+    // Roof variations
+    if (b.t > 14) {
+      // Antenna
+      s += `<line x1="${fmt(x + w / 2)}" y1="${fmt(y)}" x2="${fmt(x + w / 2)}" y2="${fmt(y - 8)}" stroke="${T.bldgEdge}" stroke-width="0.6"/>`;
+      // Blinking light
+      s += `<circle cx="${fmt(x + w / 2)}" cy="${fmt(y - 9)}" r="0.8" fill="${T.accent}"><animate attributeName="opacity" values="1;0.1;1" dur="1.4s" repeatCount="indefinite"/></circle>`;
+    } else if (b.t > 8) {
+      // Step-back: small box on top
+      s += `<rect x="${fmt(x + w * 0.25)}" y="${fmt(y - 4)}" width="${fmt(w * 0.5)}" height="4" fill="${color}"/>`;
+    }
+
+    // Windows (only for near + mid layers)
+    if (depth >= 0.85 && b.h > 18) {
+      s += renderWindows(T, x, y, w, b.h, b.c, b.t, depth);
+    }
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderWindows(T, x, y, w, h, seed, intensity, depth) {
+  let s = '';
+  const winW = depth >= 1 ? 1.8 : 1.4;
+  const winH = depth >= 1 ? 2 : 1.6;
+  const padX = (w - winW * 3) / 4;
+  const padY = 3;
+  const rows = Math.floor((h - 6) / (winH + padY));
+  const cols = 3;
+  let q = (seed * 7919) >>> 0;
+  const rnd = () => { q = (q * 9301 + 49297) % 233280; return q / 233280; };
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const wx = x + padX + c * (winW + padX);
+      const wy = y + 4 + r * (winH + padY);
+      const lit = rnd();
+      // Stronger commit week → more lit windows
+      const litThresh = 0.3 + (intensity / 28) * 0.5;
+      if (lit < litThresh) {
+        // Pick warmth based on intensity
+        const palette = [T.window2, T.window3, T.window4];
+        const idx = lit < litThresh * 0.4 ? 2 : lit < litThresh * 0.7 ? 1 : 0;
+        const color = palette[idx];
+        // Animation: occasional flicker (turn off briefly)
+        const flicker = rnd() < 0.18;
+        s += `<rect x="${fmt(wx)}" y="${fmt(wy)}" width="${winW}" height="${winH}" fill="${color}">`;
+        if (flicker) {
+          const dur = 3 + rnd() * 5;
+          const beg = -rnd() * dur;
+          s += `<animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.5;0.51;0.55;0.56;1" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/>`;
+        }
+        s += `</rect>`;
+      } else {
+        // Dark window
+        s += `<rect x="${fmt(wx)}" y="${fmt(wy)}" width="${winW}" height="${winH}" fill="${T.window0}" opacity="0.5"/>`;
+        // Maybe a window turns ON during the loop
+        if (rnd() < 0.15) {
+          const turnOn = rnd() * (TOTAL - 5);
+          s += `<rect x="${fmt(wx)}" y="${fmt(wy)}" width="${winW}" height="${winH}" fill="${T.window3}" opacity="0">`;
+          s += `<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="${fmt(TOTAL - turnOn - 0.5)}s" begin="${fmt(turnOn)}s;${fmt(turnOn + TOTAL)}s" fill="freeze"/>`;
+          s += `</rect>`;
+        }
+      }
+    }
+  }
+  return s;
+}
+
+function renderSmoke(T, buildings) {
+  // 2-3 chimney smokes from tall buildings
+  const tall = buildings.filter(b => b.t >= 18 && b.layer === 'near').slice(0, 3);
+  let s = `<g>`;
+  tall.forEach((b, i) => {
+    const x = 8 + b.c * BLDG_W + BLDG_W * 0.3;
+    const y = GROUND_Y - b.h - 2;
+    for (let p = 0; p < 4; p++) {
+      const dur = 4 + p * 0.5;
+      const beg = -p * 1 - i * 0.3;
+      s += `<circle cx="${fmt(x)}" cy="${fmt(y)}" r="2" fill="${T.smoke}">`;
+      s += `<animate attributeName="cy" from="${fmt(y)}" to="${fmt(y - 30)}" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/>`;
+      s += `<animate attributeName="cx" values="${fmt(x)};${fmt(x + 6)};${fmt(x + 10)}" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/>`;
+      s += `<animate attributeName="r" values="2;5;7" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/>`;
+      s += `<animate attributeName="opacity" values="0.6;0.3;0" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/>`;
+      s += `</circle>`;
+    }
+  });
+  s += `</g>`;
+  return s;
+}
+
+function renderBirds(T) {
+  // 2 V-shaped birds crossing
+  let s = `<g stroke="${T.textDim}" stroke-width="1" fill="none" opacity="0.65">`;
+  for (let i = 0; i < 3; i++) {
+    const baseY = 50 + i * 12;
+    const dur = 14 + i * 3;
+    const beg = -i * 4;
+    s += `<g>`;
+    s += `<animateTransform attributeName="transform" type="translate" from="-30 0" to="${W + 30} ${i % 2 === 0 ? -10 : 5}" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/>`;
+    // Wings — use 2 paths that morph (subtle flap)
+    s += `<path d="M0 ${baseY} l3 -2 l3 2 M6 ${baseY} l3 -2 l3 2"><animate attributeName="d" values="M0 ${baseY} l3 -2 l3 2 M6 ${baseY} l3 -2 l3 2;M0 ${baseY} l3 1 l3 -1 M6 ${baseY} l3 1 l3 -1;M0 ${baseY} l3 -2 l3 2 M6 ${baseY} l3 -2 l3 2" dur="0.5s" repeatCount="indefinite"/></path>`;
+    s += `</g>`;
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderHeader(T) {
+  let s = `<g font-size="9" letter-spacing="2">`;
+  s += `<text x="14" y="18" fill="${T.text}" font-weight="900" letter-spacing="3">CITY OF COMMITS</text>`;
+  s += `<text x="14" y="30" fill="${T.textDim}" font-size="7" letter-spacing="2">— github-contrib-runner —</text>`;
+  s += `</g>`;
+  return s;
+}
+
+function renderFooter(T, buildings, totals) {
+  const total = totals.reduce((a, b) => a + b, 0);
+  const tallest = Math.max(...buildings.map(b => b.t));
+  const cnt = buildings.length;
+  let s = `<g font-size="7" letter-spacing="1.5" font-family="ui-monospace,Menlo,monospace">`;
+  // Right side info
+  s += `<text x="${W - 14}" y="18" text-anchor="end" fill="${T.text}" font-size="9" font-weight="700" letter-spacing="2">EST. 2025</text>`;
+  s += `<text x="${W - 14}" y="30" text-anchor="end" fill="${T.textDim}">pop. ${cnt * 1247}</text>`;
+
+  // Bottom strip with stats
+  const fy = H - 8;
+  s += `<text x="14" y="${fy}" fill="${T.textDim}">▲ TALLEST ${tallest} commits</text>`;
+  s += `<text x="${W / 2}" y="${fy}" text-anchor="middle" fill="${T.textDim}">⌂ ${cnt} buildings</text>`;
+  s += `<text x="${W - 14}" y="${fy}" text-anchor="end" fill="${T.textDim}">Σ ${total} contributions</text>`;
+  s += `</g>`;
+  return s;
+}
+
+function buildAdaptive(grid) {
+  // Two complete SVGs swapped via CSS prefers-color-scheme: one for day, one for night.
+  // Approach: serialize both as nested <g> with media-query controlled visibility.
+  // Easier: build one SVG using CSS variables for color, but day/night aesthetics differ enough that we'll output a single SVG with two <g> layers, one per scheme.
+  const dayGroup = buildSVG(LIGHT, grid).replace(/^<svg[^>]*>/, '<g class="day">').replace(/<\/svg>$/, '</g>');
+  const nightGroup = buildSVG(DARK, grid).replace(/^<svg[^>]*>/, '<g class="night">').replace(/<\/svg>$/, '</g>');
+  const style = `<style>.night{display:none}.day{display:block}@media (prefers-color-scheme:dark){.night{display:block}.day{display:none}}</style>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${style}${dayGroup}${nightGroup}</svg>`;
+}
+
+function regen(seed) {
+  const sd = seed != null ? seed : Math.floor(Math.random() * 10000);
+  const grid = genContrib(sd);
+  document.getElementById('dark-mount').innerHTML = buildSVG(DARK, grid);
+  document.getElementById('light-mount').innerHTML = buildSVG(LIGHT, grid);
+  const adaptive = buildAdaptive(grid);
+  document.getElementById('src').textContent = adaptive.slice(0, 3000) + (adaptive.length > 3000 ? '\n…' : '');
+  document.getElementById('size').textContent = (adaptive.length / 1024).toFixed(1) + ' KB · seed ' + sd;
+  window.__svg = adaptive;
+}
+document.getElementById('regen').onclick = () => regen();
+document.getElementById('download').onclick = () => {
+  const blob = new Blob([window.__svg], { type: 'image/svg+xml' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'city-skyline.svg';
+  a.click();
+};
+regen(42);
+</script>
+</body>
+</html>

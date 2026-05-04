@@ -105,8 +105,24 @@ The SVG is generated from the `username` input, not from the repository where th
     username: WendellOttoni
     variant: rocket
     theme: fire
-    output: dist/contrib-runner.svg
+  output: dist/contrib-runner.svg
 ```
+
+## Prototypes
+
+The `prototypes/` directory contains standalone HTML generators used to explore new animation concepts before they become Action variants.
+
+| Prototype | File | Status |
+| --- | --- | --- |
+| Commit Invaders | `prototypes/commit_invaders.html` | Ported to `variant: spaceship`. |
+| Code Miner Minecraft | `prototypes/code_miner_minecraft.html` | Prototype. |
+| Hash Cracker | `prototypes/hash_cracker.html` | Prototype. |
+| Build Pipeline | `prototypes/build_pipeline.html` | Prototype. |
+| City Skyline | `prototypes/city_skyline.html` | Prototype. |
+| Constellation | `prototypes/constellation.html` | Prototype. |
+| Etch-a-Sketch | `prototypes/etch_a_sketch.html` | Prototype. |
+
+Open any prototype directly in a browser to preview it and download the generated SVG. Once a prototype is stable, its SVG renderer can be ported into `src/render.mjs` and exposed through the `variant` input.
 
 ### Variants
 
