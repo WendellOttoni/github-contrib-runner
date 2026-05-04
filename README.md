@@ -10,9 +10,9 @@ This started as an alternative to the common Snake and Pac-Man profile animation
 
 ![Commit Runner preview](examples/runner.svg)
 
-### Space Ship
+### Commit Invaders
 
-![Space Ship preview](examples/spaceship.svg)
+![Commit Invaders preview](examples/spaceship.svg)
 
 ### Train Code
 
@@ -115,7 +115,7 @@ Choose one of these values with the `variant` input:
 | Variant | Concept |
 | --- | --- |
 | `runner` | Energy cursor crossing active days. |
-| `spaceship` | Ship turning contributions into constellations. |
+| `spaceship` | Space Invaders style ship shooting contribution blocks from below. |
 | `train` | Tiny train moving through the commit line. |
 | `rocket` | Rocket leaving a trail over contribution peaks. |
 | `pulse` | Signal activating the calendar as it travels. |
@@ -127,7 +127,7 @@ with:
   username: WendellOttoni
   variant: spaceship
   theme: neon
-  title: Space Ship
+  title: Commit Invaders
   output: dist/contrib-runner.svg
 ```
 

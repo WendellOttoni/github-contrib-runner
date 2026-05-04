@@ -37,8 +37,8 @@ export const variants = {
     sparkShape: "circle",
   },
   spaceship: {
-    label: "Space Ship",
-    meta: "a ship turns contributions into constellations",
+    label: "Commit Invaders",
+    meta: "a base ship shoots stronger contribution blocks",
     marker: `<path class="runner-wing" d="M8 0 L15 15 L8 11 L1 15 Z" /><circle class="runner-core" cx="8" cy="8" r="3.5" /><path class="runner-flame" d="M5 14 L8 21 L11 14 Z" />`,
     trackDash: "2 9",
     sparkShape: "star",
@@ -86,7 +86,7 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
   const padX = 34;
   const padY = 42;
   const width = padX * 2 + weeks.length * (cell + gap) - gap;
-  const height = 170;
+  const height = variant === "spaceship" ? 210 : 170;
   const gridHeight = 7 * (cell + gap) - gap;
   const gridY = padY + 24;
   const selected = variants[variant] || variants.runner;
@@ -102,6 +102,10 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
   const runnerPath = pathPoints
     .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`)
     .join(" ");
+
+  if (variant === "spaceship") {
+    return renderCommitInvaders();
+  }
 
   const grid = days
     .map((day, index) => {
@@ -185,6 +189,87 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
       x: point.x + cell / 2,
       y: point.y + cell / 2,
     };
+  }
+
+  function renderCommitInvaders() {
+    const shipY = height - 25;
+    const targets = activeDays.length ? activeDays : days.filter((_, index) => index % 19 === 0);
+    const invaderGrid = days
+      .map((day, index) => {
+        const point = xy(day);
+        const level = intensity(day.contributionCount);
+        const delay = ((index % 36) * 0.07).toFixed(2);
+        const hitDelay = ((index % 52) * 0.16).toFixed(2);
+        const hitDuration = (2.4 + level * 0.55).toFixed(2);
+        const shield = level >= 3
+          ? `<rect class="shield" x="${point.x - 2}" y="${point.y - 2}" width="${cell + 4}" height="${cell + 4}" rx="4">
+              <animate attributeName="opacity" values="0;.45;0;.2;0" dur="${hitDuration}s" begin="${hitDelay}s" repeatCount="indefinite" />
+            </rect>`
+          : "";
+        return `<g>
+          <rect class="cell level-${level}" x="${point.x}" y="${point.y}" width="${cell}" height="${cell}" rx="3">
+            <title>${escapeXml(day.date)}: ${day.contributionCount} contribution${day.contributionCount === 1 ? "" : "s"}</title>
+            <animate attributeName="opacity" values=".85;1;.85" dur="4.8s" begin="${delay}s" repeatCount="indefinite" />
+            ${level > 0 ? `<animate attributeName="opacity" values="1;.25;1;.55;1" dur="${hitDuration}s" begin="${hitDelay}s" repeatCount="indefinite" />` : ""}
+          </rect>
+          ${shield}
+        </g>`;
+      })
+      .join("\n");
+
+    const lasers = targets
+      .slice(0, 90)
+      .map((day, index) => {
+        const point = center(day);
+        const level = intensity(day.contributionCount);
+        const delay = ((index * 0.19) % 10).toFixed(2);
+        const widthByLevel = 1.3 + level * 0.45;
+        const blastSize = 2 + level * 1.7;
+        return `<g opacity="0">
+          <animate attributeName="opacity" values="0;1;0" dur=".72s" begin="${delay}s" repeatCount="indefinite" />
+          <path class="laser" d="M${point.x} ${shipY - 14} L${point.x} ${point.y + cell / 2}" stroke-width="${widthByLevel.toFixed(1)}" />
+          <circle class="blast" cx="${point.x}" cy="${point.y}" r="${blastSize.toFixed(1)}">
+            <animate attributeName="r" values="1;${(blastSize + 3).toFixed(1)};1" dur=".72s" begin="${delay}s" repeatCount="indefinite" />
+          </circle>
+        </g>`;
+      })
+      .join("\n");
+
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
+      <title id="title">${escapeXml(label)} contribution animation</title>
+      <desc id="desc">Space Invaders inspired contribution graph for ${escapeXml(login)} with ${total} contributions in the last year.</desc>
+      <style>
+        :root { color-scheme: dark; }
+        .bg { fill: ${theme.background}; }
+        .label { font: 700 16px 'JetBrains Mono', Consolas, monospace; fill: ${theme.text}; letter-spacing: 0; }
+        .meta { font: 500 11px 'JetBrains Mono', Consolas, monospace; fill: ${theme.muted}; letter-spacing: 0; }
+        .cell { stroke: #ffffff14; stroke-width: 1; }
+        .level-0 { fill: ${theme.empty}; }
+        .level-1 { fill: ${theme.levels[0]}; }
+        .level-2 { fill: ${theme.levels[1]}; }
+        .level-3 { fill: ${theme.levels[2]}; }
+        .level-4 { fill: ${theme.levels[3]}; }
+        .shield { fill: none; stroke: ${theme.accent}; stroke-width: 1.5; filter: drop-shadow(0 0 5px ${theme.accent}); }
+        .laser { stroke: ${theme.accent}; stroke-linecap: round; filter: drop-shadow(0 0 7px ${theme.accent}); }
+        .blast { fill: ${theme.secondary}; opacity: .72; filter: drop-shadow(0 0 7px ${theme.secondary}); }
+        .ship-core { fill: ${theme.accent}; filter: drop-shadow(0 0 8px ${theme.accent}); }
+        .ship-wing { fill: ${theme.secondary}; filter: drop-shadow(0 0 6px ${theme.secondary}); }
+        .barrier { fill: ${theme.secondary}; opacity: .18; }
+      </style>
+      <rect class="bg" width="100%" height="100%" rx="10" />
+      <text class="label" x="${padX}" y="28">${escapeXml(label)}</text>
+      <text class="meta" x="${padX}" y="47">${total} contributions - stronger colors take more hits</text>
+      ${invaderGrid}
+      ${lasers}
+      <g transform="translate(0 ${shipY})">
+        <animateTransform attributeName="transform" type="translate" values="${padX} ${shipY};${width - padX - 28} ${shipY};${padX} ${shipY}" dur="8s" repeatCount="indefinite" />
+        <path class="ship-wing" d="M0 12 L8 5 L16 12 L28 15 L28 21 L0 21 Z" />
+        <rect class="ship-core" x="9" y="0" width="10" height="14" rx="2" />
+        <rect class="ship-core" x="3" y="16" width="22" height="5" rx="2" />
+      </g>
+      <rect class="barrier" x="${padX}" y="${shipY - 8}" width="${width - padX * 2}" height="2" rx="1" />
+    </svg>
+    `;
   }
 }
 
