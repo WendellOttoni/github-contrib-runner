@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dungeon Crawler – SVG Generator</title>
+<style>
+  body { margin: 0; background: #0d1117; color: #c9d1d9; font-family: ui-monospace, "SF Mono", Menlo, monospace; padding: 24px; }
+  h1 { font-size: 13px; letter-spacing: .25em; color: #ffb000; margin: 0 0 16px; font-weight: 600; }
+  .card { background: #010409; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .card.light { background: #f5ecd6; border-color: #c8b78a; color: #3a2a14; }
+  .label { font-size: 10px; letter-spacing: .15em; opacity: .7; margin-bottom: 10px; text-transform: uppercase; }
+  pre { background: #0d1117; color: #8b949e; padding: 12px; border-radius: 6px; overflow: auto; font-size: 10px; max-height: 220px; }
+  button { background: #238636; color: white; border: 0; padding: 8px 14px; border-radius: 6px; cursor: pointer; font: inherit; margin-right: 8px; font-size: 12px; }
+  button:hover { background: #2ea043; }
+  .row { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+  .meta { font-size: 11px; color: #8b949e; }
+  svg { display: block; max-width: 100%; }
+</style>
+</head>
+<body>
+  <h1>▸ DUNGEON CRAWLER — GENERATOR</h1>
+  <div class="row">
+    <button id="regen">↻ Re-roll</button>
+    <button id="download">⬇ Download .svg</button>
+    <span class="meta" id="size"></span>
+  </div>
+  <div class="card"><div class="label">Dark mode (terminal)</div><div id="dark-mount"></div></div>
+  <div class="card light"><div class="label">Light mode (parchment)</div><div id="light-mount"></div></div>
+  <div class="card"><div class="label">SVG source preview</div><pre id="src"></pre></div>
+
+<script>
+'use strict';
+
+const W = 860, H = 200;
+const COLS = 53, ROWS = 7;
+const TOTAL = 60;
+
+const DARK = {
+  bg:'#0a0a0a',
+  wall:'#5a4a2a', wallDim:'#332810',
+  floor:'#1a1a1a', floorMark:'#2a2a2a',
+  hero:'#ffd47a', heroFlash:'#ffffff',
+  monLvl:['#3d4a2a','#7a8a3a','#c97f3a','#d94a3a','#e23a8a'], // 0..4
+  corpse:'#5a1a1a',
+  gold:'#ffd47a', potion:'#ff4a8a',
+  text:'#c9d1d9', textDim:'#7a7a7a', textBright:'#ffd47a',
+  good:'#3fb950', bad:'#f85149',
+  accent:'#ffb000',
+  log:'#9aa6a6',
+};
+const LIGHT = {
+  bg:'#f0e3c0',
+  wall:'#7a5a2a', wallDim:'#a89060',
+  floor:'#e6d5a8', floorMark:'#d4c08a',
+  hero:'#7a3a14', heroFlash:'#cf2424',
+  monLvl:['#7a6a3a','#5a4a2a','#9a4a1a','#7a1a1a','#7a1a5a'],
+  corpse:'#5a1a1a',
+  gold:'#a87000', potion:'#a82a5a',
+  text:'#3a2a14', textDim:'#7a6a4a', textBright:'#7a3a14',
+  good:'#1a6a1a', bad:'#a82424',
+  accent:'#a87000',
+  log:'#5a4a2a',
+};
+
+const fmt = n => Math.round(n * 1000) / 1000;
+
+function genContrib(seed) {
+  let s = seed;
+  const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  const g = [];
+  for (let r = 0; r < ROWS; r++) {
+    g[r] = [];
+    for (let c = 0; c < COLS; c++) {
+      const wave = Math.sin(c / 5) * 0.4 + 0.6;
+      const wk = (r >= 1 && r <= 5) ? 1 : 0.55;
+      const p = rnd() * wave * wk;
+      let v = 0;
+      if (p < 0.18) v = 0;
+      else if (p < 0.36) v = 1;
+      else if (p < 0.54) v = 2;
+      else if (p < 0.72) v = 3;
+      else v = 4;
+      g[r][c] = v;
+    }
+  }
+  return g;
+}
+
+// Layout: dungeon area takes most of width, sidebar right for HUD/log
+const HUD_W = 130;
+const DUNG_X = 8;
+const DUNG_Y = 8;
+const DUNG_W = W - DUNG_X - HUD_W - 8;
+const DUNG_H = H - 16;
+const CELL = 12; // tile size in px
+const COLS_D = Math.floor(DUNG_W / CELL); // ~58
+const ROWS_D = Math.floor(DUNG_H / CELL); // ~15
+
+// Map intensity → monster glyph
+const MONSTERS = ['r', 'g', 'o', 'T', 'D']; // rat, goblin, orc, troll, dragon
+
+function buildMap(grid, seed) {
+  // Build tile map: 0=wall, 1=floor
+  const map = [];
+  for (let r = 0; r < ROWS_D; r++) {
+    map[r] = [];
+    for (let c = 0; c < COLS_D; c++) map[r][c] = 0; // wall
+  }
+
+  // Carve a horizontal main corridor (3 tiles tall) through middle
+  const midR = Math.floor(ROWS_D / 2);
+  for (let c = 1; c < COLS_D - 1; c++) {
+    map[midR][c] = 1;
+    map[midR - 1][c] = 1;
+    map[midR + 1][c] = 1;
+  }
+
+  // Carve rooms at intervals + connect via short vertical corridors
+  let q = (seed * 17 + 3) >>> 0;
+  const rnd = () => { q = (q * 9301 + 49297) % 233280; return q / 233280; };
+  const rooms = [];
+  const numRooms = 5;
+  for (let i = 0; i < numRooms; i++) {
+    const x = 3 + Math.floor(i * (COLS_D - 6) / numRooms) + Math.floor(rnd() * 3);
+    const w = 5 + Math.floor(rnd() * 4);
+    const goUp = i % 2 === 0;
+    const h = 3 + Math.floor(rnd() * 2);
+    const y = goUp ? Math.max(1, midR - 2 - h) : Math.min(ROWS_D - 1 - h, midR + 2);
+    rooms.push({ x, y, w, h });
+    for (let r = y; r < y + h && r < ROWS_D - 1; r++) {
+      for (let c = x; c < x + w && c < COLS_D - 1; c++) {
+        map[r][c] = 1;
+      }
+    }
+    // Connect to corridor
+    const connX = x + Math.floor(w / 2);
+    if (goUp) {
+      for (let r = y + h; r <= midR - 1; r++) map[r][connX] = 1;
+    } else {
+      for (let r = midR + 1; r <= y; r++) map[r][connX] = 1;
+    }
+  }
+
+  return { map, rooms, midR };
+}
+
+function buildSVG(T, grid, seed) {
+  const { map, rooms, midR } = buildMap(grid, seed);
+
+  // Place monsters: each grid cell with lvl>0 → a monster on a floor tile
+  // Order monsters along a path from left to right (deterministic)
+  const monsters = [];
+  let q = (seed * 31 + 5) >>> 0;
+  const rnd = () => { q = (q * 9301 + 49297) % 233280; return q / 233280; };
+
+  // Collect floor tiles in left-to-right order
+  const floorTiles = [];
+  for (let c = 1; c < COLS_D - 1; c++) {
+    for (let r = 1; r < ROWS_D - 1; r++) {
+      if (map[r][c] === 1) floorTiles.push({ r, c });
+    }
+  }
+
+  // Spawn monsters: one per grid cell, distributed along path
+  const allCommits = [];
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      if (grid[r][c] > 0) allCommits.push({ lvl: grid[r][c], srcR: r, srcC: c });
+    }
+  }
+  // Take up to 24 monsters (one per ~16 commits)
+  const target = Math.min(22, allCommits.length);
+  const stride = allCommits.length / target;
+  const picked = [];
+  for (let i = 0; i < target; i++) picked.push(allCommits[Math.floor(i * stride)]);
+
+  // Sort floor tiles by column, take a tile near each pick's column
+  // Skip starting columns (hero's spawn)
+  const usedTiles = new Set();
+  picked.forEach((m, i) => {
+    const targetX = 4 + Math.floor((i / target) * (COLS_D - 8));
+    // Find nearest unused floor tile near targetX
+    let best = null, bestDist = Infinity;
+    for (const t of floorTiles) {
+      if (usedTiles.has(t.r + ',' + t.c)) continue;
+      if (t.c < 4) continue; // leave space for hero spawn
+      const d = Math.abs(t.c - targetX);
+      if (d < bestDist) { bestDist = d; best = t; }
+    }
+    if (best) {
+      usedTiles.add(best.r + ',' + best.c);
+      monsters.push({ ...best, lvl: m.lvl });
+    }
+  });
+
+  // Order monsters by column ascending (hero walks left to right)
+  monsters.sort((a, b) => a.c - b.c);
+
+  // Place items: a few gold/potions on floor tiles
+  const items = [];
+  for (let i = 0; i < 6; i++) {
+    let attempts = 30;
+    while (attempts-- > 0) {
+      const t = floorTiles[Math.floor(rnd() * floorTiles.length)];
+      const k = t.r + ',' + t.c;
+      if (!usedTiles.has(k) && t.c > 4) {
+        usedTiles.add(k);
+        items.push({ ...t, kind: rnd() < 0.5 ? '$' : '!' });
+        break;
+      }
+    }
+  }
+
+  // Hero path: walk left to right, visiting each monster in order
+  // Simplify: jump between consecutive monsters via straight L-shaped path on floor
+  const startTile = { r: midR, c: 2 };
+  const path = [startTile];
+  let cur = startTile;
+  for (const m of monsters) {
+    // Move horizontally toward m.c, then vertically to m.r
+    while (cur.c !== m.c) {
+      cur = { r: cur.r, c: cur.c + (m.c > cur.c ? 1 : -1) };
+      path.push(cur);
+    }
+    while (cur.r !== m.r) {
+      cur = { r: cur.r + (m.r > cur.r ? 1 : -1), c: cur.c };
+      path.push(cur);
+    }
+  }
+
+  // Animation timing: hero advances tile by tile
+  const T_INTRO = 0.8;
+  const T_DRAW = TOTAL * 0.86;
+  const T_END = TOTAL - T_INTRO - T_DRAW; // for victory + reset
+  const tilesPerSec = path.length / T_DRAW;
+  const tileTime = 1 / tilesPerSec;
+
+  let out = '';
+  out += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">`;
+  out += `<defs>`;
+  out += `<style>svg{shape-rendering:crispEdges;}</style>`;
+  out += `<filter id="glow"><feGaussianBlur stdDeviation="0.7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+  out += `</defs>`;
+
+  // Background
+  out += `<rect width="${W}" height="${H}" fill="${T.bg}"/>`;
+
+  // Dungeon area background (slightly different)
+  out += `<rect x="${DUNG_X}" y="${DUNG_Y}" width="${DUNG_W}" height="${DUNG_H}" fill="${T.bg}"/>`;
+
+  // Render dungeon tiles
+  out += renderDungeon(T, map);
+
+  // Render items (static, but disappear when hero steps on them)
+  out += renderItems(T, items, path, T_INTRO, tileTime);
+
+  // Render monsters (visible until hero reaches them, then become corpses)
+  out += renderMonsters(T, monsters, path, T_INTRO, tileTime);
+
+  // Render hero (animated through tiles)
+  out += renderHero(T, path, T_INTRO, tileTime);
+
+  // HUD sidebar
+  out += renderHUD(T, monsters, items, T_INTRO, T_DRAW, path, tileTime);
+
+  // Combat log
+  out += renderLog(T, monsters, items, path, T_INTRO, tileTime);
+
+  // Victory banner at end
+  out += renderVictory(T, T_INTRO + T_DRAW + 0.2);
+
+  out += `</svg>`;
+  return out;
+}
+
+function tileX(c) { return DUNG_X + c * CELL + CELL / 2; }
+function tileY(r) { return DUNG_Y + r * CELL + CELL * 0.7; }
+
+function renderDungeon(T, map) {
+  let s = `<g font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace">`;
+  for (let r = 0; r < map.length; r++) {
+    for (let c = 0; c < map[r].length; c++) {
+      const x = tileX(c), y = tileY(r);
+      if (map[r][c] === 1) {
+        // Floor: dot
+        s += `<text x="${fmt(x)}" y="${fmt(y)}" text-anchor="middle" fill="${T.floorMark}" opacity="0.6">·</text>`;
+      } else {
+        // Wall: only render walls adjacent to floor (saves size)
+        let adj = false;
+        for (const [dr, dc] of [[-1,0],[1,0],[0,-1],[0,1]]) {
+          const nr = r + dr, nc = c + dc;
+          if (nr >= 0 && nr < map.length && nc >= 0 && nc < map[r].length && map[nr][nc] === 1) { adj = true; break; }
+        }
+        if (adj) {
+          s += `<text x="${fmt(x)}" y="${fmt(y)}" text-anchor="middle" fill="${T.wall}">#</text>`;
+        }
+      }
+    }
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderMonsters(T, monsters, path, T_INTRO, tileTime) {
+  let s = `<g font-size="11" font-weight="900" font-family="ui-monospace,Menlo,monospace">`;
+  for (const m of monsters) {
+    // Find when hero arrives at this monster's tile
+    const idx = path.findIndex(p => p.r === m.r && p.c === m.c);
+    if (idx < 0) continue;
+    const arriveAt = T_INTRO + idx * tileTime;
+    const x = tileX(m.c), y = tileY(m.r);
+    const glyph = MONSTERS[m.lvl];
+    const color = T.monLvl[m.lvl];
+
+    // Monster wobbles before death
+    s += `<text x="${fmt(x)}" y="${fmt(y)}" text-anchor="middle" fill="${color}">`;
+    s += glyph;
+    // Idle wiggle: subtle
+    s += `<animate attributeName="opacity" values="1;0.7;1" dur="${fmt(0.6 + (m.c % 3) * 0.2)}s" repeatCount="indefinite"/>`;
+    // Hide at arriveAt
+    s += `<animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="0.15s" begin="${fmt(arriveAt)}s;${fmt(arriveAt + TOTAL)}s" fill="freeze"/>`;
+    // Reset for loop
+    s += `<animate attributeName="opacity" values="0;1" keyTimes="0;1" dur="0.05s" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s" fill="freeze"/>`;
+    s += `</text>`;
+
+    // Corpse appears
+    s += `<text x="${fmt(x)}" y="${fmt(y)}" text-anchor="middle" fill="${T.corpse}" opacity="0">%`;
+    s += `<animate attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.05;0.95;1" dur="${fmt(TOTAL - arriveAt - 0.5)}s" begin="${fmt(arriveAt + 0.05)}s;${fmt(arriveAt + 0.05 + TOTAL)}s" fill="freeze"/>`;
+    s += `</text>`;
+
+    // Hit flash
+    s += `<rect x="${fmt(x - 6)}" y="${fmt(y - 9)}" width="12" height="12" fill="${T.heroFlash}" opacity="0">`;
+    s += `<animate attributeName="opacity" values="0;0.7;0" keyTimes="0;0.3;1" dur="0.18s" begin="${fmt(arriveAt - 0.05)}s;${fmt(arriveAt - 0.05 + TOTAL)}s"/>`;
+    s += `</rect>`;
+
+    // Damage number floats up
+    const dmg = m.lvl * 3 + 2;
+    s += `<text x="${fmt(x)}" y="${fmt(y - 4)}" text-anchor="middle" font-size="7" font-weight="700" fill="${T.bad}" opacity="0">-${dmg}`;
+    s += `<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.2;1" dur="0.7s" begin="${fmt(arriveAt)}s;${fmt(arriveAt + TOTAL)}s" fill="freeze"/>`;
+    s += `<animate attributeName="y" values="${fmt(y - 4)};${fmt(y - 14)}" dur="0.7s" begin="${fmt(arriveAt)}s;${fmt(arriveAt + TOTAL)}s" fill="freeze"/>`;
+    s += `</text>`;
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderItems(T, items, path, T_INTRO, tileTime) {
+  let s = `<g font-size="11" font-weight="900" font-family="ui-monospace,Menlo,monospace">`;
+  for (const it of items) {
+    const idx = path.findIndex(p => p.r === it.r && p.c === it.c);
+    const arriveAt = idx >= 0 ? T_INTRO + idx * tileTime : -1;
+    const x = tileX(it.c), y = tileY(it.r);
+    const color = it.kind === '$' ? T.gold : T.potion;
+    s += `<text x="${fmt(x)}" y="${fmt(y)}" text-anchor="middle" fill="${color}">`;
+    s += it.kind;
+    s += `<animate attributeName="opacity" values="1;0.5;1" dur="${fmt(1 + (it.c % 4) * 0.3)}s" repeatCount="indefinite"/>`;
+    if (arriveAt > 0) {
+      s += `<animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="0.1s" begin="${fmt(arriveAt)}s;${fmt(arriveAt + TOTAL)}s" fill="freeze"/>`;
+      s += `<animate attributeName="opacity" values="0;1" keyTimes="0;1" dur="0.05s" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s" fill="freeze"/>`;
+    }
+    s += `</text>`;
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderHero(T, path, T_INTRO, tileTime) {
+  // Build values lists: x and y per tile, with keyTimes
+  const dur = path.length * tileTime;
+  const xs = path.map(p => tileX(p.c));
+  const ys = path.map(p => tileY(p.r));
+  const keyTimes = path.map((_, i) => i / Math.max(path.length - 1, 1));
+
+  let s = `<g>`;
+  // Hero @ symbol
+  s += `<text x="${fmt(xs[0])}" y="${fmt(ys[0])}" text-anchor="middle" font-size="12" font-weight="900" fill="${T.hero}" font-family="ui-monospace,Menlo,monospace" filter="url(#glow)">@`;
+  s += `<animate attributeName="x" values="${xs.map(fmt).join(';')}" keyTimes="${keyTimes.map(fmt).join(';')}" dur="${fmt(dur)}s" begin="${fmt(T_INTRO)}s;${fmt(T_INTRO + TOTAL)}s" fill="freeze"/>`;
+  s += `<animate attributeName="y" values="${ys.map(fmt).join(';')}" keyTimes="${keyTimes.map(fmt).join(';')}" dur="${fmt(dur)}s" begin="${fmt(T_INTRO)}s;${fmt(T_INTRO + TOTAL)}s" fill="freeze"/>`;
+  // Reset to start at end of loop
+  s += `<animate attributeName="x" to="${fmt(xs[0])}" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s" fill="freeze" dur="0.01s"/>`;
+  s += `<animate attributeName="y" to="${fmt(ys[0])}" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s" fill="freeze" dur="0.01s"/>`;
+  s += `</text>`;
+  s += `</g>`;
+  return s;
+}
+
+function renderHUD(T, monsters, items, T_INTRO, T_DRAW, path, tileTime) {
+  const hudX = W - HUD_W;
+  let s = `<g font-family="ui-monospace,Menlo,monospace">`;
+  // HUD background panel
+  s += `<rect x="${hudX}" y="8" width="${HUD_W - 8}" height="${H - 16}" fill="${T.bg}" stroke="${T.wall}" stroke-width="0.5"/>`;
+  // Title
+  s += `<text x="${hudX + 8}" y="22" fill="${T.accent}" font-size="9" font-weight="900" letter-spacing="2">⚔ ROGUEDEV</text>`;
+  s += `<text x="${hudX + 8}" y="32" fill="${T.textDim}" font-size="6" letter-spacing="1">DLVL 1 · WendellOttoni</text>`;
+
+  // Stats
+  const lineH = 11;
+  let y = 50;
+
+  // HP bar (always full, drops a bit on monster encounters)
+  s += statLine(T, hudX + 8, y, 'HP', '24/24', T.good); y += lineH;
+  s += statLine(T, hudX + 8, y, 'MP', '08/12', T.accent); y += lineH;
+
+  // XP / LVL animated
+  s += `<text x="${hudX + 8}" y="${y}" fill="${T.textDim}" font-size="7" letter-spacing="1">XP </text>`;
+  s += `<text x="${hudX + 32}" y="${y}" fill="${T.textBright}" font-size="8" font-weight="700">`;
+  s += `0`;
+  let xp = 0;
+  monsters.forEach((m, i) => {
+    const idx = path.findIndex(p => p.r === m.r && p.c === m.c);
+    const arriveAt = T_INTRO + idx * tileTime;
+    xp += (m.lvl + 1) * 5;
+    s += `<set attributeName="textContent" to="${xp}" begin="${fmt(arriveAt)}s;${fmt(arriveAt + TOTAL)}s"/>`;
+  });
+  s += `<set attributeName="textContent" to="0" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s"/>`;
+  s += `</text>`;
+  y += lineH;
+
+  // LVL
+  s += `<text x="${hudX + 8}" y="${y}" fill="${T.textDim}" font-size="7" letter-spacing="1">LVL</text>`;
+  s += `<text x="${hudX + 32}" y="${y}" fill="${T.accent}" font-size="8" font-weight="900">`;
+  s += `1`;
+  // Level ups every 25 xp
+  let lvl = 1, xpc = 0;
+  monsters.forEach((m, i) => {
+    const idx = path.findIndex(p => p.r === m.r && p.c === m.c);
+    const arriveAt = T_INTRO + idx * tileTime;
+    xpc += (m.lvl + 1) * 5;
+    if (xpc >= 25) { xpc = 0; lvl++; s += `<set attributeName="textContent" to="${lvl}" begin="${fmt(arriveAt + 0.1)}s;${fmt(arriveAt + 0.1 + TOTAL)}s"/>`; }
+  });
+  s += `<set attributeName="textContent" to="1" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s"/>`;
+  s += `</text>`;
+  y += lineH;
+
+  // Gold
+  s += `<text x="${hudX + 8}" y="${y}" fill="${T.gold}" font-size="7" letter-spacing="1">$</text>`;
+  s += `<text x="${hudX + 32}" y="${y}" fill="${T.gold}" font-size="8" font-weight="700">`;
+  s += `0`;
+  let gold = 0;
+  items.filter(i => i.kind === '$').forEach(it => {
+    const idx = path.findIndex(p => p.r === it.r && p.c === it.c);
+    if (idx < 0) return;
+    const arriveAt = T_INTRO + idx * tileTime;
+    gold += 50;
+    s += `<set attributeName="textContent" to="${gold}" begin="${fmt(arriveAt)}s;${fmt(arriveAt + TOTAL)}s"/>`;
+  });
+  s += `<set attributeName="textContent" to="0" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s"/>`;
+  s += `</text>`;
+  y += lineH + 4;
+
+  // Kill counter
+  s += `<text x="${hudX + 8}" y="${y}" fill="${T.textDim}" font-size="7" letter-spacing="1">KILLS</text>`;
+  s += `<text x="${hudX + 40}" y="${y}" fill="${T.textBright}" font-size="8" font-weight="700">`;
+  s += `0`;
+  monsters.forEach((m, i) => {
+    const idx = path.findIndex(p => p.r === m.r && p.c === m.c);
+    const arriveAt = T_INTRO + idx * tileTime;
+    s += `<set attributeName="textContent" to="${i + 1}" begin="${fmt(arriveAt)}s;${fmt(arriveAt + TOTAL)}s"/>`;
+  });
+  s += `<set attributeName="textContent" to="0" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s"/>`;
+  s += `</text>`;
+  y += lineH;
+
+  // Total target
+  s += `<text x="${hudX + 8}" y="${y}" fill="${T.textDim}" font-size="6">target: ${monsters.length} mobs</text>`;
+  y += lineH + 4;
+
+  // Legend
+  s += `<text x="${hudX + 8}" y="${y}" fill="${T.textDim}" font-size="6" letter-spacing="1">FOES</text>`;
+  y += 8;
+  const legend = [
+    ['r', 'rat', T.monLvl[0]],
+    ['g', 'goblin', T.monLvl[1]],
+    ['o', 'orc', T.monLvl[2]],
+    ['T', 'troll', T.monLvl[3]],
+    ['D', 'dragon', T.monLvl[4]],
+  ];
+  for (const [g, n, c] of legend) {
+    s += `<text x="${hudX + 8}" y="${y}" fill="${c}" font-size="8" font-weight="900">${g}</text>`;
+    s += `<text x="${hudX + 16}" y="${y}" fill="${T.textDim}" font-size="6">${n}</text>`;
+    y += 8;
+  }
+
+  s += `</g>`;
+  return s;
+}
+
+function statLine(T, x, y, lbl, val, col) {
+  let s = `<text x="${x}" y="${y}" fill="${T.textDim}" font-size="7" letter-spacing="1">${lbl}</text>`;
+  s += `<text x="${x + 24}" y="${y}" fill="${col}" font-size="8" font-weight="700">${val}</text>`;
+  return s;
+}
+
+function renderLog(T, monsters, items, path, T_INTRO, tileTime) {
+  // Combat log at bottom of dungeon: 1 line that updates
+  const x = DUNG_X + 8;
+  const y = H - 4;
+  let s = `<g font-family="ui-monospace,Menlo,monospace" font-size="7">`;
+
+  // Build log events
+  const events = [];
+  events.push({ t: 0, msg: '> entering dungeon level 1...' });
+  monsters.forEach(m => {
+    const idx = path.findIndex(p => p.r === m.r && p.c === m.c);
+    const arriveAt = T_INTRO + idx * tileTime;
+    const name = ['rat', 'goblin', 'orc', 'troll', 'dragon'][m.lvl];
+    const dmg = m.lvl * 3 + 2;
+    const xp = (m.lvl + 1) * 5;
+    events.push({ t: arriveAt - 0.05, msg: `> ${name} blocks the path` });
+    events.push({ t: arriveAt + 0.05, msg: `> hit ${name} (-${dmg}hp) +${xp}xp` });
+  });
+  items.forEach(it => {
+    const idx = path.findIndex(p => p.r === it.r && p.c === it.c);
+    if (idx < 0) return;
+    const arriveAt = T_INTRO + idx * tileTime;
+    const msg = it.kind === '$' ? '> picked up 50 gold' : '> drank potion of vigor';
+    events.push({ t: arriveAt, msg });
+  });
+  events.sort((a, b) => a.t - b.t);
+
+  // Cursor
+  s += `<text x="${x - 4}" y="${y}" fill="${T.accent}" font-size="9" font-weight="900">>`;
+  s += `<animate attributeName="opacity" values="1;0.3;1" dur="0.7s" repeatCount="indefinite"/>`;
+  s += `</text>`;
+
+  // Log text (only render every Nth to keep size down)
+  const filtered = [];
+  for (let i = 0; i < events.length; i += 2) filtered.push(events[i]);
+
+  s += `<text x="${x + 6}" y="${y}" fill="${T.log}">`;
+  s += escapeXML(filtered[0].msg.slice(2));
+  for (let i = 1; i < filtered.length; i++) {
+    s += `<set attributeName="textContent" to="${escapeXML(filtered[i].msg.slice(2))}" begin="${fmt(filtered[i].t)}s;${fmt(filtered[i].t + TOTAL)}s"/>`;
+  }
+  s += `<set attributeName="textContent" to="${escapeXML(filtered[0].msg.slice(2))}" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s"/>`;
+  s += `</text>`;
+
+  s += `</g>`;
+  return s;
+}
+
+function escapeXML(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function renderVictory(T, t) {
+  const cx = DUNG_X + DUNG_W / 2;
+  const cy = H / 2;
+  const k1 = fmt(t / TOTAL);
+  const k2 = fmt((t + 0.3) / TOTAL);
+  const k3 = fmt((TOTAL - 0.5) / TOTAL);
+  const k4 = fmt((TOTAL - 0.1) / TOTAL);
+  let s = `<g opacity="0">`;
+  s += `<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;${k1};${k2};${k3};${k4};1" dur="${TOTAL}s" repeatCount="indefinite"/>`;
+  s += `<rect x="${cx - 130}" y="${cy - 22}" width="260" height="44" fill="${T.bg}" stroke="${T.accent}" stroke-width="1" stroke-dasharray="3 2"/>`;
+  s += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="11" font-weight="900" fill="${T.accent}" letter-spacing="3">>>> DUNGEON CLEARED <<<</text>`;
+  s += `<text x="${cx}" y="${cy + 12}" text-anchor="middle" font-size="7" fill="${T.textDim}" letter-spacing="2">press any key to descend...</text>`;
+  s += `</g>`;
+  return s;
+}
+
+let lastSeed = 42;
+
+function buildAdaptive(grid) {
+  const day = buildSVG(LIGHT, grid, lastSeed).replace(/^<svg[^>]*>/, '<g class="day">').replace(/<\/svg>$/, '</g>');
+  const night = buildSVG(DARK, grid, lastSeed).replace(/^<svg[^>]*>/, '<g class="night">').replace(/<\/svg>$/, '</g>');
+  const style = `<style>.night{display:none}.day{display:block}@media (prefers-color-scheme:dark){.night{display:block}.day{display:none}}</style>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${style}${day}${night}</svg>`;
+}
+
+function regen(seed) {
+  const sd = seed != null ? seed : Math.floor(Math.random() * 10000);
+  lastSeed = sd;
+  const grid = genContrib(sd);
+  document.getElementById('dark-mount').innerHTML = buildSVG(DARK, grid, sd);
+  document.getElementById('light-mount').innerHTML = buildSVG(LIGHT, grid, sd);
+  const adaptive = buildAdaptive(grid);
+  document.getElementById('src').textContent = adaptive.slice(0, 3000) + (adaptive.length > 3000 ? '\n…' : '');
+  document.getElementById('size').textContent = (adaptive.length / 1024).toFixed(1) + ' KB · seed ' + sd;
+  window.__svg = adaptive;
+}
+document.getElementById('regen').onclick = () => regen();
+document.getElementById('download').onclick = () => {
+  const blob = new Blob([window.__svg], { type: 'image/svg+xml' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'dungeon-crawler.svg';
+  a.click();
+};
+regen(42);
+</script>
+</body>
+</html>
