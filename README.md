@@ -105,24 +105,49 @@ The SVG is generated from the `username` input, not from the repository where th
     username: WendellOttoni
     variant: rocket
     theme: fire
-  output: dist/contrib-runner.svg
+    output: dist/contrib-runner.svg
 ```
 
 ## Prototypes
 
-The `prototypes/` directory contains standalone HTML generators used to explore new animation concepts before they become Action variants.
+The `prototypes/` directory contains standalone HTML generators used to explore new animation concepts before they become Action variants. GitHub does not render these HTML files directly inside the README, so open them locally in a browser to preview, re-roll sample data, and download the generated SVG.
 
-| Prototype | File | Status |
+### Prototype Examples
+
+| Prototype | Open locally | Status |
 | --- | --- | --- |
-| Commit Invaders | `prototypes/commit_invaders.html` | Ported to `variant: spaceship`. |
-| Code Miner Minecraft | `prototypes/code_miner_minecraft.html` | Prototype. |
-| Hash Cracker | `prototypes/hash_cracker.html` | Prototype. |
-| Build Pipeline | `prototypes/build_pipeline.html` | Prototype. |
-| City Skyline | `prototypes/city_skyline.html` | Prototype. |
-| Constellation | `prototypes/constellation.html` | Prototype. |
-| Etch-a-Sketch | `prototypes/etch_a_sketch.html` | Prototype. |
+| Commit Invaders | [`prototypes/commit_invaders.html`](prototypes/commit_invaders.html) | Ported to `variant: spaceship`. |
+| Code Miner Minecraft | [`prototypes/code_miner_minecraft.html`](prototypes/code_miner_minecraft.html) | Prototype. |
+| Hash Cracker | [`prototypes/hash_cracker.html`](prototypes/hash_cracker.html) | Prototype. |
+| Build Pipeline | [`prototypes/build_pipeline.html`](prototypes/build_pipeline.html) | Prototype. |
+| City Skyline | [`prototypes/city_skyline.html`](prototypes/city_skyline.html) | Prototype. |
+| Constellation | [`prototypes/constellation.html`](prototypes/constellation.html) | Prototype. |
+| Etch-a-Sketch | [`prototypes/etch_a_sketch.html`](prototypes/etch_a_sketch.html) | Prototype. |
 
-Open any prototype directly in a browser to preview it and download the generated SVG. Once a prototype is stable, its SVG renderer can be ported into `src/render.mjs` and exposed through the `variant` input.
+To preview them:
+
+```bash
+git clone https://github.com/WendellOttoni/github-contrib-runner.git
+cd github-contrib-runner
+```
+
+Then open any file from `prototypes/` in your browser. Each prototype has:
+
+- dark and light previews;
+- a re-roll button with simulated contribution data;
+- a download button for the generated SVG;
+- SVG source preview for inspection.
+
+Prototype HTML files are not Action variants yet. To use a prototype with real GitHub contribution data, its renderer must first be ported into `src/render.mjs` and added to the `variant` input.
+
+The already ported example is `Commit Invaders`:
+
+```yml
+with:
+  username: WendellOttoni
+  variant: spaceship
+  output: dist/commit-invaders.svg
+```
 
 ### Variants
 
