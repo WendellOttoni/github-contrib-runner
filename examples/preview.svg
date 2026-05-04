@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="916" height="170" viewBox="0 0 916 170" role="img" aria-labelledby="title desc">
+  <title id="title">Commit Runner preview</title>
+  <desc id="desc">Preview of an animated contribution runner SVG.</desc>
+  <style>
+    :root { color-scheme: dark; }
+    .bg { fill: #0d1117; }
+    .label { font: 700 16px 'JetBrains Mono', Consolas, monospace; fill: #f2f2f2; letter-spacing: 0; }
+    .meta { font: 500 11px 'JetBrains Mono', Consolas, monospace; fill: #8b949e; letter-spacing: 0; }
+    .cell { stroke: #ffffff14; stroke-width: 1; }
+    .level-0 { fill: #17191f; }
+    .level-1 { fill: #3a1f20; }
+    .level-2 { fill: #79321f; }
+    .level-3 { fill: #c8401f; }
+    .level-4 { fill: #fe4701; }
+    .track { fill: none; stroke: #ff005433; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 3 8; }
+    .runner-core { fill: #fe4701; filter: drop-shadow(0 0 7px #fe4701); }
+    .runner-wing { fill: #ff0054; }
+    .spark { fill: #ff0054; filter: drop-shadow(0 0 5px #ff0054); }
+    .scan { fill: url(#scanGradient); opacity: .38; }
+  </style>
+  <defs>
+    <linearGradient id="scanGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fe4701" stop-opacity="0" />
+      <stop offset=".5" stop-color="#fe4701" stop-opacity=".75" />
+      <stop offset="1" stop-color="#ff0054" stop-opacity="0" />
+    </linearGradient>
+    <g id="week-a">
+      <rect class="cell level-0" x="0" y="0" width="12" height="12" rx="3" />
+      <rect class="cell level-1" x="0" y="16" width="12" height="12" rx="3" />
+      <rect class="cell level-0" x="0" y="32" width="12" height="12" rx="3" />
+      <rect class="cell level-2" x="0" y="48" width="12" height="12" rx="3" />
+      <rect class="cell level-0" x="0" y="64" width="12" height="12" rx="3" />
+      <rect class="cell level-3" x="0" y="80" width="12" height="12" rx="3" />
+      <rect class="cell level-1" x="0" y="96" width="12" height="12" rx="3" />
+    </g>
+    <g id="week-b">
+      <rect class="cell level-1" x="0" y="0" width="12" height="12" rx="3" />
+      <rect class="cell level-2" x="0" y="16" width="12" height="12" rx="3" />
+      <rect class="cell level-0" x="0" y="32" width="12" height="12" rx="3" />
+      <rect class="cell level-3" x="0" y="48" width="12" height="12" rx="3" />
+      <rect class="cell level-4" x="0" y="64" width="12" height="12" rx="3" />
+      <rect class="cell level-1" x="0" y="80" width="12" height="12" rx="3" />
+      <rect class="cell level-0" x="0" y="96" width="12" height="12" rx="3" />
+    </g>
+    <g id="week-c">
+      <rect class="cell level-0" x="0" y="0" width="12" height="12" rx="3" />
+      <rect class="cell level-0" x="0" y="16" width="12" height="12" rx="3" />
+      <rect class="cell level-2" x="0" y="32" width="12" height="12" rx="3" />
+      <rect class="cell level-4" x="0" y="48" width="12" height="12" rx="3" />
+      <rect class="cell level-2" x="0" y="64" width="12" height="12" rx="3" />
+      <rect class="cell level-0" x="0" y="80" width="12" height="12" rx="3" />
+      <rect class="cell level-3" x="0" y="96" width="12" height="12" rx="3" />
+    </g>
+    <g id="week-d">
+      <rect class="cell level-3" x="0" y="0" width="12" height="12" rx="3" />
+      <rect class="cell level-0" x="0" y="16" width="12" height="12" rx="3" />
+      <rect class="cell level-1" x="0" y="32" width="12" height="12" rx="3" />
+      <rect class="cell level-0" x="0" y="48" width="12" height="12" rx="3" />
+      <rect class="cell level-2" x="0" y="64" width="12" height="12" rx="3" />
+      <rect class="cell level-4" x="0" y="80" width="12" height="12" rx="3" />
+      <rect class="cell level-2" x="0" y="96" width="12" height="12" rx="3" />
+    </g>
+  </defs>
+  <rect class="bg" width="100%" height="100%" rx="10" />
+  <text class="label" x="34" y="28">Commit Runner</text>
+  <text class="meta" x="34" y="47">preview animation from a contribution calendar</text>
+  <g transform="translate(34 66)">
+    <use href="#week-a" x="0" /><use href="#week-b" x="16" /><use href="#week-c" x="32" /><use href="#week-d" x="48" />
+    <use href="#week-a" x="64" /><use href="#week-c" x="80" /><use href="#week-b" x="96" /><use href="#week-d" x="112" />
+    <use href="#week-b" x="128" /><use href="#week-a" x="144" /><use href="#week-d" x="160" /><use href="#week-c" x="176" />
+    <use href="#week-a" x="192" /><use href="#week-b" x="208" /><use href="#week-c" x="224" /><use href="#week-d" x="240" />
+    <use href="#week-d" x="256" /><use href="#week-a" x="272" /><use href="#week-b" x="288" /><use href="#week-c" x="304" />
+    <use href="#week-a" x="320" /><use href="#week-c" x="336" /><use href="#week-b" x="352" /><use href="#week-d" x="368" />
+    <use href="#week-b" x="384" /><use href="#week-a" x="400" /><use href="#week-d" x="416" /><use href="#week-c" x="432" />
+    <use href="#week-a" x="448" /><use href="#week-b" x="464" /><use href="#week-c" x="480" /><use href="#week-d" x="496" />
+    <use href="#week-d" x="512" /><use href="#week-a" x="528" /><use href="#week-b" x="544" /><use href="#week-c" x="560" />
+    <use href="#week-a" x="576" /><use href="#week-c" x="592" /><use href="#week-b" x="608" /><use href="#week-d" x="624" />
+    <use href="#week-b" x="640" /><use href="#week-a" x="656" /><use href="#week-d" x="672" /><use href="#week-c" x="688" />
+    <use href="#week-a" x="704" /><use href="#week-b" x="720" /><use href="#week-c" x="736" /><use href="#week-d" x="752" />
+    <use href="#week-d" x="768" /><use href="#week-a" x="784" /><use href="#week-b" x="800" /><use href="#week-c" x="816" />
+  </g>
+  <rect class="scan" x="34" y="58" width="42" height="124" rx="10">
+    <animate attributeName="x" values="34;840;34" dur="9s" repeatCount="indefinite" />
+  </rect>
+  <path class="track" d="M56 78 L88 130 L136 114 L184 82 L232 146 L296 98 L360 130 L424 82 L488 146 L552 98 L616 130 L680 82 L744 146 L824 98" />
+  <circle class="spark" cx="136" cy="114" r="5" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin=".4s" repeatCount="indefinite" /></circle>
+  <circle class="spark" cx="296" cy="98" r="5" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="1.2s" repeatCount="indefinite" /></circle>
+  <circle class="spark" cx="488" cy="146" r="5" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2s" repeatCount="indefinite" /></circle>
+  <circle class="spark" cx="680" cy="82" r="5" opacity="0"><animate attributeName="opacity" values="0;.95;0" dur="2.4s" begin="2.8s" repeatCount="indefinite" /></circle>
+  <g transform="translate(-8 -8)">
+    <animateMotion dur="14s" repeatCount="indefinite" rotate="auto" path="M56 78 L88 130 L136 114 L184 82 L232 146 L296 98 L360 130 L424 82 L488 146 L552 98 L616 130 L680 82 L744 146 L824 98" />
+    <path class="runner-wing" d="M8 0 L14 16 L8 12 L2 16 Z" opacity=".9" />
+    <circle class="runner-core" cx="8" cy="8" r="4.5" />
+  </g>
+</svg>

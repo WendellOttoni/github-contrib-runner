@@ -4,6 +4,10 @@ Generate a custom animated SVG from a GitHub contribution calendar.
 
 This started as an alternative to the common Snake and Pac-Man profile animations. Instead of cloning either idea directly, it renders a contribution grid with a moving runner, scan light, pulse effects, and themeable colors.
 
+## Preview
+
+![Commit Runner preview](examples/preview.svg)
+
 ## Usage
 
 Create this workflow in `.github/workflows/contrib-runner.yml`:
