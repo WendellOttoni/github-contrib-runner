@@ -1,3 +1,5 @@
+import { renderCodeMinerMinecraftGrid } from "./code-miner-minecraft.mjs";
+
 export const themes = {
   fire: {
     background: "#0d1117",
@@ -78,6 +80,13 @@ export const variants = {
     trackDash: "2 5",
     sparkShape: "line",
   },
+  minecraft: {
+    label: "Code Miner Minecraft",
+    meta: "Minecraft-style miner breaks contribution ore blocks",
+    marker: "",
+    trackDash: "4 7",
+    sparkShape: "diamond",
+  },
 };
 
 export function renderContributionRunner({ username: login, weeks, title, theme, variant = "runner" }) {
@@ -105,6 +114,10 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
 
   if (variant === "spaceship") {
     return renderCommitInvadersGame({ login, days, total, max, label });
+  }
+
+  if (variant === "minecraft") {
+    return renderCodeMinerMinecraftGrid(daysToPrototypeGrid(days, max));
   }
 
   const grid = days
@@ -630,6 +643,16 @@ function invaderLevel(count, max) {
   if (count <= max * 0.5) return 2;
   if (count <= max * 0.75) return 3;
   return 4;
+}
+
+function daysToPrototypeGrid(days, max) {
+  const grid = Array.from({ length: 7 }, () => Array.from({ length: 53 }, () => 0));
+  for (const day of days) {
+    if (day.weekIndex < 53 && day.dayIndex < 7) {
+      grid[day.dayIndex][day.weekIndex] = invaderLevel(day.contributionCount, max);
+    }
+  }
+  return grid;
 }
 
 function invaderX(column) {
