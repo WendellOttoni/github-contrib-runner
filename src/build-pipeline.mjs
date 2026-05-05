@@ -1,0 +1,342 @@
+'use strict';
+
+const W = 860, H = 200;
+const COLS = 53, ROWS = 7;
+const TOTAL = 60;
+
+const DARK = {
+  bg:'#0d1117', panel:'#161b22', panelLine:'#30363d',
+  fg:'#c9d1d9', fgDim:'#8b949e', fgFaint:'#484f58',
+  accent:'#39d353', accent2:'#58a6ff',
+  ok:'#3fb950', warn:'#d29922', err:'#f85149',
+  belt:'#21262d', beltLine:'#30363d',
+  commit0:'#161b22', commit1:'#0e4429', commit2:'#006d32', commit3:'#26a641', commit4:'#39d353',
+};
+const LIGHT = {
+  bg:'#ffffff', panel:'#f6f8fa', panelLine:'#d0d7de',
+  fg:'#1f2328', fgDim:'#656d76', fgFaint:'#afb8c1',
+  accent:'#1f883d', accent2:'#0969da',
+  ok:'#1a7f37', warn:'#9a6700', err:'#cf222e',
+  belt:'#eef2f5', beltLine:'#d0d7de',
+  commit0:'#ebedf0', commit1:'#9be9a8', commit2:'#40c463', commit3:'#30a14e', commit4:'#216e39',
+};
+
+const fmt = n => Math.round(n * 1000) / 1000;
+
+function genContrib(seed) {
+  let s = seed;
+  const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  const g = [];
+  for (let r = 0; r < ROWS; r++) {
+    g[r] = [];
+    for (let c = 0; c < COLS; c++) {
+      const wave = Math.sin(c / 5) * 0.4 + 0.6;
+      const wk = (r >= 1 && r <= 5) ? 1 : 0.55;
+      const p = rnd() * wave * wk;
+      let v = 0;
+      if (p < 0.18) v = 0;
+      else if (p < 0.36) v = 1;
+      else if (p < 0.54) v = 2;
+      else if (p < 0.72) v = 3;
+      else v = 4;
+      g[r][c] = v;
+    }
+  }
+  return g;
+}
+
+// Pipeline stages
+const STAGES = [
+  { id: 'lint',   label: 'LINT',   x: 220 },
+  { id: 'test',   label: 'TEST',   x: 360 },
+  { id: 'build',  label: 'BUILD',  x: 500 },
+  { id: 'deploy', label: 'DEPLOY', x: 640 },
+];
+const SHIP_X = 800;
+const QUEUE_X = 80;
+const BELT_Y = 120;
+const COMMIT_R = 9;
+
+function buildSVG(T, grid) {
+  // Compute commits per column (week). Each column = one build pipeline run.
+  const weeks = [];
+  for (let c = 0; c < COLS; c++) {
+    let total = 0, max = 0;
+    for (let r = 0; r < ROWS; r++) { total += grid[r][c]; if (grid[r][c] > max) max = grid[r][c]; }
+    if (total > 0) weeks.push({ c, total, max });
+  }
+
+  // Limit to ~36 builds for readability and size
+  const target = 36;
+  let builds = weeks;
+  if (weeks.length > target) {
+    const step = weeks.length / target;
+    builds = [];
+    for (let i = 0; i < target; i++) builds.push(weeks[Math.floor(i * step)]);
+  }
+
+  // Each build has staggered start; all must finish by TOTAL - 4
+  const usable = TOTAL - 6; // intro 1 + outro 5
+  const interval = usable / builds.length;
+  const buildDur = interval * 4.2; // overlapping
+
+  builds.forEach((b, i) => {
+    b.t0 = 1 + i * interval;
+    b.dur = buildDur;
+    // Failure roll: ~12% commits fail at random stage (deterministic by index)
+    b.failStage = ((b.c * 7 + b.total * 3) % 100 < 12) ? ((b.c * 11) % 4) : -1;
+    b.color = b.max >= 4 ? T.commit4 : b.max >= 3 ? T.commit3 : b.max >= 2 ? T.commit2 : T.commit1;
+  });
+
+  let out = '';
+  out += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">`;
+  out += `<defs>`;
+  out += `<style>svg{shape-rendering:auto;}</style>`;
+  out += `<filter id="glow"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+  out += `<linearGradient id="trail" x1="0%" x2="100%"><stop offset="0%" stop-color="${T.accent}" stop-opacity="0"/><stop offset="100%" stop-color="${T.accent}" stop-opacity="0.5"/></linearGradient>`;
+  // Commit dot symbol (filled circle with stroke)
+  out += `</defs>`;
+
+  out += `<rect width="${W}" height="${H}" fill="${T.bg}"/>`;
+
+  // Header bar
+  out += renderHeader(T);
+
+  // Pipeline belt
+  out += renderBelt(T);
+
+  // Stage gates (vertical pillars)
+  out += renderStages(T);
+
+  // SHIPPED end zone
+  out += renderShipped(T, builds);
+
+  // Builds (commits) animating along belt
+  out += renderBuilds(T, builds);
+
+  // HUD bottom
+  out += renderHUD(T, builds);
+
+  out += `</svg>`;
+  return out;
+}
+
+function renderHeader(T) {
+  let s = `<g font-size="9" letter-spacing="1.5">`;
+  // Title
+  s += `<text x="14" y="18" fill="${T.accent}" font-weight="900" letter-spacing="3">▸ CI / CD PIPELINE</text>`;
+  s += `<text x="14" y="32" fill="${T.fgDim}" font-size="8">main · github-contrib-runner</text>`;
+
+  // Center: status
+  const cx = W / 2;
+  s += `<g font-size="8">`;
+  s += `<circle cx="${cx - 60}" cy="15" r="3" fill="${T.ok}"><animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/></circle>`;
+  s += `<text x="${cx - 50}" y="18" fill="${T.fg}" font-weight="700">PIPELINE ACTIVE</text>`;
+  s += `<text x="${cx + 60}" y="18" fill="${T.fgDim}">runner-ubuntu-latest</text>`;
+  s += `</g>`;
+
+  // Right: build count
+  s += `<text x="${W - 14}" y="18" text-anchor="end" fill="${T.fgDim}">RUN #</text>`;
+  s += `<text x="${W - 14}" y="32" text-anchor="end" fill="${T.fg}" font-weight="900" font-size="11">`;
+  s += `8421`;
+  for (let i = 1; i <= 12; i++) {
+    const t = 1 + (i / 12) * (TOTAL - 6);
+    s += `<set attributeName="textContent" to="${8421 + i * 3}" begin="${fmt(t)}s;${fmt(t + TOTAL)}s"/>`;
+  }
+  s += `<set attributeName="textContent" to="8421" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s"/>`;
+  s += `</text>`;
+  s += `</g>`;
+  return s;
+}
+
+function renderBelt(T) {
+  let s = '';
+  // Conveyor belt rectangle
+  s += `<rect x="${QUEUE_X - 20}" y="${BELT_Y - 14}" width="${SHIP_X - QUEUE_X + 40}" height="28" fill="${T.belt}" stroke="${T.beltLine}" stroke-width="1" rx="2"/>`;
+  // Belt segment marks (animated - moving right)
+  const seg = 12;
+  for (let i = 0; i < 50; i++) {
+    const x = QUEUE_X - 20 + i * seg;
+    if (x > SHIP_X + 20) break;
+    s += `<line x1="${x}" y1="${BELT_Y - 14}" x2="${x - 4}" y2="${BELT_Y + 14}" stroke="${T.beltLine}" stroke-width="0.6" opacity="0.5">`;
+    s += `<animate attributeName="x1" from="${x}" to="${x - seg}" dur="0.9s" repeatCount="indefinite"/>`;
+    s += `<animate attributeName="x2" from="${x - 4}" to="${x - 4 - seg}" dur="0.9s" repeatCount="indefinite"/>`;
+    s += `</line>`;
+  }
+  // Belt center line
+  s += `<line x1="${QUEUE_X - 20}" y1="${BELT_Y}" x2="${SHIP_X + 20}" y2="${BELT_Y}" stroke="${T.beltLine}" stroke-width="0.4" stroke-dasharray="3 3"/>`;
+
+  // QUEUE label
+  s += `<text x="${QUEUE_X}" y="${BELT_Y - 22}" text-anchor="middle" fill="${T.fgDim}" font-size="8" letter-spacing="2">QUEUE</text>`;
+  return s;
+}
+
+function renderStages(T) {
+  let s = '';
+  for (const stg of STAGES) {
+    // Vertical divider/gate
+    s += `<line x1="${stg.x}" y1="${BELT_Y - 32}" x2="${stg.x}" y2="${BELT_Y + 32}" stroke="${T.fgDim}" stroke-width="0.6" stroke-dasharray="2 2"/>`;
+    // Stage box on top
+    s += `<rect x="${stg.x - 28}" y="${BELT_Y - 56}" width="56" height="20" fill="${T.panel}" stroke="${T.panelLine}" stroke-width="1" rx="3"/>`;
+    s += `<text x="${stg.x}" y="${BELT_Y - 42}" text-anchor="middle" fill="${T.accent}" font-size="9" font-weight="800" letter-spacing="2">${stg.label}</text>`;
+    // Stage gear/icon (simple square + dot)
+    s += `<circle cx="${stg.x - 20}" cy="${BELT_Y - 46}" r="2" fill="${T.accent}"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" begin="${fmt(STAGES.indexOf(stg) * 0.2)}s" repeatCount="indefinite"/></circle>`;
+  }
+  return s;
+}
+
+function renderShipped(T, builds) {
+  let s = '';
+  // SHIP zone
+  s += `<rect x="${SHIP_X - 8}" y="${BELT_Y - 32}" width="56" height="64" fill="${T.panel}" stroke="${T.accent}" stroke-width="1" rx="3"/>`;
+  s += `<text x="${SHIP_X + 20}" y="${BELT_Y - 14}" text-anchor="middle" fill="${T.accent}" font-size="9" font-weight="900" letter-spacing="2">🚀</text>`;
+  s += `<text x="${SHIP_X + 20}" y="${BELT_Y + 4}" text-anchor="middle" fill="${T.accent}" font-size="7" font-weight="900" letter-spacing="1">SHIPPED</text>`;
+  // Counter of shipped builds
+  s += `<text x="${SHIP_X + 20}" y="${BELT_Y + 18}" text-anchor="middle" fill="${T.fg}" font-size="10" font-weight="900">`;
+  s += `0`;
+  let shipped = 0;
+  builds.forEach((b, i) => {
+    if (b.failStage < 0) {
+      shipped++;
+      const t = b.t0 + b.dur * 0.95;
+      s += `<set attributeName="textContent" to="${shipped}" begin="${fmt(t)}s;${fmt(t + TOTAL)}s"/>`;
+    }
+  });
+  s += `<set attributeName="textContent" to="0" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s"/>`;
+  s += `</text>`;
+  return s;
+}
+
+function renderBuilds(T, builds) {
+  let s = `<g>`;
+  for (const b of builds) {
+    s += renderBuild(T, b);
+  }
+  s += `</g>`;
+  return s;
+}
+
+function renderBuild(T, b) {
+  // Animation path: queue → stage1 → stage2 → stage3 → stage4 → ship
+  const stops = [QUEUE_X, STAGES[0].x, STAGES[1].x, STAGES[2].x, STAGES[3].x, SHIP_X + 20];
+  const segs = stops.length - 1;
+  // If failStage >= 0, build stops at that stage (and shows X)
+  const lastIdx = b.failStage >= 0 ? b.failStage + 1 : segs;
+  const xValues = [];
+  const keyTimes = [];
+  // intro (offstage left)
+  xValues.push(QUEUE_X - 60); keyTimes.push(0);
+  xValues.push(QUEUE_X); keyTimes.push(0.04);
+  for (let i = 1; i <= lastIdx; i++) {
+    xValues.push(stops[i]);
+    keyTimes.push(0.04 + (i / segs) * 0.85);
+  }
+  // hold at last
+  xValues.push(stops[lastIdx]);
+  keyTimes.push(0.95);
+  // fade out
+  xValues.push(stops[lastIdx] + (b.failStage < 0 ? 30 : 0));
+  keyTimes.push(1);
+
+  const beg = `${fmt(b.t0)}s;${fmt(b.t0 + TOTAL)}s`;
+
+  let s = `<g opacity="0">`;
+  s += `<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.04;0.95;1" dur="${fmt(b.dur)}s" begin="${beg}" fill="freeze"/>`;
+  // Trail behind commit
+  s += `<rect x="-22" y="-2" width="22" height="4" fill="url(#trail)" opacity="0.6"/>`;
+  // Commit circle
+  s += `<circle cx="0" cy="0" r="${COMMIT_R}" fill="${b.color}" stroke="${T.fg}" stroke-width="0.5"/>`;
+  // Commit short SHA inside
+  const sha = ('00000' + ((b.c * 31 + b.total * 7) >>> 0).toString(16)).slice(-5);
+  s += `<text x="0" y="2.5" text-anchor="middle" fill="${T.bg}" font-size="6" font-weight="900" font-family="ui-monospace,Menlo,monospace">${sha}</text>`;
+
+  // Stage check marks: appear as commit passes through each stage
+  for (let i = 1; i <= 4; i++) {
+    const passT = (0.04 + (i / segs) * 0.85);
+    const ok = b.failStage < 0 || b.failStage >= i;
+    if (i <= lastIdx) {
+      // Floating tick/X above the stage gate
+      const stageX = STAGES[i - 1].x;
+      const sym = ok ? '✓' : '✗';
+      const col = ok ? T.ok : T.err;
+      s += `<text x="${stageX}" y="${BELT_Y - 22}" text-anchor="middle" fill="${col}" font-size="11" font-weight="900" opacity="0">`;
+      s += `${sym}`;
+      s += `<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.6;1" dur="0.7s" begin="${fmt(b.t0 + b.dur * passT)}s;${fmt(b.t0 + b.dur * passT + TOTAL)}s" fill="freeze"/>`;
+      s += `</text>`;
+    }
+  }
+
+  // Commit position animation
+  s += `<animateTransform attributeName="transform" type="translate" values="${xValues.map((x, i) => `${fmt(x)} ${BELT_Y}`).join(';')}" keyTimes="${keyTimes.map(fmt).join(';')}" dur="${fmt(b.dur)}s" begin="${beg}" fill="freeze"/>`;
+
+  // If failed: red flash and then crumble
+  if (b.failStage >= 0) {
+    const failT = 0.04 + ((b.failStage + 1) / segs) * 0.85;
+    s += `<circle cx="0" cy="0" r="${COMMIT_R + 4}" fill="none" stroke="${T.err}" stroke-width="2" opacity="0">`;
+    s += `<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.3;1" dur="0.6s" begin="${fmt(b.t0 + b.dur * failT)}s;${fmt(b.t0 + b.dur * failT + TOTAL)}s"/>`;
+    s += `<animate attributeName="r" values="${COMMIT_R};${COMMIT_R + 12};${COMMIT_R + 16}" keyTimes="0;0.5;1" dur="0.6s" begin="${fmt(b.t0 + b.dur * failT)}s;${fmt(b.t0 + b.dur * failT + TOTAL)}s"/>`;
+    s += `</circle>`;
+  }
+
+  s += `</g>`;
+  return s;
+}
+
+function renderHUD(T, builds) {
+  const total = builds.length;
+  const failed = builds.filter(b => b.failStage >= 0).length;
+  const succeeded = total - failed;
+  const successRate = Math.round((succeeded / total) * 100);
+
+  let s = `<g font-size="8" font-family="ui-monospace,Menlo,monospace">`;
+  // Bottom log line
+  const y = H - 14;
+  // Logs
+  const logs = [
+    "[lint]   eslint . --max-warnings 0  ✓ 0 issues",
+    "[test]   jest --coverage             ✓ 247 passed",
+    "[build]  vite build                  ✓ 1.2 MB → 384 KB gz",
+    "[deploy] gh-pages -d dist            ✓ deployed",
+    "[lint]   prettier --check            ✓ formatting ok",
+    "[test]   playwright e2e              ✓ 32 specs",
+    "[build]  tsc --noEmit                ✓ no type errors",
+    "[deploy] release v1.0." + (Math.floor(Math.random()*99)) + "             ✓ tagged",
+    "[ci]     queue: 3 pending → 0",
+    "[ci]     cache hit ratio 94%",
+    "[ci]     avg build time: 2m 14s",
+  ];
+  s += `<text x="14" y="${y}" fill="${T.fgDim}">`;
+  s += escapeXML(logs[0]);
+  for (let i = 1; i < logs.length; i++) {
+    const t = 1 + (i / logs.length) * (TOTAL - 6);
+    s += `<set attributeName="textContent" to="${escapeXML(logs[i])}" begin="${fmt(t)}s;${fmt(t + TOTAL)}s"/>`;
+  }
+  s += `<set attributeName="textContent" to="${escapeXML(logs[0])}" begin="${fmt(TOTAL - 0.05)}s;${fmt(TOTAL * 2 - 0.05)}s"/>`;
+  s += `</text>`;
+
+  // Right side stats
+  s += `<text x="${W - 14}" y="${H - 28}" text-anchor="end" fill="${T.fgDim}" font-size="7">SUCCESS</text>`;
+  s += `<text x="${W - 14}" y="${H - 18}" text-anchor="end" fill="${T.ok}" font-size="11" font-weight="900">${successRate}%</text>`;
+
+  // Cursor
+  s += `<text x="6" y="${y}" fill="${T.accent}" font-size="9">$<animate attributeName="opacity" values="1;0.3;1" dur="0.9s" repeatCount="indefinite"/></text>`;
+
+  s += `</g>`;
+  return s;
+}
+
+function escapeXML(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function buildAdaptive(grid) {
+  const tok = {};
+  for (const k of Object.keys(DARK)) tok[k] = `var(--${k})`;
+  const svg = buildSVG(tok, grid);
+  const cssLight = Object.keys(LIGHT).map(k => `--${k}:${LIGHT[k]};`).join('');
+  const cssDark = Object.keys(DARK).map(k => `--${k}:${DARK[k]};`).join('');
+  const style = `<style>:root{${cssLight}}@media (prefers-color-scheme: dark){:root{${cssDark}}}</style>`;
+  return svg.replace('<defs>', `<defs>${style}`);
+}
+
+export { buildAdaptive as renderBuildPipelineGrid };

@@ -1,5 +1,6 @@
 import { renderCodeMinerMinecraftGrid } from "./code-miner-minecraft.mjs";
 import { renderHashCrackerGrid } from "./hash-cracker.mjs";
+import { renderBuildPipelineGrid } from "./build-pipeline.mjs";
 
 export const themes = {
   fire: {
@@ -95,6 +96,13 @@ export const variants = {
     trackDash: "2 5",
     sparkShape: "line",
   },
+  pipeline: {
+    label: "Build Pipeline",
+    meta: "commits travel through CI stages",
+    marker: "",
+    trackDash: "5 5",
+    sparkShape: "square",
+  },
 };
 
 export function renderContributionRunner({ username: login, weeks, title, theme, variant = "runner" }) {
@@ -130,6 +138,10 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
 
   if (variant === "hash") {
     return renderHashCrackerGrid(daysToPrototypeGrid(days, max));
+  }
+
+  if (variant === "pipeline") {
+    return renderBuildPipelineGrid(daysToPrototypeGrid(days, max));
   }
 
   const grid = days

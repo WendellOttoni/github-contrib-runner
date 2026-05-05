@@ -42,6 +42,10 @@ This started as an alternative to the common Snake and Pac-Man profile animation
 
 ![Hash Cracker preview](examples/hash.svg)
 
+### Build Pipeline
+
+![Build Pipeline preview](examples/pipeline.svg)
+
 ## Usage
 
 Create this workflow in `.github/workflows/contrib-runner.yml`:
@@ -127,7 +131,7 @@ The `prototypes/` directory contains standalone HTML generators used to explore 
 | Commit Invaders | [`prototypes/commit_invaders.html`](prototypes/commit_invaders.html) | Ported to `variant: spaceship`. |
 | Code Miner Minecraft | [`prototypes/code_miner_minecraft.html`](prototypes/code_miner_minecraft.html) | Ported to `variant: minecraft`. |
 | Hash Cracker | [`prototypes/hash_cracker.html`](prototypes/hash_cracker.html) | Ported to `variant: hash`. |
-| Build Pipeline | [`prototypes/build_pipeline.html`](prototypes/build_pipeline.html) | Prototype. |
+| Build Pipeline | [`prototypes/build_pipeline.html`](prototypes/build_pipeline.html) | Ported to `variant: pipeline`. |
 | City Skyline | [`prototypes/city_skyline.html`](prototypes/city_skyline.html) | Prototype. |
 | Constellation | [`prototypes/constellation.html`](prototypes/constellation.html) | Prototype. |
 | Etch-a-Sketch | [`prototypes/etch_a_sketch.html`](prototypes/etch_a_sketch.html) | Prototype. |
@@ -172,6 +176,7 @@ Choose one of these values with the `variant` input:
 | `scanner` | Scanner reading contribution intensity. |
 | `minecraft` | Faithful Minecraft-style miner prototype using real contribution data. |
 | `hash` | Faithful terminal hash cracker prototype using real contribution data. |
+| `pipeline` | Faithful CI/CD build pipeline prototype using real contribution data. |
 
 ```yml
 with:
@@ -248,7 +253,7 @@ You can generate more than one variant by calling the action multiple times:
 | `output` | `dist/contrib-runner.svg` | Output SVG path. |
 | `title` | Variant label | SVG title. |
 | `theme` | `fire` | Theme name: `fire`, `neon`, or `ocean`. |
-| `variant` | `runner` | Animation variant: `runner`, `spaceship`, `train`, `rocket`, `pulse`, `miner`, `scanner`, `minecraft`, or `hash`. |
+| `variant` | `runner` | Animation variant: `runner`, `spaceship`, `train`, `rocket`, `pulse`, `miner`, `scanner`, `minecraft`, `hash`, or `pipeline`. |
 
 ## Development
 
