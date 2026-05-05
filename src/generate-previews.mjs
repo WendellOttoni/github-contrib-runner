@@ -12,6 +12,7 @@ const variantThemes = {
   minecraft: "ocean",
   hash: "neon",
   pipeline: "neon",
+  city: "ocean",
 };
 
 await mkdir("examples", { recursive: true });
