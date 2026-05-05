@@ -9,12 +9,6 @@ const variantThemes = {
   pulse: "neon",
   miner: "ocean",
   scanner: "ocean",
-  minecraft: "ocean",
-  hash: "neon",
-  pipeline: "neon",
-  skyline: "ocean",
-  constellation: "neon",
-  sketch: "fire",
 };
 
 await mkdir("examples", { recursive: true });
