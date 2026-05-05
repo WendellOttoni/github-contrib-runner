@@ -48,7 +48,7 @@ This started as an alternative to the common Snake and Pac-Man profile animation
 
 ### City Skyline
 
-![City Skyline preview](examples/city.svg)
+<img src="examples/city.svg?raw=1" alt="City Skyline preview" width="860" />
 
 ### Constellation
 
