@@ -50,6 +50,10 @@ This started as an alternative to the common Snake and Pac-Man profile animation
 
 ![City Skyline preview](examples/city.svg)
 
+### Constellation
+
+![Constellation preview](examples/constellation.svg)
+
 ## Usage
 
 Create this workflow in `.github/workflows/contrib-runner.yml`:
@@ -137,7 +141,7 @@ The `prototypes/` directory contains standalone HTML generators used to explore 
 | Hash Cracker | [`prototypes/hash_cracker.html`](prototypes/hash_cracker.html) | Ported to `variant: hash`. |
 | Build Pipeline | [`prototypes/build_pipeline.html`](prototypes/build_pipeline.html) | Ported to `variant: pipeline`. |
 | City Skyline | [`prototypes/city_skyline.html`](prototypes/city_skyline.html) | Ported to `variant: city`. |
-| Constellation | [`prototypes/constellation.html`](prototypes/constellation.html) | Prototype. |
+| Constellation | [`prototypes/constellation.html`](prototypes/constellation.html) | Ported to `variant: constellation`. |
 | Etch-a-Sketch | [`prototypes/etch_a_sketch.html`](prototypes/etch_a_sketch.html) | Prototype. |
 
 To preview them:
@@ -182,6 +186,7 @@ Choose one of these values with the `variant` input:
 | `hash` | Faithful terminal hash cracker prototype using real contribution data. |
 | `pipeline` | Faithful CI/CD build pipeline prototype using real contribution data. |
 | `city` | Faithful city skyline prototype using real contribution data. |
+| `constellation` | Faithful animated star chart prototype using real contribution data. |
 
 ```yml
 with:
@@ -258,7 +263,7 @@ You can generate more than one variant by calling the action multiple times:
 | `output` | `dist/contrib-runner.svg` | Output SVG path. |
 | `title` | Variant label | SVG title. |
 | `theme` | `fire` | Theme name: `fire`, `neon`, or `ocean`. |
-| `variant` | `runner` | Animation variant: `runner`, `spaceship`, `train`, `rocket`, `pulse`, `miner`, `scanner`, `minecraft`, `hash`, `pipeline`, or `city`. |
+| `variant` | `runner` | Animation variant: `runner`, `spaceship`, `train`, `rocket`, `pulse`, `miner`, `scanner`, `minecraft`, `hash`, `pipeline`, `city`, or `constellation`. |
 
 ## Development
 

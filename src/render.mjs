@@ -2,6 +2,7 @@ import { renderCodeMinerMinecraftGrid } from "./code-miner-minecraft.mjs";
 import { renderHashCrackerGrid } from "./hash-cracker.mjs";
 import { renderBuildPipelineGrid } from "./build-pipeline.mjs";
 import { renderCitySkylineGrid } from "./city-skyline.mjs";
+import { renderConstellationGrid } from "./constellation.mjs";
 
 export const themes = {
   fire: {
@@ -111,6 +112,13 @@ export const variants = {
     trackDash: "4 7",
     sparkShape: "square",
   },
+  constellation: {
+    label: "Constellation",
+    meta: "contribution days become an animated star chart",
+    marker: "",
+    trackDash: "2 8",
+    sparkShape: "star",
+  },
 };
 
 export function renderContributionRunner({ username: login, weeks, title, theme, variant = "runner" }) {
@@ -154,6 +162,10 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
 
   if (variant === "city") {
     return renderCitySkylineGrid(daysToPrototypeGrid(days, max));
+  }
+
+  if (variant === "constellation") {
+    return renderConstellationGrid(daysToPrototypeGrid(days, max));
   }
 
   const grid = days

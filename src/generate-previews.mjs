@@ -13,6 +13,7 @@ const variantThemes = {
   hash: "neon",
   pipeline: "neon",
   city: "ocean",
+  constellation: "neon",
 };
 
 await mkdir("examples", { recursive: true });
