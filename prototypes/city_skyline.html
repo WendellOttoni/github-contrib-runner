@@ -179,6 +179,7 @@ function renderStars(T) {
     const beg = -rnd() * dur;
     s += `<circle cx="${fmt(x)}" cy="${fmt(y)}" r="${fmt(r)}" opacity="${0.4 + rnd() * 0.5}"><animate attributeName="opacity" values="${fmt(0.3 + rnd() * 0.4)};${fmt(0.7 + rnd() * 0.3)};${fmt(0.3 + rnd() * 0.4)}" dur="${fmt(dur)}s" begin="${fmt(beg)}s" repeatCount="indefinite"/></circle>`;
   }
+  s += `</g>`;
   // Wrap with isNight gating: in day mode stars are hidden via opacity 0
   s = `<g opacity="${T.isNight === false ? 0 : 1}">${s}</g>`;
   return s;
@@ -357,10 +358,15 @@ function buildAdaptive(grid) {
   // Two complete SVGs swapped via CSS prefers-color-scheme: one for day, one for night.
   // Approach: serialize both as nested <g> with media-query controlled visibility.
   // Easier: build one SVG using CSS variables for color, but day/night aesthetics differ enough that we'll output a single SVG with two <g> layers, one per scheme.
-  const dayGroup = buildSVG(LIGHT, grid).replace(/^<svg[^>]*>/, '<g class="day">').replace(/<\/svg>$/, '</g>');
-  const nightGroup = buildSVG(DARK, grid).replace(/^<svg[^>]*>/, '<g class="night">').replace(/<\/svg>$/, '</g>');
+  const dayGroup = wrapSceneGroup("day", buildSVG(LIGHT, grid));
+  const nightGroup = wrapSceneGroup("night", buildSVG(DARK, grid));
   const style = `<style>.night{display:none}.day{display:block}@media (prefers-color-scheme:dark){.night{display:block}.day{display:none}}</style>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${style}${dayGroup}${nightGroup}</svg>`;
+}
+
+function wrapSceneGroup(className, svg) {
+  const body = svg.replace(/^<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
+  return `<g class="${className}">${body}</g>`;
 }
 
 function regen(seed) {
