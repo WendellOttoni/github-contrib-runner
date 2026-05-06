@@ -35,54 +35,12 @@ export const themes = {
 };
 
 export const variants = {
-  runner: {
-    label: "Commit Runner",
-    meta: "energy cursor crossing active days",
-    marker: `<path class="runner-wing" d="M8 0 L14 16 L8 12 L2 16 Z" opacity=".9" /><circle class="runner-core" cx="8" cy="8" r="4.5" />`,
-    trackDash: "3 8",
-    sparkShape: "circle",
-  },
   spaceship: {
     label: "Commit Invaders",
     meta: "a base ship shoots stronger contribution blocks",
     marker: `<path class="runner-wing" d="M8 0 L15 15 L8 11 L1 15 Z" /><circle class="runner-core" cx="8" cy="8" r="3.5" /><path class="runner-flame" d="M5 14 L8 21 L11 14 Z" />`,
     trackDash: "2 9",
     sparkShape: "star",
-  },
-  train: {
-    label: "Train Code",
-    meta: "a tiny train moves through the commit line",
-    marker: `<rect class="runner-wing" x="1" y="5" width="14" height="8" rx="2" /><rect class="runner-core" x="4" y="2" width="7" height="6" rx="1.5" /><circle class="runner-core" cx="4" cy="15" r="2" /><circle class="runner-core" cx="12" cy="15" r="2" />`,
-    trackDash: "1 6",
-    sparkShape: "square",
-  },
-  rocket: {
-    label: "Rocket Trail",
-    meta: "a rocket leaves a trail over contribution peaks",
-    marker: `<path class="runner-core" d="M8 0 C14 6 14 12 8 18 C2 12 2 6 8 0 Z" /><circle class="runner-wing" cx="8" cy="7" r="2.2" /><path class="runner-flame" d="M5 16 L8 24 L11 16 Z" />`,
-    trackDash: "6 8",
-    sparkShape: "circle",
-  },
-  pulse: {
-    label: "Data Pulse",
-    meta: "a signal activates the calendar as it travels",
-    marker: `<circle class="runner-core" cx="8" cy="8" r="5" /><circle class="runner-wing" cx="8" cy="8" r="9" opacity=".25"><animate attributeName="r" values="5;13;5" dur="1.2s" repeatCount="indefinite" /></circle>`,
-    trackDash: "10 5",
-    sparkShape: "ring",
-  },
-  miner: {
-    label: "Code Miner",
-    meta: "a miner collects contribution blocks",
-    marker: `<rect class="runner-core" x="3" y="5" width="10" height="10" rx="2" /><path class="runner-wing" d="M2 5 L8 0 L14 5 Z" /><path class="runner-flame" d="M12 2 L17 7 M15 4 L10 9" />`,
-    trackDash: "4 7",
-    sparkShape: "diamond",
-  },
-  scanner: {
-    label: "Laser Scanner",
-    meta: "a scanner reads contribution intensity",
-    marker: `<rect class="runner-core" x="2" y="4" width="12" height="8" rx="2" /><path class="runner-wing" d="M14 8 L24 4 L24 12 Z" opacity=".55" /><circle class="runner-core" cx="5" cy="8" r="2" />`,
-    trackDash: "2 5",
-    sparkShape: "line",
   },
   minecraft: {
     label: "Code Miner Minecraft",
@@ -121,16 +79,17 @@ export const variants = {
   },
 };
 
-export function renderContributionRunner({ username: login, weeks, title, theme, variant = "runner" }) {
+export function renderContributionRunner({ username: login, weeks, title, theme, variant = "spaceship" }) {
+  const normalizedVariant = variants[variant] ? variant : "spaceship";
   const cell = 12;
   const gap = 4;
   const padX = 34;
   const padY = 42;
   const width = padX * 2 + weeks.length * (cell + gap) - gap;
-  const height = variant === "spaceship" ? 210 : 170;
+  const height = normalizedVariant === "spaceship" ? 210 : 170;
   const gridHeight = 7 * (cell + gap) - gap;
   const gridY = padY + 24;
-  const selected = variants[variant] || variants.runner;
+  const selected = variants[normalizedVariant];
   const label = title || selected.label;
   const days = weeks.flatMap((week, weekIndex) =>
     week.contributionDays.map((day, dayIndex) => ({ ...day, weekIndex, dayIndex })),
@@ -144,27 +103,27 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
     .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`)
     .join(" ");
 
-  if (variant === "spaceship") {
+  if (normalizedVariant === "spaceship") {
     return renderCommitInvadersGame({ login, days, total, max, label });
   }
 
-  if (variant === "minecraft") {
+  if (normalizedVariant === "minecraft") {
     return renderCodeMinerMinecraftGrid(daysToPrototypeGrid(days, max));
   }
 
-  if (variant === "hash") {
+  if (normalizedVariant === "hash") {
     return renderHashCrackerGrid(daysToPrototypeGrid(days, max));
   }
 
-  if (variant === "pipeline") {
+  if (normalizedVariant === "pipeline") {
     return renderBuildPipelineGrid(daysToPrototypeGrid(days, max));
   }
 
-  if (variant === "city") {
+  if (normalizedVariant === "city") {
     return renderCitySkylineGrid(daysToPrototypeGrid(days, max));
   }
 
-  if (variant === "constellation") {
+  if (normalizedVariant === "constellation") {
     return renderConstellationGrid(daysToPrototypeGrid(days, max));
   }
 

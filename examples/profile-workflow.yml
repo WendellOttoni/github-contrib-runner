@@ -1,4 +1,4 @@
-name: Commit Runner Animation
+name: Contribution Animation
 
 on:
   schedule:
@@ -16,15 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate Commit Runner animation
+      - name: Generate contribution animation
         uses: WendellOttoni/github-contrib-runner@main
         with:
           username: ${{ github.repository_owner }}
-          variant: runner
-          theme: fire
+          variant: spaceship
+          theme: neon
           output: dist/contrib-runner.svg
 
-      - name: Push output to dist branch
+      - name: Push output to output branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output

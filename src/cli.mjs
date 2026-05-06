@@ -7,9 +7,9 @@ const token = getInput("token") || process.env.GITHUB_TOKEN;
 const output = getInput("output") || "dist/contrib-runner.svg";
 const title = getInput("title");
 const themeName = getInput("theme") || "fire";
-const variantName = getInput("variant") || "runner";
+const variantName = getInput("variant") || "spaceship";
 const theme = themes[themeName] || themes.fire;
-const variant = variants[variantName] ? variantName : "runner";
+const variant = variants[variantName] ? variantName : "spaceship";
 
 if (!username) {
   throw new Error("username is required.");

@@ -2,13 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { renderContributionRunner, themes, variants } from "./render.mjs";
 
 const variantThemes = {
-  runner: "fire",
   spaceship: "neon",
-  train: "fire",
-  rocket: "fire",
-  pulse: "neon",
-  miner: "ocean",
-  scanner: "ocean",
   minecraft: "ocean",
   hash: "neon",
   pipeline: "neon",
@@ -36,9 +30,9 @@ async function readPrimaryPreview() {
   const svg = renderContributionRunner({
     username: "WendellOttoni",
     weeks: createPreviewWeeks(),
-    title: variants.runner.label,
-    theme: themes.fire,
-    variant: "runner",
+    title: variants.spaceship.label,
+    theme: themes.neon,
+    variant: "spaceship",
   });
   return svg;
 }

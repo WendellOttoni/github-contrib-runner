@@ -24,9 +24,9 @@ inputs:
     required: false
     default: fire
   variant:
-    description: Animation variant. Supported values are runner, spaceship, train, rocket, pulse, miner, scanner, minecraft, hash, pipeline, city, constellation.
+    description: Animation variant. Supported values are spaceship, minecraft, hash, pipeline, city, constellation.
     required: false
-    default: runner
+    default: spaceship
 
 runs:
   using: composite
