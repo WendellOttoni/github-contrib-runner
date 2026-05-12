@@ -1,8 +1,11 @@
-import { renderCodeMinerMinecraftGrid } from "./code-miner-minecraft.mjs";
-import { renderHashCrackerGrid } from "./hash-cracker.mjs";
-import { renderBuildPipelineGrid } from "./build-pipeline.mjs";
+import { renderCodeMinerMinecraftGrid } from "./code-miner-minecraft-prototype.mjs";
+import { renderHashCrackerGrid } from "./hash-cracker-prototype.mjs";
+import { renderBuildPipelineGrid } from "./build-pipeline-prototype.mjs";
 import { renderCitySkylineGrid } from "./city-skyline.mjs";
-import { renderConstellationGrid } from "./constellation.mjs";
+import { renderConstellationGrid } from "./constellation-prototype.mjs";
+import { renderCommitInvadersGrid } from "./commit-invaders-prototype.mjs";
+import { renderEtchASketchGrid } from "./etch-a-sketch-prototype.mjs";
+import { renderDungeonCrawlerGrid } from "./dungeon-crawler-prototype.mjs";
 
 export const themes = {
   fire: {
@@ -77,6 +80,20 @@ export const variants = {
     trackDash: "2 8",
     sparkShape: "star",
   },
+  etch: {
+    label: "Etch-a-Sketch",
+    meta: "contributions drive a line drawing animation",
+    marker: "",
+    trackDash: "3 6",
+    sparkShape: "line",
+  },
+  dungeon: {
+    label: "Dungeon Crawler",
+    meta: "contributions become rooms in a dungeon run",
+    marker: "",
+    trackDash: "2 6",
+    sparkShape: "diamond",
+  },
 };
 
 export function renderContributionRunner({ username: login, weeks, title, theme, variant = "spaceship" }) {
@@ -104,7 +121,7 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
     .join(" ");
 
   if (normalizedVariant === "spaceship") {
-    return renderCommitInvadersGame({ login, days, total, max, label });
+    return renderCommitInvadersGrid(daysToPrototypeGrid(days, max));
   }
 
   if (normalizedVariant === "minecraft") {
@@ -125,6 +142,14 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
 
   if (normalizedVariant === "constellation") {
     return renderConstellationGrid(daysToPrototypeGrid(days, max));
+  }
+
+  if (normalizedVariant === "etch") {
+    return renderEtchASketchGrid(daysToPrototypeGrid(days, max));
+  }
+
+  if (normalizedVariant === "dungeon") {
+    return renderDungeonCrawlerGrid(daysToPrototypeGrid(days, max));
   }
 
   const grid = days

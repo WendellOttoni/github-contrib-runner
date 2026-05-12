@@ -553,7 +553,7 @@ function renderVictory(T, t) {
   let s = `<g opacity="0">`;
   s += `<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;${k1};${k2};${k3};${k4};1" dur="${TOTAL}s" repeatCount="indefinite"/>`;
   s += `<rect x="${cx - 130}" y="${cy - 22}" width="260" height="44" fill="${T.bg}" stroke="${T.accent}" stroke-width="1" stroke-dasharray="3 2"/>`;
-  s += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="11" font-weight="900" fill="${T.accent}" letter-spacing="3">>>> DUNGEON CLEARED <<<</text>`;
+  s += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="11" font-weight="900" fill="${T.accent}" letter-spacing="3">&gt;&gt;&gt; DUNGEON CLEARED &lt;&lt;&lt;</text>`;
   s += `<text x="${cx}" y="${cy + 12}" text-anchor="middle" font-size="7" fill="${T.textDim}" letter-spacing="2">press any key to descend...</text>`;
   s += `</g>`;
   return s;

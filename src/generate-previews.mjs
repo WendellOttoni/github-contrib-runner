@@ -8,6 +8,8 @@ const variantThemes = {
   pipeline: "neon",
   city: "ocean",
   constellation: "neon",
+  etch: "fire",
+  dungeon: "ocean",
 };
 
 await mkdir("examples", { recursive: true });

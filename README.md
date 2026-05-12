@@ -30,14 +30,13 @@ The Action currently focuses on the most customized variants: game-like, termina
 
 ![Constellation preview](examples/constellation.svg)
 
-## Coming Soon
+### Etch-a-Sketch
 
-These prototypes already have local previews, but are not Action variants yet.
+![Etch-a-Sketch preview](examples/etch.svg)
 
-| Prototype | Preview locally | Status |
-| --- | --- | --- |
-| Dungeon Crawler | [`prototypes/dungeon_crawler.html`](prototypes/dungeon_crawler.html) | Prototype, planned variant. |
-| Etch-a-Sketch | [`prototypes/etch_a_sketch.html`](prototypes/etch_a_sketch.html) | Prototype, planned variant. |
+### Dungeon Crawler
+
+![Dungeon Crawler preview](examples/dungeon.svg)
 
 ## Usage
 
@@ -103,6 +102,8 @@ Choose one of these values with the `variant` input:
 | `pipeline` | Build Pipeline: commits travel through CI stages. |
 | `city` | City Skyline: weekly contribution towers build a skyline. |
 | `constellation` | Constellation: contribution days become an animated star chart. |
+| `etch` | Etch-a-Sketch: contributions drive a line drawing animation. |
+| `dungeon` | Dungeon Crawler: contributions become rooms in a dungeon run. |
 
 ```yml
 with:
@@ -160,8 +161,8 @@ The `prototypes/` directory contains standalone HTML generators used to explore 
 | Build Pipeline | [`prototypes/build_pipeline.html`](prototypes/build_pipeline.html) | Ported to `variant: pipeline`. |
 | City Skyline | [`prototypes/city_skyline.html`](prototypes/city_skyline.html) | Ported to `variant: city`. |
 | Constellation | [`prototypes/constellation.html`](prototypes/constellation.html) | Ported to `variant: constellation`. |
-| Dungeon Crawler | [`prototypes/dungeon_crawler.html`](prototypes/dungeon_crawler.html) | Prototype, planned variant. |
-| Etch-a-Sketch | [`prototypes/etch_a_sketch.html`](prototypes/etch_a_sketch.html) | Prototype, planned variant. |
+| Dungeon Crawler | [`prototypes/dungeon_crawler.html`](prototypes/dungeon_crawler.html) | Ported to `variant: dungeon`. |
+| Etch-a-Sketch | [`prototypes/etch_a_sketch.html`](prototypes/etch_a_sketch.html) | Ported to `variant: etch`. |
 
 To preview them:
 
@@ -183,7 +184,7 @@ Prototype HTML files are not Action variants yet. To use a prototype with real G
 | `output` | `dist/contrib-runner.svg` | Output SVG path. |
 | `title` | Variant label | SVG title. |
 | `theme` | `fire` | Theme name: `fire`, `neon`, or `ocean`. |
-| `variant` | `spaceship` | Animation variant: `spaceship`, `minecraft`, `hash`, `pipeline`, `city`, or `constellation`. |
+| `variant` | `spaceship` | Animation variant: `spaceship`, `minecraft`, `hash`, `pipeline`, `city`, `constellation`, `etch`, or `dungeon`. |
 
 ## Development
 
