@@ -1,9 +1,8 @@
-import { renderCodeMinerMinecraftGrid } from "./code-miner-minecraft-prototype.mjs";
-import { renderHashCrackerGrid } from "./hash-cracker-prototype.mjs";
-import { renderBuildPipelineGrid } from "./build-pipeline-prototype.mjs";
+import { renderCodeMinerMinecraftGrid } from "./code-miner-minecraft.mjs";
+import { renderHashCrackerGrid } from "./hash-cracker.mjs";
+import { renderBuildPipelineGrid } from "./build-pipeline.mjs";
 import { renderCitySkylineGrid } from "./city-skyline.mjs";
-import { renderConstellationGrid } from "./constellation-prototype.mjs";
-import { renderCommitInvadersGrid } from "./commit-invaders-prototype.mjs";
+import { renderConstellationGrid } from "./constellation.mjs";
 import { renderEtchASketchGrid } from "./etch-a-sketch-prototype.mjs";
 import { renderDungeonCrawlerGrid } from "./dungeon-crawler-prototype.mjs";
 
@@ -121,7 +120,7 @@ export function renderContributionRunner({ username: login, weeks, title, theme,
     .join(" ");
 
   if (normalizedVariant === "spaceship") {
-    return renderCommitInvadersGrid(daysToPrototypeGrid(days, max));
+    return renderCommitInvadersGame({ login, days, total, max, label });
   }
 
   if (normalizedVariant === "minecraft") {
